@@ -49,6 +49,24 @@
             <mxPoint x="387.1868978805395" y="326.7741935483871" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="kcYDHiKPppMCa5fq4IoN-4" value="Receive Instructions" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="523.2519460500964" y="279.9993548387097" width="109.2485549132948" height="79.83870967741935" as="geometry" />
+        </mxCell>
+        <mxCell id="kcYDHiKPppMCa5fq4IoN-5" value="&amp;nbsp; &amp;nbsp;Verify&amp;nbsp; &amp;nbsp; Notifications" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="523.2519460500964" y="489.99935483870973" width="109.2485549132948" height="79.83870967741935" as="geometry" />
+        </mxCell>
+        <mxCell id="kcYDHiKPppMCa5fq4IoN-6" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="kcYDHiKPppMCa5fq4IoN-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="410" as="sourcePoint" />
+            <mxPoint x="250" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kcYDHiKPppMCa5fq4IoN-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="kcYDHiKPppMCa5fq4IoN-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="450" as="sourcePoint" />
+            <mxPoint x="220" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
