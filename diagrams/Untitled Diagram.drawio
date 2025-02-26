@@ -16,13 +16,13 @@
         <mxCell id="mTnGnp5YAqu6k8MlJbpn-5" value="Analog AC Current Sensor&lt;div&gt;SEN0211&lt;br&gt;&lt;div&gt;1x&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="40" y="190" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="mTnGnp5YAqu6k8MlJbpn-6" value="Analog Hall Current Sensor&lt;div&gt;1x&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="mTnGnp5YAqu6k8MlJbpn-6" value="Analog Hall Current Sensor&lt;div&gt;SEN0214&lt;br&gt;&lt;div&gt;1x&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="40" y="280" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="mTnGnp5YAqu6k8MlJbpn-7" value="Digital Wattmeter&lt;div&gt;3x&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="mTnGnp5YAqu6k8MlJbpn-7" value="Digital Wattmeter&lt;div&gt;SEN0291&lt;br&gt;&lt;div&gt;3x&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="660" y="100" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="mTnGnp5YAqu6k8MlJbpn-8" value="Digital Temperature Sensor&lt;div&gt;1x&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="mTnGnp5YAqu6k8MlJbpn-8" value="Digital Temperature Sensor&lt;div&gt;DS18B20&lt;br&gt;&lt;div&gt;1x&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="660" y="190" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="mTnGnp5YAqu6k8MlJbpn-9" value="Capacitive Touch Sensor&lt;div&gt;1x&lt;/div&gt;&lt;div&gt;Most likley not used&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
