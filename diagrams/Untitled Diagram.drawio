@@ -136,7 +136,7 @@
             <mxPoint x="520" y="220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="mTnGnp5YAqu6k8MlJbpn-39" value="Raspberry&amp;nbsp;&lt;div&gt;Pi&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="mTnGnp5YAqu6k8MlJbpn-39" value="Raspberry&amp;nbsp;&lt;div&gt;Pi&lt;/div&gt;&lt;div&gt;3x?&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="345" y="10" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="mTnGnp5YAqu6k8MlJbpn-44" value="" style="endArrow=none;html=1;rounded=0;strokeColor=light-dark(#FF0000,#FFFFFF);" edge="1" parent="1" source="mTnGnp5YAqu6k8MlJbpn-89">
@@ -390,6 +390,15 @@
             <mxPoint x="450" y="20" as="sourcePoint" />
             <mxPoint x="425" y="20" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="mTnGnp5YAqu6k8MlJbpn-103" value="5V" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mTnGnp5YAqu6k8MlJbpn-105" value="5V" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mTnGnp5YAqu6k8MlJbpn-106" value="5V" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="490" width="40" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
