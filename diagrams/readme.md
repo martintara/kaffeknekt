@@ -5,5 +5,5 @@
 ![Alt Text](block_diagram_low_level.drawio.png)
 ![Alt Text](block_diagram_low_level.drawio.png)
 ![Alt Text](Class_diagram_GUI.drawio.png)
-![Alt Text](Gui Component Diagram.drawio.png)
-![Alt Text](Main Component Diagram.drawio.png)
+![Alt Text](Gui_Component_Diagram.drawio.png)
+![Alt Text](Main_Component_Diagram.drawio.png)
