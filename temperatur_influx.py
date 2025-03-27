@@ -41,7 +41,7 @@ while True:
     celsius = temp_data()
     
     #create datapoint to send
-    p = Point('Temperature').field('temperature °C', celsius)
+    p = Point('Temperature').field('temperature_C', celsius)
     
     API.write(bucket=BUCKET, org=ORG, record=p)
     print(f'{celsius:.5f}°C')
