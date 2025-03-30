@@ -7,4 +7,4 @@
 ![Alt Text](Class_diagram_GUI.drawio.png)
 ![Alt Text](Gui_Component_Diagram.drawio.png)
 ![Alt Text](Main_Component_Diagram.drawio.png)
-![Alt Text](Soki_DataFlowDiagram.drawio.png)
+![Alt Text](Kaffeknekt_Flow_Chart.drawio.png)
