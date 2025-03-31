@@ -105,12 +105,12 @@
         <mxCell id="BwwECi_1TPFcPrx5lDiG-45" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="680" y="200" width="20" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="BwwECi_1TPFcPrx5lDiG-46" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.375;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="BwwECi_1TPFcPrx5lDiG-8" target="BwwECi_1TPFcPrx5lDiG-43" edge="1">
+        <mxCell id="BwwECi_1TPFcPrx5lDiG-46" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.375;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="BwwECi_1TPFcPrx5lDiG-25" target="BwwECi_1TPFcPrx5lDiG-43" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="530" y="390" as="sourcePoint" />
             <mxPoint x="550" y="190" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="510" y="420" />
+              <mxPoint x="715" y="524" />
               <mxPoint x="530" y="340" />
               <mxPoint x="540" y="210" />
               <mxPoint x="620" y="210" />
