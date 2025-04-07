@@ -15,7 +15,7 @@
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-32" value="HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KQubY17tb24o_JSvYcSJ-18">
           <mxGeometry x="-0.0683" y="-2" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="7" y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="tCFHhLoynig8EYh6mOK0-4" target="KQubY17tb24o_JSvYcSJ-25">
@@ -62,7 +62,7 @@
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-31" value="HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KQubY17tb24o_JSvYcSJ-20">
           <mxGeometry x="-0.1004" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-16" value="Database to Sens. Query" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
