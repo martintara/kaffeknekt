@@ -19,7 +19,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="tCFHhLoynig8EYh6mOK0-4" value="InfluxDB&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="197" y="398" width="80" height="80" as="geometry" />
+          <mxGeometry x="197" y="438" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="tCFHhLoynig8EYh6mOK0-5" target="KQubY17tb24o_JSvYcSJ-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -28,13 +28,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tCFHhLoynig8EYh6mOK0-5" value="Qt Code&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="197" y="158" width="80" height="80" as="geometry" />
+          <mxGeometry x="197" y="117" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Raspberry PI 5&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="38" y="72" width="140" height="54" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-3" value="ESP32&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="677" y="398" width="80" height="80" as="geometry" />
+          <mxGeometry x="677" y="438" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-4" target="KQubY17tb24o_JSvYcSJ-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -45,13 +45,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-4" value="Sensors&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="677" y="559" width="80" height="80" as="geometry" />
+          <mxGeometry x="677" y="599" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-10" target="tCFHhLoynig8EYh6mOK0-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-10" value="Display&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="677" y="158" width="80" height="80" as="geometry" />
+          <mxGeometry x="677" y="117" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-3" target="KQubY17tb24o_JSvYcSJ-16" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -72,7 +72,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-16" value="Sensor to DB&lt;br&gt;&amp;lt;Script&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="400" y="398" width="80" height="80" as="geometry" />
+          <mxGeometry x="398" y="438" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-25" target="tCFHhLoynig8EYh6mOK0-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
