@@ -1,0 +1,1 @@
+{"temperature_C":23.5,"power_mW":2560,"timestamp_ns":1744190723110065000}
