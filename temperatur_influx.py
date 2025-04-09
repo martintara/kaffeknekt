@@ -5,7 +5,7 @@ from influxdb_client import InfluxDBClient, Point
 #Specify identification keys
 URL = 'http://localhost:8086'
 ORG = 'Kaffeknekt'
-TOKEN = '' #token skal limes inn her
+TOKEN = 'ETV_6VBhkfF7HzNGfOjN6F7nTvX0ye_tblcGObcB1OVJDLYxQXUWpt8NU84PJmrn6R6IV921X2eWLLJDg1wgdQ==' #token skal limes inn her
 BUCKET = 'sensor_data'
 
 #set up client between python script and influxdb
