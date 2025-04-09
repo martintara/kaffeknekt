@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.9">
   <diagram name="Page-1" id="HhNXI8WZJUnv4hM9NlqA">
-    <mxGraphModel dx="1467" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="788" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -21,25 +21,20 @@
         <mxCell id="tCFHhLoynig8EYh6mOK0-4" value="InfluxDB&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="198" y="439" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="KQubY17tb24o_JSvYcSJ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="tCFHhLoynig8EYh6mOK0-5" target="KQubY17tb24o_JSvYcSJ-10" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="440" y="160" />
-              <mxPoint x="599" y="160" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="cwW55VT3t5SB2WEBMHX0-1" value="HDMI/USB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KQubY17tb24o_JSvYcSJ-13">
-          <mxGeometry x="-0.0464" y="-2" relative="1" as="geometry">
-            <mxPoint y="-13" as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" parent="1" source="tCFHhLoynig8EYh6mOK0-5" target="KQubY17tb24o_JSvYcSJ-33" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="3WhupO3LqhPyWRwJNvzr-1" value="HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="KQubY17tb24o_JSvYcSJ-39" vertex="1" connectable="0">
           <mxGeometry x="0.1185" y="-1" relative="1" as="geometry">
             <mxPoint x="1" y="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z7kRrfylKnzDRi8egSPC-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="tCFHhLoynig8EYh6mOK0-5" target="KQubY17tb24o_JSvYcSJ-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Z7kRrfylKnzDRi8egSPC-2" value="HDMI/USB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Z7kRrfylKnzDRi8egSPC-1">
+          <mxGeometry x="-0.0771" relative="1" as="geometry">
+            <mxPoint y="-11" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tCFHhLoynig8EYh6mOK0-5" value="Qt Code&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
