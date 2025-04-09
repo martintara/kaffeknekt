@@ -29,7 +29,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cwW55VT3t5SB2WEBMHX0-1" value="?" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KQubY17tb24o_JSvYcSJ-13">
+        <mxCell id="cwW55VT3t5SB2WEBMHX0-1" value="HDMI/USB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KQubY17tb24o_JSvYcSJ-13">
           <mxGeometry x="-0.0464" y="-2" relative="1" as="geometry">
             <mxPoint y="-13" as="offset" />
           </mxGeometry>
