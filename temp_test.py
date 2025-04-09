@@ -1,6 +1,7 @@
 import serial
 import time
 from datetime import datetime, timezone
+from dateutil.parser import parse
 from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 
@@ -25,7 +26,8 @@ def main():
             while True:
                 line = ser.readline().decode('utf-8').strip()
                 if line:
-                    timestamp = datetime.now(timezone.utc)
+                    stamp = datetime.now(timezone.utc).isoformat()
+                    timestamp = parse(stamp)
                     log_line = f"{timestamp} - {line}"
                     print(log_line)
                     file.write(log_line + '\n')

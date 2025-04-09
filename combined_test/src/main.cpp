@@ -120,6 +120,8 @@ void loop() {
 #include <Wire.h>
 #include "DFRobot_INA219.h"
 #include <ArduinoJson.h>
+#include <sys/time.h>
+
 
 #define DS18S20_Pin 25
 OneWire ds(DS18S20_Pin);
@@ -189,7 +191,7 @@ void ina219Task(void *parameter) {
 }
 
 void serialSenderTask(void *parameter) {
-  StaticJsonDocument<128> doc;
+  StaticJsonDocument<192> doc;
 
   while (1) {
     if (xSemaphoreTake(dataMutex, portMAX_DELAY)) {
@@ -198,6 +200,14 @@ void serialSenderTask(void *parameter) {
       xSemaphoreGive(dataMutex);
     }
 
+    // Use gettimeofday to get seconds + microseconds
+    struct timeval now;
+    gettimeofday(&now, NULL);
+
+    // Combine into nanoseconds
+    int64_t timestamp_ns = ((int64_t)now.tv_sec * 1000000000LL) + ((int64_t)now.tv_usec * 1000LL);
+    doc["timestamp_ns"] = timestamp_ns;
+
     serializeJson(doc, Serial);
     Serial.println();
 
@@ -205,9 +215,47 @@ void serialSenderTask(void *parameter) {
   }
 }
 
+
+
+void setTimeFromSerial(const String& timeStr) {
+  struct tm tm;
+  if (sscanf(timeStr.c_str(), "%d-%d-%dT%d:%d:%dZ",
+             &tm.tm_year, &tm.tm_mon, &tm.tm_mday,
+             &tm.tm_hour, &tm.tm_min, &tm.tm_sec) == 6) {
+    tm.tm_year -= 1900;
+    tm.tm_mon -= 1;
+    time_t t = mktime(&tm);
+    struct timeval now = { .tv_sec = t, .tv_usec = 0 };
+    settimeofday(&now, NULL);
+    Serial.println("[ESP32] Time synced from Raspberry Pi.");
+  } else {
+    Serial.println("[ESP32] Failed to parse time string.");
+  }
+}
+
+void waitForTimeSync() {
+  Serial.println("Waiting for time sync from Raspberry Pi...");
+
+  while (true) {
+    if (Serial.available()) {
+      String input = Serial.readStringUntil('\n');
+      input.trim();
+      if (input.startsWith("TIME:")) {
+        String timeStr = input.substring(5);
+        setTimeFromSerial(timeStr);
+        break;
+      }
+    }
+    delay(100);
+  }
+}
+
+
 void setup() {
   Serial.begin(115200);
   Wire.begin();
+
+  waitForTimeSync(); // <-- Important: wait for Pi to send timestamp
 
   while (!ina219.begin()) {
     Serial.println("INA219 init failed");
