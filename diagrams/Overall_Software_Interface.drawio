@@ -10,50 +10,50 @@
         <mxCell id="tCFHhLoynig8EYh6mOK0-3" value="" style="whiteSpace=wrap;html=1;aspect=fixed;dashed=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="39" y="80" width="480" height="480" as="geometry" />
         </mxCell>
-        <mxCell id="KQubY17tb24o_JSvYcSJ-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="tCFHhLoynig8EYh6mOK0-4" target="KQubY17tb24o_JSvYcSJ-25" edge="1">
+        <mxCell id="KQubY17tb24o_JSvYcSJ-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="tCFHhLoynig8EYh6mOK0-4" target="KQubY17tb24o_JSvYcSJ-25" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lk2kVFszZDgi0h9clUzz-7" value="Line Protocol" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="KQubY17tb24o_JSvYcSJ-37" vertex="1" connectable="0">
           <mxGeometry x="-0.1778" y="1" relative="1" as="geometry">
-            <mxPoint x="-6" y="-7" as="offset" />
+            <mxPoint x="-6" y="-8" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tCFHhLoynig8EYh6mOK0-4" value="InfluxDB&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="197" y="438" width="80" height="80" as="geometry" />
+          <mxGeometry x="198" y="439" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="tCFHhLoynig8EYh6mOK0-5" target="KQubY17tb24o_JSvYcSJ-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="KQubY17tb24o_JSvYcSJ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="tCFHhLoynig8EYh6mOK0-5" target="KQubY17tb24o_JSvYcSJ-33" edge="1">
+        <mxCell id="KQubY17tb24o_JSvYcSJ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" parent="1" source="tCFHhLoynig8EYh6mOK0-5" target="KQubY17tb24o_JSvYcSJ-33" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="3WhupO3LqhPyWRwJNvzr-1" value="?" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KQubY17tb24o_JSvYcSJ-39">
           <mxGeometry x="0.1185" y="-1" relative="1" as="geometry">
-            <mxPoint x="1" y="-10" as="offset" />
+            <mxPoint x="1" y="11" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tCFHhLoynig8EYh6mOK0-5" value="Qt Code&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="197" y="117" width="80" height="80" as="geometry" />
+          <mxGeometry x="199" y="119" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Raspberry PI 5&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="38" y="72" width="140" height="54" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-3" value="ESP32&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="677" y="438" width="80" height="80" as="geometry" />
+          <mxGeometry x="600" y="439" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-4" target="KQubY17tb24o_JSvYcSJ-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lk2kVFszZDgi0h9clUzz-4" value="I2C/GPIO/SPI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="KQubY17tb24o_JSvYcSJ-9" vertex="1" connectable="0">
           <mxGeometry x="-0.0562" y="3" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint y="-13" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-4" value="Sensors&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="677" y="599" width="80" height="80" as="geometry" />
+          <mxGeometry x="720" y="599" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-10" value="Display&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="677" y="117" width="80" height="80" as="geometry" />
+          <mxGeometry x="599" y="119" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-3" target="KQubY17tb24o_JSvYcSJ-16" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -62,7 +62,7 @@
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-44" value="PySerial" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="KQubY17tb24o_JSvYcSJ-17" vertex="1" connectable="0">
           <mxGeometry x="-0.138" y="1" relative="1" as="geometry">
-            <mxPoint x="-16" y="-9" as="offset" />
+            <mxPoint x="4" y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Lk2kVFszZDgi0h9clUzz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-16" target="tCFHhLoynig8EYh6mOK0-4" edge="1">
@@ -70,24 +70,24 @@
         </mxCell>
         <mxCell id="Lk2kVFszZDgi0h9clUzz-3" value="Line Protocol" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Lk2kVFszZDgi0h9clUzz-2" vertex="1" connectable="0">
           <mxGeometry x="0.2639" y="-1" relative="1" as="geometry">
-            <mxPoint x="11" y="-7" as="offset" />
+            <mxPoint x="11" y="-8" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-16" value="Sensor to DB&lt;br&gt;&amp;lt;Script&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="398" y="438" width="80" height="80" as="geometry" />
+          <mxGeometry x="398" y="439" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="KQubY17tb24o_JSvYcSJ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-25" target="tCFHhLoynig8EYh6mOK0-5" edge="1">
+        <mxCell id="KQubY17tb24o_JSvYcSJ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="KQubY17tb24o_JSvYcSJ-25" target="tCFHhLoynig8EYh6mOK0-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="3WhupO3LqhPyWRwJNvzr-2" value="?" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KQubY17tb24o_JSvYcSJ-38">
           <mxGeometry x="0.0441" y="2" relative="1" as="geometry">
-            <mxPoint y="8" as="offset" />
+            <mxPoint y="-12" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-25" value="Database to GUI Data&lt;div&gt;&amp;lt;Script&amp;gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="277" y="278" width="80" height="80" as="geometry" />
+          <mxGeometry x="280" y="280" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="KQubY17tb24o_JSvYcSJ-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="KQubY17tb24o_JSvYcSJ-33" target="tCFHhLoynig8EYh6mOK0-4" edge="1">
+        <mxCell id="KQubY17tb24o_JSvYcSJ-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="KQubY17tb24o_JSvYcSJ-33" target="tCFHhLoynig8EYh6mOK0-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lk2kVFszZDgi0h9clUzz-6" value="Line Protocol" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="KQubY17tb24o_JSvYcSJ-40" vertex="1" connectable="0">
@@ -96,7 +96,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-33" value="GUI to DB Query&lt;br&gt;&amp;lt;Script&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="118" y="279" width="80" height="80" as="geometry" />
+          <mxGeometry x="119" y="279" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
