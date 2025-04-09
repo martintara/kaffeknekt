@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.9">
   <diagram name="Page-1" id="HhNXI8WZJUnv4hM9NlqA">
-    <mxGraphModel dx="788" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1027" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,9 +13,9 @@
         <mxCell id="KQubY17tb24o_JSvYcSJ-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="tCFHhLoynig8EYh6mOK0-4" target="KQubY17tb24o_JSvYcSJ-25" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Lk2kVFszZDgi0h9clUzz-7" value="Line Protocol" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="KQubY17tb24o_JSvYcSJ-37" vertex="1" connectable="0">
+        <mxCell id="Lk2kVFszZDgi0h9clUzz-7" value="JSON" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="KQubY17tb24o_JSvYcSJ-37" vertex="1" connectable="0">
           <mxGeometry x="-0.1778" y="1" relative="1" as="geometry">
-            <mxPoint x="-6" y="-8" as="offset" />
+            <mxPoint x="-2" y="-8" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tCFHhLoynig8EYh6mOK0-4" value="InfluxDB&lt;br&gt;&amp;lt;Module&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
@@ -102,6 +102,9 @@
         </mxCell>
         <mxCell id="KQubY17tb24o_JSvYcSJ-33" value="GUI to DB Query&lt;br&gt;&amp;lt;Script&amp;gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="119" y="279" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Z7kRrfylKnzDRi8egSPC-4" value="InfluxDB HTTP API" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="184" y="439" width="109" height="19" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
