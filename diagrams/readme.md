@@ -9,3 +9,4 @@
 ![Alt Text](Main_Component_Diagram.drawio.png)
 ![Alt Text](Kaffeknekt_Flow_Chart.drawio.png)
 ![Alt Text](Kaffeknekt_System_Arkitektur.drawio.png)
+![Alt Text](Electrical_diagram.drawio.png)
