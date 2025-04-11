@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "graphview.h"  // Included to ensure the GraphView class is available
@@ -16,3 +17,59 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow() {
     delete ui;  // Clean up UI resources to prevent memory leaks
 }
+=======
+//Koden som kjører!!
+/*
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "influx_fetcher.h"
+
+#include <QDebug>
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent),
+      ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    fetcher = new InfluxFetcher(this);
+
+    connect(ui->FetchButton, &QPushButton::clicked, this, [=]() {
+        fetcher->fetchTemperatureData();
+    });
+
+    connect(fetcher, &InfluxFetcher::dataReady, this, [=](const QByteArray &data) {
+        ui->textOutput->setText(QString::fromUtf8(data));
+    });
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+*/
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "influx_fetcher.h"
+#include "influx_fetcher.h"
+#include <QDebug>
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    auto *fetcher = new InfluxFetcher(this);
+
+    connect(ui->FetchButton, &QPushButton::clicked, this, [=]() {
+        fetcher->fetchTemperature();
+    });
+
+    connect(fetcher, &InfluxFetcher::dataReady, this, [=](const QString &result) {
+        ui->textOutput->setText(result);
+    });
+}
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+>>>>>>> 2f35e43 (koden B&K, men ikke nor data RTS)
