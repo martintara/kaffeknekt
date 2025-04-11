@@ -59,30 +59,79 @@ void InfluxFetcher::handleReply(QNetworkReply *reply)
         } else {
             emit dataReady("Ingen data funnet.");
         }
-*/  if (reply->error() == QNetworkReply::NoError) {
+    if (reply->error() == QNetworkReply::NoError) {
         QByteArray response = reply->readAll();
         qDebug() << "Svar mottatt fra InfluxDB:";
         qDebug().noquote() << response;
         emit dataReady("Svar mottatt, se konsoll");
-    } else {
+    } /*else {
         qWarning() << "Feil ved henting:" << reply->errorString();
         QByteArray response = reply->readAll();
         qDebug().noquote() << response;  // ← vis hele feilmeldingen fra InfluxDB!
         emit dataReady("Feil ved henting av data.");
+    }///ny kode(((
+    if (reply->error() == QNetworkReply::NoError) {
+            QByteArray response = reply->readAll();
+            qDebug().noquote() << "✅ Svar mottatt fra InfluxDB:\n" << response;
+
+            // Split opp CSV til linjer
+            QList<QByteArray> lines = response.split('\n');
+
+            if (lines.size() > 4) {
+                QByteArray lastLine = lines.last();
+                if (lastLine.trimmed().isEmpty() && lines.size() > 5)
+                    lastLine = lines.at(lines.size() - 2);  // Hopp over tom linje
+
+                QStringList fields = QString(lastLine).split(',');
+
+                if (fields.size() >= 8) {
+                    QString tempValue = fields.at(6).trimmed();  // Verdi for temperatur
+                    emit dataReady("Siste temperatur: " + tempValue + " °C");
+                } else {
+                    emit dataReady("⚠️ Klarte ikke hente verdi fra linjen.");
+                }
+            }
+    }*/
+    QByteArray response = reply->readAll();
+    qDebug().noquote() << " Svar mottatt fra InfluxDB:\n" << response;
+
+    QList<QByteArray> lines = response.split('\n');
+    // Gå baklengs og finn første linje som ikke er tom og ikke starter med '#'
+    QByteArray dataLine;
+    for (int i = lines.size() - 1; i >= 0; --i) {
+        QByteArray line = lines.at(i).trimmed();
+        if (!line.isEmpty() && !line.startsWith('#')) {
+            dataLine = line;
+            break;
+        }
     }
+
+    if (!dataLine.isEmpty()) {
+        QStringList fields = QString(dataLine).split(',');
+
+        if (fields.size() >= 7) {
+            QString tempValue = fields.at(6).trimmed();  // _value ligger på index 6
+            emit dataReady("Siste temperatur: " + tempValue + " °C");
+        } else {
+            emit dataReady(" Klarte ikke tolke verdier i linjen.");
+        }
     } else {
-        qWarning() << "❌ Feil ved henting:" << reply->errorString();
+        emit dataReady("Ingen datalinje funnet i svaret.");
+    }/*
+    else {
+        qWarning() << "Feil ved henting:" << reply->errorString();
         emit dataReady("Feil ved henting av data.");
-    }
+    }*/
     reply->deleteLater();
 }
 //DEN NYE FETCH INFLUX:
 void InfluxFetcher::fetchTemperature()
 {
-    QUrl url("http://localhost:8086/api/v2/query");
+    //QUrl url("http://localhost:8086/api/v2/query");
+    QUrl url("http://localhost:8086/api/v2/query?org=Kaffeknekt");
     QNetworkRequest request(url);
 
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");  //""
     request.setRawHeader("Authorization", "Token gYOa4uSF29eaZZHM2lu7gklxe_gGa-IcWO1RLSK4JRP05nCImvw-ZMcT71wO9Gb8LyhseQ2B_LAiExHl-lOAGQ==");
 
     // Bygg JSON korrekt

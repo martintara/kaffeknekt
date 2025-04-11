@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/*
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "graphview.h"  // Included to ensure the GraphView class is available
@@ -17,9 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow() {
     delete ui;  // Clean up UI resources to prevent memory leaks
 }
-=======
+
 //Koden som kjører!!
-/*
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "influx_fetcher.h"
@@ -51,7 +51,6 @@ MainWindow::~MainWindow()
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "influx_fetcher.h"
-#include "influx_fetcher.h"
 #include <QDebug>
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -72,4 +71,3 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
->>>>>>> 2f35e43 (koden B&K, men ikke nor data RTS)

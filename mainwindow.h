@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/*
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -60,7 +60,6 @@ public:
 private:
     Ui::MainWindow *ui;
     InfluxFetcher *fetcher;
->>>>>>> 2f35e43 (koden B&K, men ikke nor data RTS)
 };
 
 #endif // MAINWINDOW_H
