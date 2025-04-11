@@ -7,8 +7,8 @@ from dateutil.parser import parse
 
 # InfluxDB settings
 URL = 'http://localhost:8086'
-ORG = 'Kaffeknekt'
-TOKEN = 'ETV_6VBhkfF7HzNGfOjN6F7nTvX0ye_tblcGObcB1OVJDLYxQXUWpt8NU84PJmrn6R6IV921X2eWLLJDg1wgdQ=='
+ORG = 'kaffeknekt_admin'
+TOKEN = 'zIKDeYY-92Yyzcs2FTe5q5ZBh9laYZ9ZlwsoIDR1E2Alz26gKoobMmd93xug_e27QFCdMJclWOSWwsMDadbXXQ=='
 BUCKET = 'sensor_data'
 
 client = InfluxDBClient(url=URL, token=TOKEN, org=ORG)
