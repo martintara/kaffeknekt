@@ -1,5 +1,5 @@
 from (bucket: "sensor_data")
-  |> range(start: -8s)
+  |> range(start: -16h)
   |> filter(fn: (r) => r._measurement == "Esp32Metrics")
   |> filter(fn: (r) => 
     r._field == "Readable_time" or
