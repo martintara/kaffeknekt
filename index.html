@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaffeknekt</title>
+  <style>
+    :root {
+      --primary: #5c3d2e;
+      --secondary: #b85c38;
+      --accent: #e0c097;
+      --light: #f9f5eb;
+      --dark: #2c2825;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    header {
+      background-color: var(--primary);
+      padding: 1.5rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--light);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    section {
+      padding: 5rem 0;
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(92, 61, 46, 0.8), rgba(92, 61, 46, 0.8)), url('/api/placeholder/1200/600') center/cover no-repeat;
+      color: var(--light);
+      text-align: center;
+      padding: 10rem 0 5rem;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .team-member {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    
+    .member-img {
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      width: 100%;       /* You can change this to a fixed width if needed */
+      max-width: 250px;  /* Optional: controls maximum size */
+      height: auto;
+      border-radius: 8px; /* Optional: rounded corners */
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .member-info {
+      padding: 1.5rem;
+    }
+    
+    .member-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .member-info h4 {
+      font-size: 1rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .mission {
+      background-color: var(--primary);
+      color: var(--light);
+      text-align: center;
+    }
+    
+    .mission-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .mission-content h2 {
+      color: var(--light);
+    }
+    
+    .mission-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 3rem 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-col h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .contact-info p {
+      margin-bottom: 0.5rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icon {
+      font-size: 1.5rem;
+      color: var(--light);
+      transition: color 0.3s;
+    }
+    
+    .social-icon:hover {
+      color: var(--accent);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+    
+    .logo img {
+      height: 200px;     /* Change this value to your desired logo height */
+      width: auto;      /* Keeps the aspect ratio */
+    }
+
+
+
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="logo_kaffeknekt.png" alt="Kaffeknekt Logo">
+        </div>
+
+        <div class="nav-links">
+          <a href="#team">Our Team</a>
+          <a href="#mission">Our Mission</a>
+          
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Noen ville sagt: <br> "Dette kan bli ettertraktet!"</h1>
+      <p>"I like my coffee like I like my mornings: dark, bitter, and too hot for human consumption." ☕😄</p>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="container">
+      <h2 class="section-title">Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="sok.jpg" alt="Team Member" class="member-img">
+          <div class="member-info">
+            <h3>Sokaina</h3>
+            <h4>Master Roaster</h4>
+            <p>With 15 years of experience in coffee roasting, Sokaina brings unparalleled expertise to our beans. Her passion for the perfect roast drives our signature flavors.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="did.jpg" alt="Team Member" class="member-img">
+          <div class="member-info">
+            <h3>Didrik</h3>
+            <h4>Head Barista</h4>
+            <p>Didrik's latte art has won championships across the country. He trains our barista team to create both visually stunning and delicious coffee experiences.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="iva.jpg" alt="Team Member" class="member-img">
+          <div class="member-info">
+            <h3>Ivan</h3>
+            <h4>Sustainability Director</h4>
+            <p>Ivan ensures our sourcing practices remain ethical and sustainable. She works directly with coffee farmers to develop fair partnerships.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="kad.jpg" alt="Team Member" class="member-img">
+          <div class="member-info">
+            <h3>Kadir</h3>
+            <h4>Executive Chef</h4>
+            <p>Kadir creates our delectable pastries and food menu, carefully designing flavors that complement our coffee selections perfectly.</p>
+          </div>
+        </div>
+        
+  
+          <div class="team-member">
+          <img src="mar.jpg" alt="Team Member" class="member-img">
+          <div class="member-info">
+            <h3>Martin</h3>
+            <h4>Coffee Educator</h4>
+            <p>Martin leads our workshops and tasting events, sharing her vast knowledge of coffee origins, brewing methods, and flavor profiles.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="mik.jpg" alt="Team Member" class="member-img">
+          <div class="member-info">
+		<h3>Mikolaj<h3>
+            <h4>Rørlegger</h4>
+            <p>Miko ensures every customer receives exceptional service. His warm personality and attention to detail create our welcoming atmosphere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission" class="mission">
+    <div class="container">
+      <div class="mission-content">
+        <h2 class="section-title">Our Mission</h2>
+        <p>At Kaffeknekt, we believe coffee is more than just a beverage—it's a catalyst for connection, creativity, and community. Our mission is to honor the entire coffee journey, from the farmers who nurture the beans to the moment it reaches your cup.</p>
+        <p>We're committed to sustainable sourcing practices that protect our planet and support coffee-growing communities. By paying premium prices for exceptional beans, we ensure farmers receive fair compensation for their craft.</p>
+        <p>Every cup we serve represents our dedication to quality, craftsmanship, and the authentic coffee experience. We strive to create a warm, inclusive space where coffee lovers can gather, share ideas, and find moments of joy in their busy lives.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col contact-info">
+          <h3>Visit Us</h3>
+          <p>2264</p>
+          <p>Krona</p>
+          <p>Hasbergs vei 36, Kongsberg</p>
+          <p>815 493 00</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Hours</h3>
+          <p>Monday - Friday: 7am - 11pm</p>
+          <p>Saturday: please don't</p>
+          <p>Sunday: please don't</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <p>Follow us for updates, coffee tips, and special offers!</p>
+          <div class="social-links">
+            <a href="https://instagram.com/kaffeknekt/" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; Kaffeknekt. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
