@@ -33,11 +33,24 @@ def main():
                         date_part, time_part = iso.split("T")
                         readable_time = f"{date_part} {time_part}"
 
+                        #prøver på sensor adding flexibility
+                        #Inisialiserer Point() bygging
                         point = Point("Esp32Metrics") \
-                            .field("temperature_C", data["temperature_C"]) \
-                            .field("power_mW", data["power_mW"]) \
-                            .field("readable_time", readable_time) \
-                            .time(data["timestamp_ns"]) 
+                        .field("readable_time", readable_time)
+
+                        #adder dataen for hver verdi i rekken
+                        for field, value in data.items():
+                            if field != "timestamp_ns":
+                                point = point.field(field, value)
+                            else:
+                                point = point.time(value)
+                        # 
+
+                        #point = Point("Esp32Metrics") \
+                            #.field("temperature_C", data["temperature_C"]) \
+                            #.field("power_mW", data["power_mW"]) \
+                            #.field("readable_time", readable_time) \
+                            #.time(data["timestamp_ns"]) 
 
                         API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
                         print("✅ Wrote to Influx")
