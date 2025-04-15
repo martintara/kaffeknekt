@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "dab2a570282176eb",
+        "id": "2c5531986b5c8338",
         "type": "tabs",
         "children": [
           {
-            "id": "f248b34d2711af71",
+            "id": "97c433d350796541",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "rtc_test.md",
+                "file": "trykk_test.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "rtc_test"
+              "title": "trykk_test"
             }
           }
         ]
@@ -94,7 +94,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "rtc_test.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for rtc_test"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +112,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "rtc_test.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from rtc_test"
+              "title": "Outgoing links"
             }
           },
           {
@@ -142,13 +140,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "rtc_test.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of rtc_test"
+              "title": "Outline"
             }
           }
         ]
@@ -168,8 +165,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f248b34d2711af71",
+  "active": "97c433d350796541",
   "lastOpenFiles": [
+    "screenshots/temp_test_terminal.png",
+    "trykk_test.md",
     "Notater.md",
     "rtc_test.md",
     "screenshots/rtc_terminal.png",
