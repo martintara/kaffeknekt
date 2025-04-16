@@ -1,4 +1,5 @@
 [[rtc_test]]
 [[trykk_test]]
 [[temp_test]]
-
+[[dc_wattmeter]]
+[[ac_wattmeter]]
