@@ -90,6 +90,7 @@ void loop() {
     //doc["pressure_unit"] = "bar";
     doc["ac_watt"] = ac_watt;
     //doc["watt_unit"] = "watt";
+    doc["dc_watt"] = ac_watt;
     doc["timestamp"] = getInfluxDBTimestamp();
     
     // Serialize JSON to serial port
