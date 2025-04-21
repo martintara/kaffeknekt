@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Kaffeknekt</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/tooplate-barista.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #ba9879;
+        }
+
+        .hero-image-wrapper {
+            width: 100%;
+            border: 6px solid #7b4b2a;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .hero-full-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .contact-btn {
+            background-color: #d2a679;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            background-color: #b07d50;
+            color: white;
+        }
+
+        .person-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+        }
+
+        .person-card:hover {
+            transform: scale(1.05);
+        }
+
+        .person-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .description-box {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <section class="intro-section container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="hero-image-wrapper">
+                    <img src="images/kaffeknekt_GB.jpg" alt="Kaffeknekt Team" class="hero-full-image" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex flex-column align-items-start">
+                <a href="index.html">
+                    <img src="images/kaffelogo.png" alt="Kaffeknekt Logo" style="max-height: 60px; margin-bottom: 15px;">
+                </a>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">
+                    Kaffeknekt is a student-driven bachelor project from USN that integrates real-time data monitoring with a smart espresso machine. Our mission is to showcase connected industry solutions in an engaging and accessible way.
+                </p>
+                <a href="contact.html" class="contact-btn mt-3" style="margin-left: 15px;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container py-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="person-card">
+                    <img src="images/soki.jpg" class="person-img" alt="Person 1">
+                    <h4 class="mt-3">Navn 1</h4>
+                    <p><em>Computer Engineer - Cyber Physical Systems</em></p>
+                    <div class="description-box">Beskrivelse XXX</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="person-card">
+                    <img src="images/didrik.jpg" class="person-img" alt="Person 2">
+                    <h4 class="mt-3">Navn 2</h4>
+                    <p><em>Computer Engineer - Cyber Physical Systems</em></p>
+                    <div class="description-box">Beskrivelse</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="person-card">
+                    <img src="images/kadir.jpg" class="person-img" alt="Person 3">
+                    <h4 class="mt-3">Navn 3</h4>
+                    <p><em>Data ingeniør</em></p>
+                    <div class="description-box">Beskrivelse</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="person-card">
+                    <img src="images/ivan.jpg" class="person-img" alt="Person 4">
+                    <h4 class="mt-3">Ivan Bergmann Maronson</h4>
+                    <p><em>Electrical Engineer - Cybernetics</em></p>
+                    <div class="description-box">Beskrivelse</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="person-card">
+                    <img src="images/martin.jpg" class="person-img" alt="Person 5">
+                    <h4 class="mt-3">Martin Taralstad</h4>
+                    <p><em>Computer Engineer - Cyber Physical Systems</em></p>
+                    <div class="description-box">Beskrivelse/ansvarsområder</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="person-card">
+                    <img src="images/mikolaj.jpg" class="person-img" alt="Person 6">
+                    <h4 class="mt-3">Mikolaj Szczeblewski</h4>
+                    <p><em>Electrical Engineer - Cybernetics</em></p>
+                    <div class="description-box">Beskrivelse</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
