@@ -28,8 +28,10 @@ def main():
                         data = json.loads(line)
                         print("Received:", data)
 
-                        human_time = datetime.fromtimestamp(data["timestamp_ns"] / 1e9).replace(microsecond=0)
-                        iso = human_time.isoformat()
+                        datastamp = "timestamp"
+
+                        stamp = datetime.fromtimestamp(data["timestamp"] / 1e9).replace(microsecond=0)
+                        iso = stamp.isoformat()
                         date_part, time_part = iso.split("T")
                         readable_time = f"{date_part} {time_part}"
 
@@ -40,7 +42,7 @@ def main():
 
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
-                            if field != "timestamp_ns":
+                            if field != "timestamp":
                                 point = point.field(field, value)
                             else:
                                 point = point.time(value)
