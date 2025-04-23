@@ -1,30 +1,29 @@
-#include <Arduino.h>
 #include <WiFi.h>
 
-const char* ssid = "PiAP";           // Your Pi's AP SSID
-const char* password = "81549300"; // Your Pi's AP password
+const char* ssid = "Note24u";
+const char* password = "jrid0948";
 
 void setup() {
   Serial.begin(115200);
   delay(1000);
-
+  
   WiFi.begin(ssid, password);
-  Serial.print("Connecting to WiFi");
 
-  while (WiFi.status() != WL_CONNECTED) {
+  Serial.print("Connecting to WiFi");
+  int attempts = 0;
+  while (WiFi.status() != WL_CONNECTED && attempts < 40) {
     delay(500);
     Serial.print(".");
+    attempts++;
   }
 
-  Serial.println("\n✅ Connected!");
-  Serial.print("Local IP: ");
-  Serial.println(WiFi.localIP());
-
-  // Blink built-in LED if available
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH);
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("\nConnected!");
+    Serial.print("IP Address: ");
+    Serial.println(WiFi.localIP());
+  } else {
+    Serial.println("\nFailed to connect.");
+  }
 }
 
-void loop() {
-  // You can add your MQTT or JSON logic here
-}
+void loop() {}

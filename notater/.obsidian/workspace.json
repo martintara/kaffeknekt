@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b23da8e54d5c5bf4",
+        "id": "7c875a5f67338958",
         "type": "tabs",
         "children": [
           {
-            "id": "f6eb85caf61d91be",
+            "id": "6d232214de016963",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,8 +161,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f6eb85caf61d91be",
+  "active": "6d232214de016963",
   "lastOpenFiles": [
+    "mqtt_test.md",
+    "wifi-instructions.md",
+    "trykk_test.md",
     "ac_wattmeter.md",
     "screenshots/ac_wattmeter_take2.png",
     "screenshots/ac_wattmeter_wo_load.png",
@@ -172,7 +175,6 @@
     "screenshots/dc_wattmeter_terminal.png",
     "rtc_test.md",
     "temp_test.md",
-    "trykk_test.md",
     "screenshots/trykk_test_terminal.png",
     "screenshots/temp_test_terminal.png",
     "screenshots/rtc_terminal.png",
