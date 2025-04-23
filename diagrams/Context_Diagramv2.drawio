@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.12">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.14">
   <diagram name="Page-1" id="w19W2elUKWIPrPfcGqXV">
-    <mxGraphModel dx="1027" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1025" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -45,16 +45,6 @@
         <mxCell id="wLg-W0uU6MoSDw0pWi6D-18" value="Power" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="wLg-W0uU6MoSDw0pWi6D-7" vertex="1" connectable="0">
           <mxGeometry x="0.0042" y="-18" relative="1" as="geometry">
             <mxPoint x="4" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="wLg-W0uU6MoSDw0pWi6D-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;curved=1;entryX=0;entryY=0.875;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="wLg-W0uU6MoSDw0pWi6D-3" target="wLg-W0uU6MoSDw0pWi6D-1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="240" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="wLg-W0uU6MoSDw0pWi6D-19" value="Vibrations" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="wLg-W0uU6MoSDw0pWi6D-11" vertex="1" connectable="0">
-          <mxGeometry x="-0.5487" y="-9" relative="1" as="geometry">
-            <mxPoint x="11" y="-6" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="wLg-W0uU6MoSDw0pWi6D-3" value="ESPRESSO MACHINE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
