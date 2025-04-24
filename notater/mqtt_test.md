@@ -7,6 +7,8 @@ Did multiple attempts to create a hotspot through the normal wifi interfaces / c
 ### first success
 Installed RaspAP
 
+24apr
+https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/
 
 ### screenshots
 
