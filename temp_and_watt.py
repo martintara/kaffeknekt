@@ -14,53 +14,52 @@ BUCKET = 'sensor_data'
 client = InfluxDBClient(url=URL, token=TOKEN, org=ORG)
 API = client.write_api(write_options=SYNCHRONOUS)
 
-SERIAL_PORT = '/dev/ttyUSB0'
-BAUD_RATE = 115200
+serial_port = '/dev/ttyUSB0'
+baud_rate = 115200
 
 def main():
     try:
-        with serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1) as ser:
-            print(f"Listening on {SERIAL_PORT} at {BAUD_RATE} baud...")
-            while True:
-                line = ser.readline().decode('utf-8').strip()
-                if line:
-                    try:
-                        data = json.loads(line)
-                        print("Received:", data)
+        with serial.Serial(serial_port, baud_rate, timeout=1) as esp
+        while True:
+            line = esp.readline().decode('utf-8').strip()
+            if line:
+                try:
+                    data = json.loads(line)
+                    print(data)
 
-                        datastamp = "timestamp"
+                    datastamp = "timestamp"
 
-                        stamp = datetime.fromtimestamp(data["timestamp"] / 1e9).replace(microsecond=0)
-                        iso = stamp.isoformat()
-                        date_part, time_part = iso.split("T")
-                        readable_time = f"{date_part} {time_part}"
+                    stamp = datetime.fromtimestamp(data["timestamp"] / 1e9).replace(microsecond=0)
+                    iso = stamp.isoformat()
+                    date_part, time_part = iso.split("T")
+                    readable_time = f"{date_part} {time_part}"
 
-                        #prøver på sensor adding flexibility
-                        #Inisialiserer Point() bygging
-                        point = Point("Esp32Metrics") \
-                        .field("readable_time", readable_time)
+                    #prøver på sensor adding flexibility
+                    #Inisialiserer Point() bygging
+                    point = Point("Esp32Metrics") \
+                    .field("readable_time", readable_time)
 
-                        #adder dataen for hver verdi i rekken
-                        for field, value in data.items():
-                            if field != "timestamp":
-                                point = point.field(field, value)
-                            else:
-                                point = point.time(value)
-                        # 
+                    #adder dataen for hver verdi i rekken
+                    for field, value in data.items():
+                        if field != "timestamp":
+                            point = point.field(field, value)
+                        else:
+                            point = point.time(value)
+                    # 
 
-                        #point = Point("Esp32Metrics") \
-                            #.field("temperature_C", data["temperature_C"]) \
-                            #.field("power_mW", data["power_mW"]) \
-                            #.field("readable_time", readable_time) \
-                            #.time(data["timestamp_ns"]) 
+                    #point = Point("Esp32Metrics") \
+                        #.field("temperature_C", data["temperature_C"]) \
+                        #.field("power_mW", data["power_mW"]) \
+                        #.field("readable_time", readable_time) \
+                        #.time(data["timestamp_ns"]) 
 
-                        API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
-                        print("✅ Wrote to Influx")
+                    API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
+                    print("Data written to Influx")
 
-                    except json.JSONDecodeError:
-                        print("⚠️ Invalid JSON:", line)
-                    except KeyError as e:
-                        print(f"⚠️ Missing expected key: {e}")
+                except json.JSONDecodeError:
+                    print("Invalid JSON:", line)
+                except KeyError as e:
+                    print(f"{e} is missing.")
     except KeyboardInterrupt:
         print("\nStopped by user.")
     except serial.SerialException as e:
