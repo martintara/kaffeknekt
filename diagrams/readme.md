@@ -8,6 +8,7 @@
 ![Alt Text](Kaffeknekt_Flow_Chart.drawio.png)
 ![Alt Text](Kaffeknekt_System_Arkitektur.drawio.png)
 ![Alt Text](Electrical_Diagram.drawio.png)
+![Alt Text](Context_Diagramv2.drawio.svg)
 ![Alt Text](Overall_Software_Interface.drawio.svg)
 ![Alt Text](Activity_Diagram.drawio.svg)
 ![Alt Text](Sequence_Diagram.drawio.svg)
