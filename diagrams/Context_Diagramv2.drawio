@@ -21,7 +21,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="wLg-W0uU6MoSDw0pWi6D-1" value="SYSTEM" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="320" y="160" width="120" height="80" as="geometry" />
+          <mxGeometry x="320" y="235" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="wLg-W0uU6MoSDw0pWi6D-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=-0.006;entryY=0.133;entryDx=0;entryDy=0;curved=1;entryPerimeter=0;" parent="1" source="wLg-W0uU6MoSDw0pWi6D-3" target="wLg-W0uU6MoSDw0pWi6D-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -48,10 +48,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="wLg-W0uU6MoSDw0pWi6D-3" value="ESPRESSO MACHINE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="120" y="280" width="120" height="80" as="geometry" />
+          <mxGeometry x="120" y="355" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="wLg-W0uU6MoSDw0pWi6D-4" value="USER" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="520" y="40" width="120" height="80" as="geometry" />
+          <mxGeometry x="520" y="115" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RnZcuvhByZRlKtQZMTfZ-1" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Context Diagram&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="244" y="16" width="290" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
