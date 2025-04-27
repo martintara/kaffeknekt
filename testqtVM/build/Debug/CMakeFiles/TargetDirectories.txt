@@ -1,0 +1,5 @@
+/home/sokcher/testqtVM/build/Debug/CMakeFiles/HelloWorldQt.dir
+/home/sokcher/testqtVM/build/Debug/CMakeFiles/edit_cache.dir
+/home/sokcher/testqtVM/build/Debug/CMakeFiles/rebuild_cache.dir
+/home/sokcher/testqtVM/build/Debug/CMakeFiles/HelloWorldQt_autogen_timestamp_deps.dir
+/home/sokcher/testqtVM/build/Debug/CMakeFiles/HelloWorldQt_autogen.dir

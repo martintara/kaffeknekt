@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_HelloWorldQt_FILE /home/sokcher/testqtVM/build/Debug/HelloWorldQt)
+set(__QT_DEPLOY_TARGET_HelloWorldQt_TYPE EXECUTABLE)
