@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b25f904992dc321c",
+        "id": "5b8f83fd4f070227",
         "type": "tabs",
         "children": [
           {
-            "id": "543e3259e0337d18",
+            "id": "57684bd56305abfa",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,8 +161,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "543e3259e0337d18",
+  "active": "57684bd56305abfa",
   "lastOpenFiles": [
+    "bluetooth_test.md",
+    "screenshots/bluetooth_test_uptime_01.png",
     "mqtt_test.md",
     "trykk_test.md",
     "screenshots/trykk_test_readings.png",
@@ -180,7 +182,6 @@
     "rtc_test.md",
     "temp_test.md",
     "screenshots/trykk_test_terminal.png",
-    "screenshots/temp_test_terminal.png",
     "screenshots"
   ]
 }
