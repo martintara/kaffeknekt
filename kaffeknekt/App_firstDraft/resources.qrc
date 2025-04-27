@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/"/>
+    <qresource prefix="/icons">
+        <file>menu.svg</file>
+        <file>home.svg</file>
+        <file>info.svg</file>
+        <file>settings.svg</file>
+        <file>calendar.svg</file>
+        <file>pie-chart.svg</file>
+        <file>coffee.svg</file>
+        <file>kaffeknekt_logo.png</file>
+        <file>tullegraf.png</file>
+    </qresource>
+</RCC>
