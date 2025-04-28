@@ -43,7 +43,7 @@ def main():
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
                             if field != "timestamp":
-                                point = point.field(field, value)
+                                point = point.field(field, float(value))
                             else:
                                 point = point.time(value)
                         # 
