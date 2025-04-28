@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5f33e5140cadb7b1",
+        "id": "04a7131e195142c3",
         "type": "tabs",
         "children": [
           {
-            "id": "1efcc680edf9333f",
+            "id": "137425cd45d65611",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,8 +161,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d976199049c7dadc",
+  "active": "137425cd45d65611",
   "lastOpenFiles": [
+    "screenshots/random_generator_terminal.png",
+    "random_generator.md",
     "bluetooth_test.md",
     "screenshots/bluetooth_test_uptime_02.png",
     "screenshots/bluetooth_test_uptime_01.png",
@@ -179,7 +181,6 @@
     "dc_wattmeter.md",
     "Notater.md",
     "screenshots/ac_wattmeter_terminal.png",
-    "screenshots/dc_wattmeter_terminal.png",
     "rtc_test.md",
     "temp_test.md",
     "screenshots"
