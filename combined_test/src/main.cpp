@@ -293,7 +293,7 @@ DFRobot_ADS1115 ads(&Wire);
 
 // SEN0211 sensor parameters
 #define CURRENT_DETECTION_RANGE 20    // Set your sensor's current detection range (5A, 10A, 20A)
-#define VOLTAGE_REFERENCE 230.0       // Reference voltage for your AC line (220V, 110V, etc.)
+#define VOLTAGE_REFERENCE 240.0       // Reference voltage for your AC line (220V, 110V, etc.)
 #define CALIBRATION_FACTOR 1.070      // Calibration factor: actual/measured
 
 // Input pins on ADS1115
@@ -415,10 +415,11 @@ void serialSenderTask(void *parameter) {
 
   while (1) {
     if (xSemaphoreTake(dataMutex, portMAX_DELAY)) {
-      doc["temperature_C"] = sensorData.temperature;
-      doc["power_W"] = sensorData.power;         // Note units changed from mW to W
-      doc["current_A"] = sensorData.current;     // Added current data
-      doc["voltage_V"] = sensorData.voltage;     // Added fixed voltage reference
+      doc["temperature"] = sensorData.temperature;
+      doc["power"] = sensorData.power;         // Note units changed from mW to W
+      //doc["current_A"] = sensorData.current;     // Added current data
+      //doc["voltage_V"] = sensorData.voltage;     // Added fixed voltage reference
+      doc["pressure"] = 9.00;     // Added current data
       xSemaphoreGive(dataMutex);
     }
 
@@ -428,8 +429,8 @@ void serialSenderTask(void *parameter) {
 
     // Combine into nanoseconds
     int64_t timestamp_ns = ((int64_t)now.tv_sec * 1000000000LL) + ((int64_t)now.tv_usec * 1000LL);
-    doc["timestamp_ns"] = timestamp_ns;
-
+    doc["timestamp"] = timestamp_ns;
+    //doc["timestamp"] = 1745742888368398000;
     serializeJson(doc, Serial);
     Serial.println();
 
@@ -505,7 +506,6 @@ void setup() {
 void loop() {
   // nothing - all work done in tasks
 }
-
 
 
 
