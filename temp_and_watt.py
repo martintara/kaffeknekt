@@ -7,8 +7,8 @@ from dateutil.parser import parse
 
 # InfluxDB settings
 URL = 'http://localhost:8086'
-ORG = 'kaffeknekt_admin'
-TOKEN = 'zIKDeYY-92Yyzcs2FTe5q5ZBh9laYZ9ZlwsoIDR1E2Alz26gKoobMmd93xug_e27QFCdMJclWOSWwsMDadbXXQ=='
+ORG = 'Kaffeknekt'
+TOKEN = 'dlatvWih4FyEIXjqDQS0L1LVU33YcUzdcq5FF81z_cJ6Mw6cnqe5mn_C__n3pDt0rmFKqRXjcWddyRk2DXyLiQ=='
 BUCKET = 'sensor_data'
 
 client = InfluxDBClient(url=URL, token=TOKEN, org=ORG)
@@ -19,47 +19,48 @@ baud_rate = 115200
 
 def main():
     try:
-        with serial.Serial(serial_port, baud_rate, timeout=1) as esp
-        while True:
-            line = esp.readline().decode('utf-8').strip()
-            if line:
-                try:
-                    data = json.loads(line)
-                    print(data)
+        with serial.Serial(serial_port, baud_rate, timeout=1) as esp:
+            print("esp: connected")
+            while True:
+                line = esp.readline().decode('utf-8').strip()
+                if line:
+                    try:
+                        data = json.loads(line)
+                        print(data)
 
-                    datastamp = "timestamp"
+                        datastamp = "timestamp"
 
-                    stamp = datetime.fromtimestamp(data["timestamp"] / 1e9).replace(microsecond=0)
-                    iso = stamp.isoformat()
-                    date_part, time_part = iso.split("T")
-                    readable_time = f"{date_part} {time_part}"
+                        stamp = datetime.fromtimestamp(data["timestamp"] / 1e9).replace(microsecond=0)
+                        iso = stamp.isoformat()
+                        date_part, time_part = iso.split("T")
+                        readable_time = f"{date_part} {time_part}"
 
-                    #prøver på sensor adding flexibility
-                    #Inisialiserer Point() bygging
-                    point = Point("Esp32Metrics") \
-                    .field("readable_time", readable_time)
+                        #prøver på sensor adding flexibility
+                        #Inisialiserer Point() bygging
+                        point = Point("Esp32Metrics") \
+                        .field("readable_time", readable_time)
 
-                    #adder dataen for hver verdi i rekken
-                    for field, value in data.items():
-                        if field != "timestamp":
-                            point = point.field(field, value)
-                        else:
-                            point = point.time(value)
-                    # 
+                        #adder dataen for hver verdi i rekken
+                        for field, value in data.items():
+                            if field != "timestamp":
+                                point = point.field(field, value)
+                            else:
+                                point = point.time(value)
+                        # 
 
-                    #point = Point("Esp32Metrics") \
-                        #.field("temperature_C", data["temperature_C"]) \
-                        #.field("power_mW", data["power_mW"]) \
-                        #.field("readable_time", readable_time) \
-                        #.time(data["timestamp_ns"]) 
+                        #point = Point("Esp32Metrics") \
+                            #.field("temperature_C", data["temperature_C"]) \
+                            #.field("power_mW", data["power_mW"]) \
+                            #.field("readable_time", readable_time) \
+                            #.time(data["timestamp_ns"]) 
 
-                    API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
-                    print("Data written to Influx")
+                        API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
+                        print("Data written to Influx")
 
-                except json.JSONDecodeError:
-                    print("Invalid JSON:", line)
-                except KeyError as e:
-                    print(f"{e} is missing.")
+                    except json.JSONDecodeError:
+                        print("Invalid JSON:", line)
+                    except KeyError as e:
+                        print(f"{e} is missing.")
     except KeyboardInterrupt:
         print("\nStopped by user.")
     except serial.SerialException as e:

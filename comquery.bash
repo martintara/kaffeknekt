@@ -1,1 +1,1 @@
-influx query --file queryTest.flux --org kaffeknekt_admin
+influx query --file queryTest.flux --org Kaffeknekt
