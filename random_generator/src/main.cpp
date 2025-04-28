@@ -21,8 +21,8 @@ const float PRESSURE_LOW_MIN = 3.0; // Low pressure range min
 const float PRESSURE_LOW_MAX = 5.0; // Low pressure range max
 const float PRESSURE_HIGH_MIN = 10.0; // High pressure range min
 const float PRESSURE_HIGH_MAX = 11.0; // High pressure range max
-const float TEMP_MIN = 23.0; // Minimum temperature in bar
-const float TEMP_MAX = 26.0; // Maximum temperature in bar
+const float TEMP_MIN = 90.0; // Minimum temperature in C
+const float TEMP_MAX = 96.0; // Maximum temperature in C
 const int WATT_MIN = 1000; // Minimum AC wattage
 const int WATT_MAX = 1200; // Maximum AC wattage
 
