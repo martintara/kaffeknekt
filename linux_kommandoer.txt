@@ -1,2 +1,0 @@
-sudo apt install libopengl0 libopengl-dev libgl-dev libglu1-mesa-dev
-
