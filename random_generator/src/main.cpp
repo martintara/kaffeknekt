@@ -272,9 +272,9 @@ void loop() {
     
     // Create JSON document
     StaticJsonDocument<256> doc;
-    doc["pressure"] = pressure;
-    doc["power"] = power;
     doc["temperature"] = temperature;
+    doc["power"] = power;
+    doc["pressure"] = pressure;
     doc["timestamp"] = getInfluxDBTimestamp();
     
     // Only include flag if it's U or D (during transition)
