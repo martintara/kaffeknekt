@@ -415,7 +415,7 @@ void serialSenderTask(void *parameter) {
 
   while (1) {
     if (xSemaphoreTake(dataMutex, portMAX_DELAY)) {
-      doc["temperature"] = sensorData.temperature;
+      doc["temperature"] = float(sensorData.temperature);
       doc["power"] = sensorData.power;         // Note units changed from mW to W
       //doc["current_A"] = sensorData.current;     // Added current data
       //doc["voltage_V"] = sensorData.voltage;     // Added fixed voltage reference
