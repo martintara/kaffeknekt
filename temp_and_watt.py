@@ -44,6 +44,8 @@ def main():
                         for field, value in data.items():
                             if field != "timestamp":
                                 point = point.field(field, float(value))
+                            elif field == "flag":
+                                point = point.field(field, str(value))
                             else:
                                 point = point.time(value)
                         # 
