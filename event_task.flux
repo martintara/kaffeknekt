@@ -17,7 +17,8 @@ kaffe = from(bucket: "sensor_data")
    |> range(start: -2m)
    |> filter(fn: (r) => 
          r._measurement == "Esp32Metrics" and 
-         r._field == "flag")
+         r._field == "flag"
+      )
    |> events.duration(
          unit: 1s, 
          start: (r) => r._value == "U", 
@@ -27,14 +28,20 @@ kaffe = from(bucket: "sensor_data")
          //session_id: readable_time,
          send: date.sub(from: r._start, 5s),
          until: date.add(to: r._stop, 10s),
-         _measurement: "flag_data" 
+         _measurement: r._measurement
        })
 
 monitor = from(bucket: "sensor_data")
    |> range(start: -2m)
    |> filter(fn: (r) => 
-         r._measurement == "Esp32Metrics")
-   |> drop(columns: ["readable_time", "_measurement", "_start", "_stop"])
+         r._measurement == "Esp32Metrics"
+      )
+   |> drop(columns: [
+      "readable_time", 
+      "_measurement", 
+      "_start", 
+      "_stop"
+      ])
 
 join.left(
    left: kaffe,
