@@ -1,5 +1,8 @@
 <RCC>
-    <qresource prefix="/"/>
+    <qresource prefix="/">
+        <file>../../../../Downloads/battery-charging.svg</file>
+        <file>../../../../Downloads/droplet.svg</file>
+    </qresource>
     <qresource prefix="/icons">
         <file>menu.svg</file>
         <file>home.svg</file>
@@ -10,5 +13,8 @@
         <file>coffee.svg</file>
         <file>kaffeknekt_logo.png</file>
         <file>tullegraf.png</file>
+        <file>../../../../Downloads/battery-charging.svg</file>
+        <file>../../../../Downloads/droplet.svg</file>
+        <file>../../../../Downloads/thermometer.svg</file>
     </qresource>
 </RCC>

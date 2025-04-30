@@ -12,20 +12,20 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     optionsdialog.cpp \
-    sensorAnalyticsdialog.cpp \
+    sensoranalyticsdialog.cpp \
     settingsdialog.cpp
 
 HEADERS += \
     mainwindow.h \
     optionsdialog.h \
-    sensorAnalyticsdialog.h \
+    sensoranalyticsdialog.h \
     settingsdialog.h
 
 FORMS += \
     mainwindow.ui \
     optionsdialog.ui \
-    settingsdialog.ui \
-    sensorAnalyticsdialog.ui
+    sensoranalyticsdialog.ui \
+    settingsdialog.ui
 
 
 # Default rules for deployment.
@@ -34,4 +34,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    resources.qrc \
     resources.qrc
+
+DISTFILES += \
+    ../App_firstDraft/tullegraf.png

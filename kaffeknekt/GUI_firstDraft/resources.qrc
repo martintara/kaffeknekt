@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>calendar.svg</file>
+        <file>coffee.svg</file>
+        <file>home.svg</file>
+        <file>info.svg</file>
+        <file>kaffeknekt_logo.png</file>
+        <file>menu.svg</file>
+        <file>settings.svg</file>
+        <file>pie-chart.svg</file>
+        <file>../../../../Downloads/battery-charging(1).svg</file>
+        <file>../../../../Downloads/droplet.svg</file>
+        <file>../../../../Downloads/thermometer.svg</file>
+        <file>../../kaffeknekt_logo.webp</file>
+        <file>../../semcon_logo.webp</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>../App_firstDraft/kaffeknekt_logo.png</file>
+        <file>../../frame.png</file>
+        <file>../../../../tullegraf.png</file>
+        <file>../../semcon_logo.webp</file>
+    </qresource>
+</RCC>
