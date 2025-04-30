@@ -1,10 +1,9 @@
-// random data script generert av claude ai
+// Random data generator
 
 #include <Arduino.h>
 #include <ArduinoJson.h>
 #include "DFRobot_DS323X.h"
 #include <Wire.h>
-//#include <time.h>
 
 // Define I2C pins for ESP32
 #define SDA_PIN 21

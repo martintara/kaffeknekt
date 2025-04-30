@@ -1,14 +1,4 @@
-/**
- * @file main.cpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2025-04-04
- * 
- * @copyright Copyright (c) 2025
- * 
- */
-
+// temp test
 #include <OneWire.h>
 
 int DS18S20_Pin = 25; //DS18S20 Signal pin on digital 2
