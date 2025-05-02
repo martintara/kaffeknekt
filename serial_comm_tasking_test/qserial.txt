@@ -1,0 +1,37 @@
+#include <QCoreApplication>
+#include <QSerialPort>
+#include <QSerialPortInfo>
+#include <QTextStream>
+#include <QTimer>
+
+QSerialPort serial;
+
+void sendManualTime()
+{
+    QByteArray message = R"({"set_time": true, "year": 2025, "month": 4, "day": 30, "hour": 15, "minute": 45, "second": 0})\n";
+    serial.write(message);
+    qInfo() << "Sent:" << message;
+}
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    serial.setPortName("/dev/ttyUSB0");  // Or COM3 on Windows
+    serial.setBaudRate(QSerialPort::Baud115200);
+
+    if (!serial.open(QIODevice::ReadWrite)) {
+        qCritical() << "Failed to open port:" << serial.errorString();
+        return 1;
+    }
+
+    QObject::connect(&serial, &QSerialPort::readyRead, []() {
+        QByteArray data = serial.readAll();
+        QTextStream(stdout) << "ESP32 → " << data;
+    });
+
+    QTimer::singleShot(2000, sendManualTime);  // Send after 2 seconds
+
+    return a.exec();
+}
+
