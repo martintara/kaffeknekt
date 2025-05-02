@@ -43,7 +43,7 @@ monitor = from(bucket: "sensor_data")
       "_stop"
       ])
 
-join.left(
+combine = join.left(
    left: kaffe,
    right: monitor,
    on: (l, r) => l._measurement == r._measurement,
@@ -55,7 +55,7 @@ join.left(
       session_ID: r.readable_time
 }))
 
-destination
+combine
    |> group(columns: ["_time"])
    |> to(bucket: "event_data", org: "Kaffeknekt")
 
