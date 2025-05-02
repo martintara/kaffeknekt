@@ -42,15 +42,11 @@ def main():
 
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
-                            if field == "flag" and value != 'D' or 'U':
-                                value == 'F'
-                                point = point.field(field, str(value))
-
+                            if field != "flag" and "timestamp":
+                                point = point.field(field, float(value))
+                                
                             elif field == "flag":
                                 point = point.field(field, str(value))
-
-                            elif field != "timestamp":
-                                point = point.field(field, float(value))
 
                             else:
                                 point = point.time(value)
