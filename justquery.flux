@@ -1,4 +1,5 @@
 from(bucket: "sensor_data")
+  |> range(start: -1d)
   |> filter(fn: (r) => 
     r._measurement == "Esp32Metrics"
     )
