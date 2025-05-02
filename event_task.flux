@@ -26,8 +26,8 @@ kaffe = from(bucket: "sensor_data")
    |> map(fn: (r) => ({
          _time: r._time, 
          //session_id: readable_time,
-         send: date.sub(from: r._start, 5s),
-         until: date.add(to: r._stop, 10s),
+         send: date.sub(from: r._start, d: 5s),
+         until: date.add(to: r._stop, d: 10s),
          _measurement: r._measurement
        })
 
@@ -48,11 +48,14 @@ join.left(
    right: monitor,
    on: (l, r) => l._measurement == r._measurement,
    as: (l, r) => ({
-      l with temperature: r.temperature, 
+      l with 
+      temperature: r.temperature, 
       power: r.power, 
       pressure: r.pressure, 
       session_ID: r.readable_time
 }))
+
+destination
    |> group(columns: ["_time"])
    |> to(bucket: "event_data", org: "Kaffeknekt")
 
