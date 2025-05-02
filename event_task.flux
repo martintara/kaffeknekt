@@ -37,7 +37,7 @@ monitor = from(bucket: "sensor_data")
          r._measurement == "Esp32Metrics"
       )
    |> drop(columns: [
-      "readable_time", 
+      //"readable_time", 
       "_measurement", 
       "_start", 
       "_stop"
