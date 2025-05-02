@@ -1,12 +1,17 @@
 from(bucket: "sensor_data")
 	|> range(start: -2d)
-	|> filter(fn: (r) => r._measurement == "Esp32Metrics")
+	|> filter(fn: (r) => 
+		r._measurement == "Esp32Metrics", 
+		onEmpty: "keep"
+		)
 	|> pivot(
 		rowKey: ["_time"], 
 		columnKey: ["_field"], 
-		valueColumn: "_value")
+		valueColumn: "_value"
+		)
 	|> drop(columns: [
 		"_start", 
 		"_stop", 
 		//"_measurement", 
-		"readable_time"])
+		"readable_time"
+		])
