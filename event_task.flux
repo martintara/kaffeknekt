@@ -61,10 +61,10 @@ join.left(
 //send = date.sub(from: tid, d: 5s)
 //until = date.add(to: tid, d: 10s)
 
-from (bucket: "sensor_data")
-    |> range(start: send, stop: until)
-    |> filter(fn: (r) => r._measurement == "Esp32Metrics")
-    |> to(bucket: "event_data", org: "Kaffeknekt") 
+//from (bucket: "sensor_data")
+//    |> range(start: send, stop: until)
+//    |> filter(fn: (r) => r._measurement == "Esp32Metrics")
+//    |> to(bucket: "event_data", org: "Kaffeknekt") 
 
 
 // prøvde å extracte hver u og d manuelt
