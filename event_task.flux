@@ -25,11 +25,11 @@ kaffe = from(bucket: "sensor_data")
          stop: (r) => r._value == "D")
    |> map(fn: (r) => ({
          _time: r._time, 
-         //session_id: readable_time,
-         send: date.sub(from: r._start, d: 5s),
-         until: date.add(to: r._stop, d: 10s),
+         //session_id: readable_time, 
+         send: date.sub(from: r._start, d: 5s), 
+         until: date.add(to: r._stop, d: 10s), 
          _measurement: r._measurement
-       })
+       }))
 
 monitor = from(bucket: "sensor_data")
    |> range(start: -2m)
@@ -46,7 +46,7 @@ monitor = from(bucket: "sensor_data")
 combine = join.left(
    left: kaffe,
    right: monitor,
-   on: (l, r) => l._measurement == r._measurement,
+   on: (l, r) => l._measurement == r._measurement, 
    as: (l, r) => ({
       l with 
       temperature: r.temperature, 
