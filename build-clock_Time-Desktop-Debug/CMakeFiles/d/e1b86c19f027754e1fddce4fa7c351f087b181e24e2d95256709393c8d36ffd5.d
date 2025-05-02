@@ -2,10 +2,10 @@ clock_Time_autogen/timestamp: \
   CMakeFiles/3.25.1/CMakeCXXCompiler.cmake \
   CMakeFiles/3.25.1/CMakeSystem.cmake \
   clock_Time_autogen/moc_predefs.h \
-  /home/kaffeknekt/clock_Time/CMakeLists.txt \
-  /home/kaffeknekt/clock_Time/clock_time.cpp \
-  /home/kaffeknekt/clock_Time/clock_time.h \
-  /home/kaffeknekt/clock_Time/main.cpp \
+  /home/kaffeknekt/kaffeknekt/clock_Time/CMakeLists.txt \
+  /home/kaffeknekt/kaffeknekt/clock_Time/clock_time.cpp \
+  /home/kaffeknekt/kaffeknekt/clock_Time/clock_time.h \
+  /home/kaffeknekt/kaffeknekt/clock_Time/main.cpp \
   /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/aarch64-linux-gnu/bits/byteswap.h \
   /usr/include/aarch64-linux-gnu/bits/confname.h \

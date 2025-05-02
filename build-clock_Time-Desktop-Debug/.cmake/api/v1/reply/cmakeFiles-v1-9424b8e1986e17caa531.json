@@ -16,7 +16,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/3.25.1/CMakeSystem.cmake"
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/3.25.1/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -270,7 +270,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -409,7 +409,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -1184,8 +1184,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug",
-		"source" : "/home/kaffeknekt/clock_Time"
+		"build" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug",
+		"source" : "/home/kaffeknekt/kaffeknekt/clock_Time"
 	},
 	"version" : 
 	{

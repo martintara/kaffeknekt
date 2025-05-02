@@ -1,5 +1,5 @@
-/home/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/EWIEGA46WW/moc_clock_time.cpp: /home/kaffeknekt/clock_Time/clock_time.h \
-  /home/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/moc_predefs.h \
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/EWIEGA46WW/moc_clock_time.cpp: /home/kaffeknekt/kaffeknekt/clock_Time/clock_time.h \
+  /home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/moc_predefs.h \
   /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/aarch64-linux-gnu/bits/byteswap.h \
   /usr/include/aarch64-linux-gnu/bits/confname.h \

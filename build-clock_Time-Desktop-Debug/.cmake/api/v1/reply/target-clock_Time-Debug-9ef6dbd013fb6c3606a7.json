@@ -241,7 +241,7 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/include"
+					"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/include"
 				},
 				{
 					"backtrace" : 14,
@@ -400,7 +400,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/mocs_compilation.cpp",
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -428,19 +428,19 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/include/ui_clock_time.h",
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/include/ui_clock_time.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/timestamp",
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/timestamp",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/timestamp.rule",
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

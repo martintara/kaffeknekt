@@ -51,19 +51,19 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/clock_Time_autogen",
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/clock_Time_autogen",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/clock_Time_autogen.rule",
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/clock_Time_autogen.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/home/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/timestamp.rule",
+			"path" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/timestamp.rule",
 			"sourceGroupIndex" : 1
 		}
 	],
