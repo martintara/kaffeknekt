@@ -34,21 +34,9 @@
               "icon": "lucide-file",
               "title": "rtc_interface_test"
             }
-          },
-          {
-            "id": "a14f9d2457015122",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "rtc_interface_test.png"
-              },
-              "icon": "lucide-image",
-              "title": "rtc_interface_test"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -192,10 +180,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a14f9d2457015122",
+  "active": "7b4636a5f1221174",
   "lastOpenFiles": [
-    "rtc_interface_test.md",
+    "Pasted image 20250502202359.png",
     "rtc_interface_test.png",
+    "rtc_interface_test.md",
     "screenshots/rtc_interface_test_terminal.png",
     "gpt_example.md",
     "random_generator.md",

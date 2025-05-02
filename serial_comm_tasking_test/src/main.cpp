@@ -1,4 +1,5 @@
 //testprogram for å finne ut av interface for å stille klokka
+//testet og fungerer
 
 #include "DFRobot_DS323X.h"
 #include <Wire.h>
@@ -79,12 +80,12 @@ void TaskReceiveTime(void *pvParameters) {
           doc.containsKey("minute") &&
           doc.containsKey("second")) {
 
-        int year = doc["year"];
-        int month = doc["month"];
-        int day = doc["day"];
-        int hour = doc["hour"];
-        int minute = doc["minute"];
-        int second = doc["second"];
+        int year = doc["year"].as<int>();
+        int month = doc["month"].as<int>();
+        int day = doc["day"].as<int>();
+        int hour = doc["hour"].as<int>();
+        int minute = doc["minute"].as<int>();
+        int second = doc["second"].as<int>();
 
         rtc.setTime(year, month, day, hour, minute, second);
 
