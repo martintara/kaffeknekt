@@ -22,8 +22,8 @@ def main():
         with serial.Serial(serial_port, baud_rate, timeout=1) as esp:
             print("Esp connected")
             while True:
-                line = esp.readline().decode('utf-8').strip()
-                if line:
+                line = esp.readline().decode('utf-8').strip() #reads line, converts to string, and cleans excess characters
+                if line: #checks if line exists
                     try:
                         data = json.loads(line)
                         print(data)
