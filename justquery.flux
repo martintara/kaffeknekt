@@ -1,6 +1,6 @@
 from(bucket: "sensor_data")
   |> range(start: -7d)
-  |> filter(fn: (r) => r._measurement == "Esp32Metrics")
+  |> filter(fn: (r) => r._measurement == "Esp32Metrics", r._field == "flag")
 //  |> pivot(
 //    rowKey: ["_time"],
 //    columnKey: ["_field"],
