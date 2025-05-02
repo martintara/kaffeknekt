@@ -29,7 +29,7 @@ void clock_time::setTime(){
     //QProcess::execute("sudo", QStringList() << "date" << "-s" << timeString); //Not in use for now
     qDebug() << "timeString:" << timeString;
 
-    //Send timeString to ESP32 somehow...
+
 
 
 }
