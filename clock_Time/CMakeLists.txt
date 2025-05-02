@@ -9,14 +9,15 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+# Find required Qt modules
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets SerialPort)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets SerialPort)
 
 set(PROJECT_SOURCES
-        main.cpp
-        clock_time.cpp
-        clock_time.h
-        clock_time.ui
+    main.cpp
+    clock_time.cpp
+    clock_time.h
+    clock_time.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -24,17 +25,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET clock_Time APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
         add_library(clock_Time SHARED
             ${PROJECT_SOURCES}
         )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(clock_Time
             ${PROJECT_SOURCES}
@@ -42,7 +37,12 @@ else()
     endif()
 endif()
 
-target_link_libraries(clock_Time PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+# Link both Widgets and SerialPort modules
+target_link_libraries(clock_Time
+    PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::SerialPort
+)
 
 set_target_properties(clock_Time PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
@@ -54,7 +54,8 @@ set_target_properties(clock_Time PROPERTIES
 
 install(TARGETS clock_Time
     BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(clock_Time)

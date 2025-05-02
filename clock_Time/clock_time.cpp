@@ -6,6 +6,10 @@
 #include <QTimeEdit>
 #include <QPushButton>
 #include <QDebug>
+#include <QString>
+#include <QStringList>
+#include <QSerialPort>
+
 
 clock_time::clock_time(QWidget *parent)
     : QWidget(parent)
@@ -29,8 +33,20 @@ void clock_time::setTime(){
     //QProcess::execute("sudo", QStringList() << "date" << "-s" << timeString); //Not in use for now
     qDebug() << "timeString:" << timeString;
 
+    QStringList list = timeString.split(" ");
+    QStringList dateList = list[0].split("-");
+    QString yearString = dateList[0];
+    QString monthString = dateList[1];
+    QString dayString = dateList[2];
+    QStringList timeList = list[1].split(":");
+    QString hourString = timeList[0];
+    QString minuteString = timeList[1];
+    QString secondString = timeList[2];
 
+    QString timeformat = "{'set_time':True,'year':%1,'month':%2,'day':%3,'hour':%4,'minute':%5,'secound':%6}";
+    QString sentTime = timeformat.arg(yearString).arg(monthString).arg(dayString).arg(hourString).arg(minuteString).arg(secondString);
 
+    qDebug() << "format:" << sentTime;
 
 }
 
