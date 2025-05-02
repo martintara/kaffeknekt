@@ -6,6 +6,6 @@ from(bucket: "sensor_data")
   |> pivot(
     rowKey: ["_time"],
     columnKey: ["_field"],
-    valueColumn. "_value"
+    valueColumn: "_value"
     )
   
