@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "917de20af7703efc",
+        "id": "ad5103428d674445",
         "type": "tabs",
         "children": [
           {
-            "id": "e006e4c5f1985c35",
+            "id": "ef44ec554aa0e3a3",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,8 +161,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e006e4c5f1985c35",
+  "active": "d976199049c7dadc",
   "lastOpenFiles": [
+    "combined_test.md",
+    "screenshots/combined_test_timing.png",
     "rtc_interface_test.md",
     "rtc_test.md",
     "gpt_example.md",
@@ -179,7 +181,6 @@
     "mqtt_test.md",
     "trykk_test.md",
     "screenshots/trykk_test_readings.png",
-    "screenshots/trykk_test_readings2.png",
     "wifi-instructions.md",
     "ac_wattmeter.md",
     "dc_wattmeter.md",

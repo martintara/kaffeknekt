@@ -30,6 +30,7 @@ void setup() {
   xTaskCreatePinnedToCore(TaskCalculateTime, "SendTime", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskPressure, "Pressure", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskPublish, "Publish", 4096, NULL, 1, NULL, 1);
+  xTaskCreatePinnedToCore(TaskReceiveTime, "Publish", 4096, NULL, 1, NULL, 1);
 }
 
 void loop() {
