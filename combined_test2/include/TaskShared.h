@@ -1,0 +1,14 @@
+#pragma once
+#include <Arduino.h>
+
+// Shared data structure
+struct Measurement {
+  uint64_t timestamp;
+  int pressure;
+};
+
+// Global shared instance (defined in main.cpp)
+extern Measurement sharedMeasurement;
+
+// Mutex to protect shared access to the Measurements
+extern SemaphoreHandle_t measurementMutex;
