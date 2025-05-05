@@ -20,6 +20,8 @@ void setup() {
   Serial.begin(115200);
   Wire.begin(SDA_PIN, SCL_PIN);
 
+  SPI.begin();
+
   while (!rtc.begin()) {
     Serial.println("Failed to init DS3232 RTC chip.");
     delay(1000);

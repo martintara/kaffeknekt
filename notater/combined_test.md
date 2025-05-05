@@ -13,3 +13,7 @@ Rounding issue. Fix: change int to float
 ![[combined_test_float_issue.png]]
 ![[combined_test_float_corrected.png]]
 ![[combined_test_korrekt_output.png]]
+
+5. may
+Feil var konflikt med pins. Vi hadde brukt 21 som SDA.
+![[combined_test_sda_konflikt.png]]

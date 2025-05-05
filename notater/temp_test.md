@@ -10,3 +10,4 @@ Implementerte så og si samme kode på esp32. Koden fungerer.
 ![[temp_test_new_30c.png]]
 
 ![[temp_test_new_adjusted.png]]
+

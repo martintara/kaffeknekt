@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b553a338a5825a83",
+        "id": "12ae2254c3242691",
         "type": "tabs",
         "children": [
           {
-            "id": "fa75fd550dadf3ee",
+            "id": "eaae57f306390023",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -163,6 +163,8 @@
   },
   "active": "d976199049c7dadc",
   "lastOpenFiles": [
+    "temp_test.md",
+    "screenshots/combined_test_sda_konflikt.png",
     "screenshots/temp_test_new_adjusted.png",
     "screenshots/temp_test_new_30c.png",
     "screenshots/combined_test_korrekt_output.png",
@@ -176,8 +178,6 @@
     "gpt_example.md",
     "screenshots/rtc_interface_test.png",
     "screenshots/rtc_interface_test_fix.png",
-    "screenshots/rtc_interface_test_leading_zero_prob.png",
-    "screenshots/rtc_interface_test_terminal.png",
     "random_generator.md",
     "bluetooth_test.md",
     "mqtt_test.md",
@@ -186,7 +186,6 @@
     "ac_wattmeter.md",
     "dc_wattmeter.md",
     "Notater.md",
-    "temp_test.md",
     "screenshots"
   ]
 }
