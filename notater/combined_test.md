@@ -3,15 +3,13 @@ Testet combined test, fikk ikke til trykksensor. tbc i morgen lul
 
 
 3.may
-suspekt timing
+suspekt timing, ikke et enormt problem, men burde testet.
 ![[combined_test_timing.png]]
 
 may 5.
 step by step integrering
 ![[combined_test_step_by_step.png]]
-
-pic float error
-
-pic corrected
-
-pic korrekt output
+Rounding issue. Fix: change int to float 
+![[combined_test_float_issue.png]]
+![[combined_test_float_corrected.png]]
+![[combined_test_korrekt_output.png]]
