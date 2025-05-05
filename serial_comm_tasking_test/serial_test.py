@@ -9,10 +9,10 @@ BAUD_RATE = 115200
 # === MANUAL TIME TO SET ===
 MANUAL_TIME = {
     "year": "2025",
-    "month": "06",
-    "day": "30",
-    "hour": "15",
-    "minute": "45",
+    "month": "05",
+    "day": "05",
+    "hour": "20",
+    "minute": "28",
     "second": "00"
 }
 
