@@ -43,12 +43,28 @@ void clock_time::setTime(){
     QString minuteString = timeList[1];
     QString secondString = timeList[2];
 
-    QString timeformat = "{'set_time':True,'year':%1,'month':%2,'day':%3,'hour':%4,'minute':%5,'secound':%6}";
+    QString timeformat = "{'set_time': True ,'year': %1 ,'month': %2 ,'day': %3 ,'hour': %4 ,'minute': %5 ,'secound': %6 }";
     QString sentTime = timeformat.arg(yearString).arg(monthString).arg(dayString).arg(hourString).arg(minuteString).arg(secondString);
 
     qDebug() << "format:" << sentTime;
 
-  //  QSerialPort::writeData()
+    QSerialPort serial;
+    serial.setPortName("/dev/ttyUSB0");
+    serial.setBaudRate(QSerialPort::Baud115200);
+    serial.setDataBits(QSerialPort::Data8);
+    serial.setParity(QSerialPort::NoParity);
+    serial.setFlowControl(QSerialPort::NoFlowControl);
+    serial.setStopBits(QSerialPort::OneStop);
+
+    if(!serial.open(QIODevice::WriteOnly)){
+        qDebug() << "Error: Port Not Open";
+        return;
+    }
+
+    QByteArray bytemessage = sentTime.toUtf8();
+    serial.write(bytemessage);
+    serial.flush();
+    serial.close();
 
 }
 

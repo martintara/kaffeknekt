@@ -181,7 +181,7 @@ build clock_Time_autogen/timestamp clock_Time_autogen/mocs_compilation.cpp | ${c
 #############################################
 # Phony custom command for CMakeFiles/clock_Time_autogen_timestamp_deps
 
-build CMakeFiles/clock_Time_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/clock_Time_autogen_timestamp_deps: phony /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2 /usr/lib/aarch64-linux-gnu/libQt6SerialPort.so.6.4.2 /usr/lib/qt6/libexec/uic /usr/lib/qt6/libexec/moc /usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2
+build CMakeFiles/clock_Time_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/clock_Time_autogen_timestamp_deps: phony /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2 /usr/lib/aarch64-linux-gnu/libQt6SerialPort.so.6.4.2 /usr/lib/qt6/libexec/moc /usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2 /usr/lib/qt6/libexec/uic
 
 
 #############################################
