@@ -69,6 +69,7 @@ void TaskReceiveTime(void *pvParameters) {
 
       if (err) {
         Serial.println("{\"error\":\"Invalid JSON\"}");
+        Serial.println(input);
         continue;
       }
 
