@@ -3,6 +3,7 @@
 #include "DFRobot_DS323X.h"
 #include "TaskCalculateTime.h"
 #include "TaskPressure.h"
+#include "TaskTemperature.h"
 #include "TaskPublish.h"
 #include "TaskReceiveTime.h"
 #include "TaskShared.h"
@@ -29,6 +30,7 @@ void setup() {
 
   xTaskCreatePinnedToCore(TaskCalculateTime, "SendTime", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskPressure, "Pressure", 4096, NULL, 1, NULL, 1);
+  xTaskCreatePinnedToCore(TaskTemperature, "Pressure", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskPublish, "Publish", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskReceiveTime, "Publish", 4096, NULL, 1, NULL, 1);
 }

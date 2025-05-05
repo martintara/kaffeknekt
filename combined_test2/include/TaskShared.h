@@ -5,6 +5,7 @@
 struct Measurement {
   uint64_t timestamp;
   float pressure;
+  float temperature;
 };
 
 // Global shared instance (defined in main.cpp)
