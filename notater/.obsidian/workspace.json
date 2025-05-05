@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ad5103428d674445",
+        "id": "b553a338a5825a83",
         "type": "tabs",
         "children": [
           {
-            "id": "ef44ec554aa0e3a3",
+            "id": "fa75fd550dadf3ee",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -164,6 +164,7 @@
   "active": "d976199049c7dadc",
   "lastOpenFiles": [
     "combined_test.md",
+    "screenshots/combined_test_step_by_step.png",
     "screenshots/combined_test_timing.png",
     "rtc_interface_test.md",
     "rtc_test.md",
@@ -180,7 +181,6 @@
     "screenshots/bluetooth_test_uptime_01.png",
     "mqtt_test.md",
     "trykk_test.md",
-    "screenshots/trykk_test_readings.png",
     "wifi-instructions.md",
     "ac_wattmeter.md",
     "dc_wattmeter.md",
