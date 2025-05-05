@@ -19,14 +19,14 @@ baud_rate = 115200
 
 def main():
     try:
-        with serial.Serial(serial_port, baud_rate, timeout=1) as esp:
+        with serial.Serial(serial_port, baud_rate, timeout=1) as ser:
             print("Esp connected")
             while True:
-                line = esp.readline().decode('utf-8').strip() #reads line, converts to string, and cleans excess characters
+                line = ser.readline().decode('utf-8').strip() #reads line, converts to string, and cleans excess characters
                 if line: #checks if line exists
                     try:
                         data = json.loads(line)
-                        #print(data)
+                        print(data)
 
                         datastamp = "timestamp"
 
@@ -48,13 +48,13 @@ def main():
                         
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
-                            if field != "timestamp":
+                            if field != "timestamp" and field != "flag":
                                 point = point.field(field, float(value))
                                 
                             #elif field == "flag":
                                 #point = point.field(field, str(value))
 
-                            else:
+                            elif field == "timestamp":
                                 point = point.time(value)
                         
                         #point = Point("Esp32Metrics") \
