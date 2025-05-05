@@ -46,7 +46,7 @@ monitor = from(bucket: "sensor_data")
 combine = join.left(
    left: kaffe,
    right: monitor,
-   on: (l, r) => l._measurement == r._measurement, 
+   on: (l, r) => l._time == r._time, 
    as: (l, r) => ({
       l with 
       temperature: r.temperature, 

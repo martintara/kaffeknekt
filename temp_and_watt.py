@@ -21,6 +21,7 @@ def main():
     try:
         with serial.Serial(serial_port, baud_rate, timeout=1) as ser:
             print("Esp connected")
+            clk = 0
             while True:
                 line = ser.readline().decode('utf-8').strip() #reads line, converts to string, and cleans excess characters
                 if line: #checks if line exists
@@ -46,6 +47,11 @@ def main():
                         except KeyError: 
                             point = point.field("flag", "1")
                         
+                        if clk == 0:
+                            clk = 1
+                        elif clk == 1:
+                            clk = 0
+
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
                             if field != "timestamp" and field != "flag":
@@ -55,7 +61,7 @@ def main():
                                 #point = point.field(field, str(value))
 
                             elif field == "timestamp":
-                                point = point.time(value - (7200 * 1e9)) #temporary corrected time for random_generator
+                                point = point.time(int(value + clk*5*1e8 - (7200 * 1e9))) #temporary corrected time for random_generator
                         
                         #point = Point("Esp32Metrics") \
                             #.field("temperature_C", data["temperature_C"]) \
