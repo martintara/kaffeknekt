@@ -26,7 +26,7 @@ def main():
                 if line: #checks if line exists
                     try:
                         data = json.loads(line)
-                        print(data)
+                        #print(data)
 
                         datastamp = "timestamp"
 
@@ -42,7 +42,7 @@ def main():
 
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
-                            if field != "flag" and "timestamp":
+                            if field != "flag" and field != "timestamp":
                                 point = point.field(field, float(value))
                                 
                             elif field == "flag":
@@ -60,6 +60,7 @@ def main():
 
                         API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
                         print("Data written to Influx")
+                        print(point)
 
                     except json.JSONDecodeError:
                         print("Invalid JSON:", line)
