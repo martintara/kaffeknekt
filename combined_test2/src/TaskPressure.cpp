@@ -35,7 +35,7 @@ void TaskPressure(void *pvParameters) {
       pressure = pressure_psi * PSI_TO_BAR;
       
       // Debug output
-      Serial.printf("Pressure sensor: Raw: %u, Pressure: %.2f bar\n", raw_pressure, pressure);
+      //Serial.printf("Pressure sensor: Raw: %u, Pressure: %.2f bar\n", raw_pressure, pressure);
     } else {
       Serial.println("Failed to read pressure sensor data");
     }

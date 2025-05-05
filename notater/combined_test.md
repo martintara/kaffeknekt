@@ -9,3 +9,9 @@ suspekt timing
 may 5.
 step by step integrering
 ![[combined_test_step_by_step.png]]
+
+pic float error
+
+pic corrected
+
+pic korrekt output

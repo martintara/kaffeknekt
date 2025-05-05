@@ -4,7 +4,7 @@
 // Shared data structure
 struct Measurement {
   uint64_t timestamp;
-  int pressure;
+  float pressure;
 };
 
 // Global shared instance (defined in main.cpp)

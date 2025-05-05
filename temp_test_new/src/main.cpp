@@ -4,7 +4,7 @@
 
 // ESP32 Firebird 2 pin definitions
 // You may need to adjust these pins based on your specific board layout
-#define MAX31865_CS_PIN    5     // CS pin for MAX31865
+#define MAX31865_CS_PIN    21     // CS pin for MAX31865
 #define MAX31865_DI_PIN    23    // MOSI pin
 #define MAX31865_DO_PIN    19    // MISO pin
 #define MAX31865_CLK_PIN   18    // SCK pin
@@ -21,7 +21,7 @@ Adafruit_MAX31865 thermo = Adafruit_MAX31865(MAX31865_CS_PIN, MAX31865_DI_PIN, M
 #define RREF      430.0
 // The 'nominal' 0-degrees-C resistance of the sensor
 // 100.0 for PT100, 1000.0 for PT1000
-#define RNOMINAL  102.2
+#define RNOMINAL  100.0 //102.2
 
 void setup() {
   Serial.begin(115200);
@@ -50,7 +50,7 @@ void loop() {
   Serial.print("Resistance = "); Serial.println(resistance, 8);
   
   // Calculate the temperature
-  float temperature = thermo.temperature(RNOMINAL, RREF);
+  float temperature = thermo.temperature(RNOMINAL, RREF) - 7.0;
   Serial.print("Temperature = "); Serial.println(temperature);
   
   // Check and print any faults
