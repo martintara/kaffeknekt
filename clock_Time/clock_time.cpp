@@ -48,5 +48,7 @@ void clock_time::setTime(){
 
     qDebug() << "format:" << sentTime;
 
+  //  QSerialPort::writeData()
+
 }
 
