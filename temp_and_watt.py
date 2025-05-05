@@ -40,18 +40,23 @@ def main():
                         point = Point("Esp32Metrics") \
                         .field("readable_time", readable_time)
 
+                        #Add flag to point from "data" if it exists, else add default value
+                        try: 
+                            point = point.field("flag", data["flag"]) 
+                        except KeyError: 
+                            point = point.field("flag", "1")
+                        
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
-                            if field != "flag" and field != "timestamp":
+                            if field != "timestamp":
                                 point = point.field(field, float(value))
                                 
-                            elif field == "flag":
-                                point = point.field(field, str(value))
+                            #elif field == "flag":
+                                #point = point.field(field, str(value))
 
                             else:
                                 point = point.time(value)
-                        # 
-
+                        
                         #point = Point("Esp32Metrics") \
                             #.field("temperature_C", data["temperature_C"]) \
                             #.field("power_mW", data["power_mW"]) \
