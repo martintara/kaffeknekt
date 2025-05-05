@@ -55,7 +55,7 @@ def main():
                                 #point = point.field(field, str(value))
 
                             elif field == "timestamp":
-                                point = point.time(value)
+                                point = point.time(value - (7200 * 1e9)) #temporary corrected time for random_generator
                         
                         #point = Point("Esp32Metrics") \
                             #.field("temperature_C", data["temperature_C"]) \
