@@ -21,3 +21,7 @@ Feil var konflikt med pins. Vi hadde brukt 21 som SDA.
 may 6.
 Implemented ACPower task with static dummy data.
 ![[combined_test_acpower_static.png]]
+
+Problemer med å implementere ads (ac wattmeter):
+![[combined_test_assert.png]]
+

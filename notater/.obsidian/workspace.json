@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5f1165d0e1df2691",
+        "id": "5465b700a307dbb5",
         "type": "tabs",
         "children": [
           {
-            "id": "dc602ce536135f4b",
+            "id": "a0efc3d0607aa598",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,9 +161,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d976199049c7dadc",
+  "active": "a0efc3d0607aa598",
   "lastOpenFiles": [
     "combined_test.md",
+    "screenshots/combined_test_assert.png",
     "screenshots/combined_test_acpower_static.png",
     "temp_test.md",
     "screenshots/combined_test_sda_konflikt.png",
@@ -177,7 +178,6 @@
     "rtc_interface_test.md",
     "rtc_test.md",
     "gpt_example.md",
-    "screenshots/rtc_interface_test.png",
     "random_generator.md",
     "bluetooth_test.md",
     "mqtt_test.md",

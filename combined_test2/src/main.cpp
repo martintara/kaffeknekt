@@ -31,12 +31,13 @@ void setup() {
 
   measurementMutex = xSemaphoreCreateMutex();
 
-  xTaskCreatePinnedToCore(TaskCalculateTime, "SendTime", 4096, NULL, 1, NULL, 1);
+
+  xTaskCreatePinnedToCore(TaskCalculateTime, "CalculateTime", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskPressure, "Pressure", 4096, NULL, 1, NULL, 1);
-  xTaskCreatePinnedToCore(TaskTemperature, "Pressure", 4096, NULL, 1, NULL, 1);
-  xTaskCreatePinnedToCore(TaskACPower, "Pressure", 4096, NULL, 1, NULL, 1);
+  xTaskCreatePinnedToCore(TaskTemperature, "Temperature", 4096, NULL, 1, NULL, 1);
+  xTaskCreatePinnedToCore(TaskACPower, "ACPower", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskPublish, "Publish", 4096, NULL, 1, NULL, 1);
-  xTaskCreatePinnedToCore(TaskReceiveTime, "Publish", 4096, NULL, 1, NULL, 1);
+  xTaskCreatePinnedToCore(TaskReceiveTime, "RecieveTime", 4096, NULL, 1, NULL, 1);
 }
 
 void loop() {
