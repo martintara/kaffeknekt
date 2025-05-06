@@ -16,7 +16,10 @@ option task = {name: "event_log", every: 1m}
 kaffe = from(bucket: "sensor_data")
    |> range(start: -2m)
    |> filter(fn: (r) => 
-         r._measurement == "Esp32Metrics" and 
+         r._measurement == "Esp32Metrics"
+      )
+   |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value")
+   |> filter(fn: (r) => 
          r._field == "flag"
       )
    |> events.duration(
