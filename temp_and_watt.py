@@ -17,11 +17,13 @@ API = client.write_api(write_options=SYNCHRONOUS)
 serial_port = '/dev/ttyUSB0'
 baud_rate = 115200
 
+clk = 0 #counter to add milliseconds to every other datawrite to avoid duplicate timestamps
+session = 1
+
 def main():
     try:
         with serial.Serial(serial_port, baud_rate, timeout=1) as ser:
             print("Esp connected")
-            clk = 0
             while True:
                 line = ser.readline().decode('utf-8').strip() #reads line, converts to string, and cleans excess characters
                 if line: #checks if line exists
@@ -40,6 +42,17 @@ def main():
                         #Inisialiserer Point() bygging
                         point = Point("Esp32Metrics") \
                         .field("readable_time", readable_time)
+
+                        if data["flag"] == "U":
+                            session = 1
+                        elif data["flag"] == "D":
+                            session = 0
+
+                        if session == 1:
+                            point = point.tag("sessionStatus", active)
+                        else:
+                            point = point.tag("sessionStatus", inactive)
+
 
                         #Add flag to point from "data" if it exists, else add default value
                         try: 
