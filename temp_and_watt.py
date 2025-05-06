@@ -48,10 +48,10 @@ def main():
                         elif data["flag"] == "D":
                             session = 0
 
-                        if session == 1:
-                            point = point.tag("sessionStatus", active)
-                        else:
-                            point = point.tag("sessionStatus", inactive)
+                        #if session == 1:
+                        #    point = point.tag("sessionStatus", active)
+                        #else:
+                        #    point = point.tag("sessionStatus", inactive)
 
 
                         #Add flag to point from "data" if it exists, else add default value
