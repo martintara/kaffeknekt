@@ -7,6 +7,7 @@
 #include "TaskPublish.h"
 #include "TaskReceiveTime.h"
 #include "TaskShared.h"
+#include "TaskACPower.h"
 
 #define SDA_PIN 21
 #define SCL_PIN 22
@@ -33,6 +34,7 @@ void setup() {
   xTaskCreatePinnedToCore(TaskCalculateTime, "SendTime", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskPressure, "Pressure", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskTemperature, "Pressure", 4096, NULL, 1, NULL, 1);
+  xTaskCreatePinnedToCore(TaskACPower, "Pressure", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskPublish, "Publish", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(TaskReceiveTime, "Publish", 4096, NULL, 1, NULL, 1);
 }

@@ -17,3 +17,7 @@ Rounding issue. Fix: change int to float
 5. may
 Feil var konflikt med pins. Vi hadde brukt 21 som SDA.
 ![[combined_test_sda_konflikt.png]]
+
+may 6.
+Implemented ACPower task with static dummy data.
+![[combined_test_acpower_static.png]]
