@@ -2,13 +2,16 @@
 #include <Wire.h>
 #include "TaskShared.h"
 #include "TaskACPower.h"
+#include "I2CLock.h"
 
 // External shared variables
 extern Measurement sharedMeasurement;
 extern SemaphoreHandle_t measurementMutex;
+extern DFRobot_ADS1115 ads;
+extern SemaphoreHandle_t i2cMutex;
 
 // ADS1115 instance
-DFRobot_ADS1115 ads(&Wire);
+//DFRobot_ADS1115 ads(&Wire);
 
 // SEN0211 sensor parameters
 #define CURRENT_DETECTION_RANGE 20    // Set your sensor's current detection range (5A, 10A, 20A)
@@ -22,6 +25,12 @@ const int CURRENT_PIN = 0;  // ADS1115 A0 for current measurement
 const int SAMPLES = 10;
 
 float readACCurrentValue() {
+    I2CLock lock(i2cMutex, portMAX_DELAY);
+ 
+    if (!lock) {
+      Serial.println("Failed to lock I2C in TaskACPower");
+      return 0.0;
+    }
     float peakVoltage = 0;
     float voltageRMS = 0;
     float currentValue = 0;
@@ -69,16 +78,6 @@ void TaskACPower(void *pvParameters) {
   // // Initial delay to allow system to stabilize
   vTaskDelay(2000 / portTICK_PERIOD_MS);
   
-  ads.setAddr_ADS1115(ADS1115_IIC_ADDRESS0);  // 0x48
-  ads.setGain(eGAIN_ONE);        // ±4.096V range
-  ads.setMode(eMODE_SINGLE);     // Single-shot mode
-  ads.setRate(eRATE_128);        // 128 samples per second
-  ads.setOSMode(eOSMODE_SINGLE); // Start a single conversion
-  ads.init();
-
-
-  //Serial.println("ADS1115 initialized OK");
-
 
   while (true) {
     float ACPower = 300.0;
@@ -90,6 +89,7 @@ void TaskACPower(void *pvParameters) {
       sharedMeasurement.ACPower = ACPower;
       xSemaphoreGive(measurementMutex);
     }
+    sharedMeasurement.ACPower = ACPower;
   
 
      

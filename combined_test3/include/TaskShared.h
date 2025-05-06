@@ -3,7 +3,7 @@
 
 // Shared data structure
 struct Measurement {
-  //uint64_t timestamp;
+  uint64_t timestamp;
   //float pressure;
   //float temperature;
   float ACPower;
