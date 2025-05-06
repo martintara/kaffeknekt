@@ -1,5 +1,6 @@
-import "join"
 import "date"
+import "events"
+import "join"
 
 option task = {name: "event_log", every: 1m}
 
