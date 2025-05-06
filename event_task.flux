@@ -25,9 +25,13 @@ kaffe = from(bucket: "sensor_data")
          r._field == "flag"
       )
    |> events.duration(
+         column: "_value",
+         timeColumn: "_time",
+         //columnName: "duration",
+         //stopColumn: "_stop",
          unit: 1s, 
-         start: (r) => r._value == "U", 
-         stop: (r) => r._value == "D")
+         //start: (r) => r._value == "U", 
+         //stop: (r) => r._value == "D")
    |> map(fn: (r) => ({
          _time: r._time, 
          //session_id: readable_time, 
