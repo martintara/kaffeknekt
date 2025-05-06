@@ -865,6 +865,43 @@
 		{
 			"isExternal" : true,
 			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort/Qt6SerialPortConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort/Qt6SerialPortConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort/Qt6SerialPortConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.25/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort/Qt6SerialPortDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort/Qt6SerialPortTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort/Qt6SerialPortTargets-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort/Qt6SerialPortAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort/Qt6SerialPortVersionlessTargets.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -4382,6 +4382,18 @@
 			"value" : "OFF"
 		},
 		{
+			"name" : "QT_FEATURE_ntddmodm",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Qt feature: ntddmodm (from target Qt6::SerialPort)"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "OFF"
+		},
+		{
 			"name" : "QT_FEATURE_opengl",
 			"properties" : 
 			[
@@ -6384,6 +6396,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6Gui"
+		},
+		{
+			"name" : "Qt6SerialPort_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt6SerialPort."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/aarch64-linux-gnu/cmake/Qt6SerialPort"
 		},
 		{
 			"name" : "Qt6WidgetsTools_DIR",
