@@ -37,3 +37,5 @@ Jobbet en del med brew trigger. Må testest mer da maskinen er intakt.
 Implementerte temperature task med statisk data:
 ![[combined_test_temperature_static.png]]
 
+Implementerte temp sensoren:
+![[combined_test_temp_implemented.png]]

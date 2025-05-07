@@ -11,10 +11,14 @@
             "id": "ad3c2fd7ff084c0a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "combined_test.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "combined_test"
             }
           }
         ]
@@ -161,8 +165,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ad3c2fd7ff084c0a",
+  "active": "d976199049c7dadc",
   "lastOpenFiles": [
+    "screenshots/combined_test_temp_implemented.png",
     "combined_test.md",
     "screenshots/combined_test_temperature_static.png",
     "screenshots/combined_test_timing_prob.png",
@@ -174,7 +179,6 @@
     "screenshots/temp_test_new_adjusted.png",
     "screenshots/temp_test_new_30c.png",
     "screenshots/combined_test_korrekt_output.png",
-    "screenshots/combined_test_float_issue.png",
     "rtc_interface_test.md",
     "rtc_test.md",
     "gpt_example.md",
