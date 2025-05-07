@@ -17,12 +17,10 @@ API = client.write_api(write_options=SYNCHRONOUS)
 serial_port = '/dev/ttyUSB0'
 baud_rate = 115200
 
-session = 1
-
 def main():
 
     clk = 0 #counter to add milliseconds to every other datawrite to avoid duplicate timestamps
-
+    session = 1
     try:
         with serial.Serial(serial_port, baud_rate, timeout=1) as ser:
             print("Esp connected")
