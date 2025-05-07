@@ -33,7 +33,7 @@ def main():
 
                         datastamp = "timestamp"
 
-                        stamp = datetime.fromtimestamp(data["timestamp"] / 1e9).replace(microsecond=0)
+                        stamp = datetime.fromtimestamp(int(data["timestamp"]) / 1e9).replace(microsecond=0)
                         iso = stamp.isoformat()
                         date_part, time_part = iso.split("T")
                         readable_time = f"{date_part} {time_part}"
@@ -56,15 +56,19 @@ def main():
 
                         #Add flag to point from "data" if it exists, else add default value
                         
-                        try: 
-                            point = point.field("flag", data["flag"]) 
-                        except KeyError: 
-                            #point = point.field("flag", "1")
-                            if session == 1:
-                                point = point.field("flag", str("U"))
-                            else:
-                                point = point.field("flag", str("D"))
+                        #try: 
+                        #    point = point.field("flag", data["flag"]) 
+                        #except KeyError: 
+                        #    if session == 1:
+                        #        point = point.field("flag", str("U"))
+                        #    elif session == 0:
+                        #        point = point.field("flag", str("D"))
                         
+                        if session == 1:
+                            point = point.field("flag", data.get('flag', 1))
+                        else:
+                            point = point.field("flag", data.get('flag', 0))
+
                         if clk == 0:
                             clk = 1
                         elif clk == 1:
