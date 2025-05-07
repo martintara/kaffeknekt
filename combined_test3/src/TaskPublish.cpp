@@ -24,6 +24,6 @@ void TaskPublish(void *pvParameters) {
     serializeJson(doc, Serial);
     Serial.println();
 
-    vTaskDelay(pdMS_TO_TICKS(500));
+    vTaskDelay(pdMS_TO_TICKS(100));
   }
 }

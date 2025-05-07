@@ -235,7 +235,7 @@ float power = 0;
 
 // Timing variables
 unsigned long lastDisplay = 0;
-const int DISPLAY_INTERVAL = 1000;  // Display readings every 1 second
+const int DISPLAY_INTERVAL = 100;  // Display readings every 1 second
 const int SAMPLES = 10;  // Number of samples to average
 
 void setup() {
@@ -275,7 +275,12 @@ void loop() {
     
     // Display readings at specified interval
     if (millis() - lastDisplay >= DISPLAY_INTERVAL) {
-      displayReadings();
+      //displayReadings();
+      if(power >= 15.0){
+        Serial.println("ON");
+      } else{
+        Serial.println("OFF");
+      }
       lastDisplay = millis();
     }
   } else {
@@ -315,7 +320,6 @@ float readACCurrentValue() {
   
   // Apply calibration factor to correct the reading
   currentValue = currentValue * CALIBRATION_FACTOR;
-  
   return currentValue;
 }
 
@@ -334,4 +338,6 @@ void displayReadings() {
   Serial.println(" W");
   
   Serial.println("---------------------------------");
+
+  
 }

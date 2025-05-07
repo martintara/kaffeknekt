@@ -95,6 +95,6 @@ void TaskACPower(void *pvParameters) {
      
 
     // Wait before next reading (2 seconds)
-    vTaskDelay(300 / portTICK_PERIOD_MS);
+    vTaskDelay(40 / portTICK_PERIOD_MS);
   }
 }
