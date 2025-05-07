@@ -14,8 +14,6 @@ DFRobot_DS323X rtc;  // global instance
 DFRobot_ADS1115 ads(&Wire);
 
 Measurement sharedMeasurement = {};
-SemaphoreHandle_t measurementMutex;
-
 SemaphoreHandle_t i2cMutex;
 
 
@@ -39,14 +37,7 @@ void setup() {
   }
   Serial.println("DS3232 RTC initialized successfully!");
 
-  measurementMutex = xSemaphoreCreateMutex();
-
   i2cMutex = xSemaphoreCreateMutex();
-  if (i2cMutex == NULL) {
-  Serial.println("Failed to create i2cMutex!");
-  while (true);
-  } 
-
   // if (measurementMutex == NULL) {
   //   Serial.println("Failed to create measurementMutex!");
   //   while (true);  // Stop everything to prevent undefined behavior

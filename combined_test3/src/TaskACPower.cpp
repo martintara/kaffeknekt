@@ -6,7 +6,6 @@
 
 // External shared variables
 extern Measurement sharedMeasurement;
-extern SemaphoreHandle_t measurementMutex;
 extern DFRobot_ADS1115 ads;
 extern SemaphoreHandle_t i2cMutex;
 
@@ -25,24 +24,26 @@ const int CURRENT_PIN = 0;  // ADS1115 A0 for current measurement
 const int SAMPLES = 10;
 
 float readACCurrentValue() {
-    I2CLock lock(i2cMutex, portMAX_DELAY);
- 
-    if (!lock) {
-      Serial.println("Failed to lock I2C in TaskACPower");
-      return 0.0;
-    }
     float peakVoltage = 0;
     float voltageRMS = 0;
     float currentValue = 0;
     
     // Take multiple samples for more stable reading
     const int SAMPLES = 10;
-    for (int i = 0; i < SAMPLES; i++) {
-      int rawReading = ads.readVoltage(CURRENT_PIN); // Reading in mV
-      peakVoltage += rawReading;
-      vTaskDelay(2 / portTICK_PERIOD_MS);
-; // Small delay between readings
+
+
+
+    if (xSemaphoreTake(i2cMutex, portMAX_DELAY) == pdTRUE) {
+      for (int i = 0; i < SAMPLES; i++) {
+        int rawReading = ads.readVoltage(CURRENT_PIN); // Reading in mV
+        peakVoltage += rawReading;
+        vTaskDelay(2 / portTICK_PERIOD_MS);
+  ; // Small delay between readings
+      }
+      xSemaphoreGive(i2cMutex);
     }
+
+
     
     // Average the readings
     peakVoltage = peakVoltage / SAMPLES;
@@ -85,16 +86,15 @@ void TaskACPower(void *pvParameters) {
     ACPower = current * VOLTAGE_REFERENCE;
     
 
-    if (xSemaphoreTake(measurementMutex, pdMS_TO_TICKS(100))) {
+    // if (xSemaphoreTake(measurementMutex, pdMS_TO_TICKS(100))) {
       sharedMeasurement.ACPower = ACPower;
-      xSemaphoreGive(measurementMutex);
-    }
-    sharedMeasurement.ACPower = ACPower;
+      // xSemaphoreGive(measurementMutex);
+    // }
   
 
      
 
     // Wait before next reading (2 seconds)
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
+    vTaskDelay(300 / portTICK_PERIOD_MS);
   }
 }

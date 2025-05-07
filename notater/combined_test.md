@@ -25,3 +25,9 @@ Implemented ACPower task with static dummy data.
 Problemer med å implementere ads (ac wattmeter):
 ![[combined_test_assert.png]]
 
+
+may 7
+Mutex fikset dette.
+
+Timing problem:
+![[combined_test_timing_prob.png]]

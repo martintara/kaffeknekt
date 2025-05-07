@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5465b700a307dbb5",
+        "id": "ad96b4aaca44a442",
         "type": "tabs",
         "children": [
           {
-            "id": "a0efc3d0607aa598",
+            "id": "47bd8d2bda0ca243",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,9 +161,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a0efc3d0607aa598",
+  "active": "47bd8d2bda0ca243",
   "lastOpenFiles": [
     "combined_test.md",
+    "screenshots/combined_test_timing_prob.png",
+    "Pasted image 20250507082425.png",
     "screenshots/combined_test_assert.png",
     "screenshots/combined_test_acpower_static.png",
     "temp_test.md",
@@ -173,8 +175,6 @@
     "screenshots/combined_test_korrekt_output.png",
     "screenshots/combined_test_float_issue.png",
     "screenshots/combined_test_float_corrected.png",
-    "screenshots/combined_test_step_by_step.png",
-    "screenshots/combined_test_timing.png",
     "rtc_interface_test.md",
     "rtc_test.md",
     "gpt_example.md",

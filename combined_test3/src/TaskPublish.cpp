@@ -11,10 +11,10 @@ void TaskPublish(void *pvParameters) {
   while (true) {
     Measurement localCopy;
 
-    if (xSemaphoreTake(measurementMutex, pdMS_TO_TICKS(100))) {
+   // if (xSemaphoreTake(measurementMutex, pdMS_TO_TICKS(100))) {
       localCopy = sharedMeasurement;
-      xSemaphoreGive(measurementMutex);
-    }
+      //xSemaphoreGive(measurementMutex);
+    //}
 
     StaticJsonDocument<128> doc;
     //doc["pressure"] = localCopy.pressure;
@@ -24,6 +24,6 @@ void TaskPublish(void *pvParameters) {
     serializeJson(doc, Serial);
     Serial.println();
 
-    vTaskDelay(pdMS_TO_TICKS(1000));
+    vTaskDelay(pdMS_TO_TICKS(500));
   }
 }
