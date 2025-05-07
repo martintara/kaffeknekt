@@ -61,9 +61,9 @@ def main():
                         except KeyError: 
                             #point = point.field("flag", "1")
                             if session == 1:
-                                point = point.field("flag", "U")
+                                point = point.field("flag", str("U"))
                             else:
-                                point = point.field("flag", "D")
+                                point = point.field("flag", str("D"))
                         
                         if clk == 0:
                             clk = 1
@@ -87,9 +87,10 @@ def main():
                             #.field("readable_time", readable_time) \
                             #.time(data["timestamp_ns"]) 
 
+                        print(point)
                         API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
                         print("Data written to Influx")
-                        print(point)
+                        
 
                     except json.JSONDecodeError:
                         print("Invalid JSON:", line)
