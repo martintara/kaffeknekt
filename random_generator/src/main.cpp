@@ -106,17 +106,13 @@ void loop() {
       inHighRange = true;
     }
     
-    // Check for transitions and set flag
-    if (wasInHighRange && !inHighRange) {
-      // Transitioning from high to low
-      pressureFlag = 'D';
-    } else if (!wasInHighRange && inHighRange) {
-      // Transitioning from low to high
-      pressureFlag = 'U';
+    // Set pressureFlag based on current range
+    if (inHighRange) {
+      pressureFlag = '1';  // Stay 1 during high pressure
     } else {
-      // No transition occurred
-      pressureFlag = '0';
+      pressureFlag = '0';  // Stay 0 during low pressure
     }
+
     
     // Generate other random sensor values within defined ranges
     float temperature = random(TEMP_MIN * 100, TEMP_MAX * 100) / 100.0; // With 2 decimal precision
@@ -130,9 +126,9 @@ void loop() {
     doc["timestamp"] = getInfluxDBTimestamp();
     
     // Only include flag if it's U or D (during transition)
-    if (pressureFlag != '0') {
+    //if (pressureFlag != '0') {
       doc["flag"] = String(pressureFlag);
-    }
+   // }
     
     // Serialize JSON to serial port
     serializeJson(doc, Serial);
