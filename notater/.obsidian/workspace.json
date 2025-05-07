@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ab86141415767822",
+        "id": "3f31be9f66341e8f",
         "type": "tabs",
         "children": [
           {
-            "id": "e911dc73ad14bc98",
+            "id": "06223a7dbbce4731",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,12 +161,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e911dc73ad14bc98",
+  "active": "d976199049c7dadc",
   "lastOpenFiles": [
+    "screenshots/combined_test_pressure_implemented_correctly.png",
     "combined_test.md",
-    "Pasted image 20250507143412.png",
-    "Pasted image 20250507142807.png",
-    "Pasted image 20250507142310.png",
+    "screenshots/combined_test_pressure_i2c_fault.png",
+    "screenshots/combined_test_pressure_static.png",
     "screenshots/combined_test_temp_implemented.png",
     "screenshots/combined_test_temperature_static.png",
     "screenshots/combined_test_timing_prob.png",

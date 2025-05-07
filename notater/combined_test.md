@@ -40,10 +40,11 @@ Implementerte temperature task med statisk data:
 Implementerte temp sensoren:
 ![[combined_test_temp_implemented.png]]
 
-![[Pasted image 20250507142310.png]]
+implementerte trykk sensor med statisk data:
+![[combined_test_pressure_static.png]]
 
 i2c feil igjen
-![[Pasted image 20250507142807.png]]
+![[combined_test_pressure_i2c_fault.png]]
 
 implementert riktig med mutex. Discovery: Wire bruker i2c også
-![[Pasted image 20250507143412.png]]
+![[combined_test_pressure_implemented_correctly.png]]
