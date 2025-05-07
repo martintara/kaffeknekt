@@ -18,7 +18,7 @@ void TaskPublish(void *pvParameters) {
 
     StaticJsonDocument<128> doc;
     //doc["pressure"] = localCopy.pressure;
-    //doc["temperature"] = localCopy.temperature;
+    doc["temperature"] = localCopy.temperature;
     doc["power"] = localCopy.ACPower;
     doc["timestamp"] = localCopy.timestamp;
     doc["flag"] = localCopy.flag;

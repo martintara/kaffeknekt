@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "14cf9e27ede2c6f9",
+        "id": "6e54360a7ac16dc4",
         "type": "tabs",
         "children": [
           {
-            "id": "45d04d4165819971",
+            "id": "ad3c2fd7ff084c0a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,9 +161,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "45d04d4165819971",
+  "active": "ad3c2fd7ff084c0a",
   "lastOpenFiles": [
     "combined_test.md",
+    "screenshots/combined_test_temperature_static.png",
     "screenshots/combined_test_timing_prob.png",
     "Pasted image 20250507082425.png",
     "screenshots/combined_test_assert.png",
@@ -174,7 +175,6 @@
     "screenshots/temp_test_new_30c.png",
     "screenshots/combined_test_korrekt_output.png",
     "screenshots/combined_test_float_issue.png",
-    "screenshots/combined_test_float_corrected.png",
     "rtc_interface_test.md",
     "rtc_test.md",
     "gpt_example.md",

@@ -32,4 +32,8 @@ Mutex fikset dette.
 Timing problem:
 ![[combined_test_timing_prob.png]]
 
-Jobbet en del med brew trigger.
+Jobbet en del med brew trigger. Må testest mer da maskinen er intakt.
+
+Implementerte temperature task med statisk data:
+![[combined_test_temperature_static.png]]
+
