@@ -17,10 +17,12 @@ API = client.write_api(write_options=SYNCHRONOUS)
 serial_port = '/dev/ttyUSB0'
 baud_rate = 115200
 
-clk = 0 #counter to add milliseconds to every other datawrite to avoid duplicate timestamps
 session = 1
 
 def main():
+
+    clk = 0 #counter to add milliseconds to every other datawrite to avoid duplicate timestamps
+
     try:
         with serial.Serial(serial_port, baud_rate, timeout=1) as ser:
             print("Esp connected")
@@ -55,16 +57,21 @@ def main():
 
 
                         #Add flag to point from "data" if it exists, else add default value
+                        
                         try: 
                             point = point.field("flag", data["flag"]) 
                         except KeyError: 
-                            point = point.field("flag", "1")
+                            if session == 1:
+                                point = point.field("flag", "U")
+                            else:
+                                point = point.field("flag", "D")
+                        #    print("flag")
                         
                         if clk == 0:
                             clk = 1
                         elif clk == 1:
                             clk = 0
-
+                       
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
                             if field != "timestamp" and field != "flag":

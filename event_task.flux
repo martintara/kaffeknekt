@@ -88,8 +88,8 @@ combine
 //            r._field == "flag" and
 //            r._value == "U")
 //      |> map(fn: (r) => ({
-//         _time: r._time
-//         send: date.sub(from: r._time, d: 5s)})
+//         _time: r._time,
+//         send: date.sub(from: r._time, d: 5s)}))
 
 //downspike = 
 //   from(bucket: "sensor_data")
@@ -99,6 +99,6 @@ combine
 //            r._field == "flag" and
 //            r._value == "D")
 //      |> map(fn: (r) => ({
-//         _time: r._time
-//         until: date.add(from: r._time, d: 5s)})
+//         _time: r._time,
+//         until: date.add(from: r._time, d: 5s)}))
          
