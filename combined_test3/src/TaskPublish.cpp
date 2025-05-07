@@ -21,6 +21,7 @@ void TaskPublish(void *pvParameters) {
     //doc["temperature"] = localCopy.temperature;
     doc["power"] = localCopy.ACPower;
     doc["timestamp"] = localCopy.timestamp;
+    doc["flag"] = localCopy.flag;
     serializeJson(doc, Serial);
     Serial.println();
 

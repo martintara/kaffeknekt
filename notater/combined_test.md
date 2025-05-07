@@ -31,3 +31,5 @@ Mutex fikset dette.
 
 Timing problem:
 ![[combined_test_timing_prob.png]]
+
+Jobbet en del med brew trigger.

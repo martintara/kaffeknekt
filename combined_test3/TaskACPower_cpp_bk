@@ -23,7 +23,7 @@ const int CURRENT_PIN = 0;  // ADS1115 A0 for current measurement
 // Number of samples to average for more stable readings
 const int SAMPLES = 10;
 
-float readACCurrentValue(int pinNumber) {
+float readACCurrentValue() {
     float peakVoltage = 0;
     float voltageRMS = 0;
     float currentValue = 0;
@@ -31,9 +31,11 @@ float readACCurrentValue(int pinNumber) {
     // Take multiple samples for more stable reading
     const int SAMPLES = 10;
 
+
+
     if (xSemaphoreTake(i2cMutex, portMAX_DELAY) == pdTRUE) {
       for (int i = 0; i < SAMPLES; i++) {
-        int rawReading = ads.readVoltage(pinNumber); // Reading in mV
+        int rawReading = ads.readVoltage(CURRENT_PIN); // Reading in mV
         peakVoltage += rawReading;
         vTaskDelay(2 / portTICK_PERIOD_MS);
   ; // Small delay between readings
@@ -80,7 +82,7 @@ void TaskACPower(void *pvParameters) {
 
   while (true) {
     float ACPower = 300.0;
-    float current = readACCurrentValue(0);
+    float current = readACCurrentValue();
     ACPower = current * VOLTAGE_REFERENCE;
     
 
@@ -88,16 +90,6 @@ void TaskACPower(void *pvParameters) {
       sharedMeasurement.ACPower = ACPower;
       // xSemaphoreGive(measurementMutex);
     // }
-
-    current = readACCurrentValue(1);
-    Serial.println(current);
-    Serial.println("ads1 " + String(current));
-    if(current >= 0.2){
-      sharedMeasurement.flag = 1;
-    } else {
-      sharedMeasurement.flag = 0;
-    }
-      
   
 
      

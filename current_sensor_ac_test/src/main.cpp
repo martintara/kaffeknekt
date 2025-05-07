@@ -226,7 +226,7 @@ float readACCurrentValue();
 void displayReadings();
 
 // Input pins on ADS1115
-const int CURRENT_PIN = 0;  // ADS1115 A0 for current measurement
+const int CURRENT_PIN = 1;  // ADS1115 A0 for current measurement
 
 // Variables for power calculation
 float current = 0;
@@ -276,7 +276,7 @@ void loop() {
     // Display readings at specified interval
     if (millis() - lastDisplay >= DISPLAY_INTERVAL) {
       //displayReadings();
-      if(power >= 15.0){
+      if(current >= 0.05){
         Serial.println("ON");
       } else{
         Serial.println("OFF");

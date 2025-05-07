@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ad96b4aaca44a442",
+        "id": "14cf9e27ede2c6f9",
         "type": "tabs",
         "children": [
           {
-            "id": "47bd8d2bda0ca243",
+            "id": "45d04d4165819971",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,7 +161,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "47bd8d2bda0ca243",
+  "active": "45d04d4165819971",
   "lastOpenFiles": [
     "combined_test.md",
     "screenshots/combined_test_timing_prob.png",

@@ -6,6 +6,7 @@
 #include "TaskPublish.h"
 #include "TaskCalculateTime.h"
 #include "TaskReceiveTime.h"
+//#include "TaskBrewTrigger.h"
 
 #define SDA_PIN 21
 #define SCL_PIN 22
@@ -49,6 +50,8 @@ void setup() {
   xTaskCreatePinnedToCore(TaskACPower, "ACPower", 4096, NULL, 2, NULL, 1);
   xTaskCreatePinnedToCore(TaskPublish, "Publish", 4096, NULL, 1, NULL, 1);
   //xTaskCreatePinnedToCore(TaskReceiveTime, "RecieveTime", 4096, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(TaskBrewTrigger, "BrewTrigger", 4096, NULL, 2, NULL, 1);
+
 }
 
 void loop() {
