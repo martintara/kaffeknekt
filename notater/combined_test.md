@@ -39,3 +39,11 @@ Implementerte temperature task med statisk data:
 
 Implementerte temp sensoren:
 ![[combined_test_temp_implemented.png]]
+
+![[Pasted image 20250507142310.png]]
+
+i2c feil igjen
+![[Pasted image 20250507142807.png]]
+
+implementert riktig med mutex. Discovery: Wire bruker i2c også
+![[Pasted image 20250507143412.png]]
