@@ -61,11 +61,11 @@ def main():
                         try: 
                             point = point.field("flag", data["flag"]) 
                         except KeyError: 
+                            #point = point.field("flag", "1")
                             if session == 1:
                                 point = point.field("flag", "U")
                             else:
                                 point = point.field("flag", "D")
-                        #    print("flag")
                         
                         if clk == 0:
                             clk = 1
