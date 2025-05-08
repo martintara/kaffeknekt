@@ -4,6 +4,8 @@ from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 from datetime import datetime, timezone
 from dateutil.parser import parse
+import socket
+import os
 
 # InfluxDB settings
 URL = 'http://localhost:8086'
@@ -21,6 +23,10 @@ def main():
 
     clk = 0 #counter to add milliseconds to every other datawrite to avoid duplicate timestamps
     session = 1
+
+    path = '/tmp/socket'
+    client = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) 
+    
     try:
         with serial.Serial(serial_port, baud_rate, timeout=1) as ser:
             print("Esp connected")
