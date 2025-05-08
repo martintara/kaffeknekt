@@ -65,9 +65,9 @@ def main():
                         #        point = point.field("flag", str("D"))
                         
                         if session == 1:
-                            point = point.field("flag", data.get('flag', 1))
+                            point = point.field("flag", data.get('flag', "1"))
                         else:
-                            point = point.field("flag", data.get('flag', 0))
+                            point = point.field("flag", data.get('flag', "0"))
 
                         if clk == 0:
                             clk = 1
