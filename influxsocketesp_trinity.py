@@ -24,12 +24,27 @@ def main():
     clk = 0 #counter to add milliseconds to every other datawrite to avoid duplicate timestamps
     session = 1
 
+
     path = '/tmp/socket'
-    client = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) 
+    
+    if os.path.exists(path):
+        os.unlink(path)
+        
+
+    server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    
+    server.bind(path)
+    server.listen(1)
+    
     
     try:
         with serial.Serial(serial_port, baud_rate, timeout=1) as ser:
             print("Esp connected")
+            
+            print("Waiting for client connection")
+            connection, cli_addr = server.accept()
+            print("Connected:", cli_addr)
+            
             while True:
                 line = ser.readline().decode('utf-8').strip() #reads line, converts to string, and cleans excess characters
                 if line: #checks if line exists
@@ -37,7 +52,6 @@ def main():
                         data = json.loads(line)
                         print(data)
 
-                        datastamp = "timestamp"
 
                         stamp = datetime.fromtimestamp(int(data["timestamp"]) / 1e9).replace(microsecond=0)
                         iso = stamp.isoformat()
@@ -71,10 +85,11 @@ def main():
                         #        point = point.field("flag", str("D"))
                         
                         if session == 1:
-                            point = point.field("flag", data.get('flag', "1"))
+                            point = point.field("flag", data.get('flag', 1))
                         else:
-                            point = point.field("flag", data.get('flag', "0"))
+                            point = point.field("flag", data.get('flag', 0))
 
+                        #clock to granulate timestamp
                         if clk == 0:
                             clk = 1
                         elif clk == 1:
@@ -101,15 +116,31 @@ def main():
                         API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
                         print("Data written to Influx")
                         
+                        
+                        data["readable_time"] = readable_time
+                        
+                        socketjson = json.dumps(data) + '\n'
+                        #socketjson = socketjson + '\n'
+                        
+                        print(socketjson)
+                        
+                        server.send(socketjson)
 
                     except json.JSONDecodeError:
                         print("Invalid JSON:", line)
+                        
                     except KeyError as e:
                         print(f"{e} is missing.")
+                        
     except KeyboardInterrupt:
         print("\nStopped by user.")
+
     except serial.SerialException as e:
         print(f"Serial error: {e}")
+        
+    finally:
+        connection.close()
+        os.unlink(path)
 
 if __name__ == "__main__":
     main()
