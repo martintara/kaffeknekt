@@ -5,7 +5,7 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
-#define SOCKET_PATH "tmp/socket"
+#define SOCKET_PATH "/tmp/socket"
 
 
 int main(){
@@ -16,6 +16,7 @@ int main(){
     qtSocket = socket(AF_UNIX, SOCK_STREAM, 0);
     if (qtSocket < 0){
         perror("Socket Error");
+        std::cout << "Socket";
         status = false;
         return 1;
     }
@@ -24,6 +25,7 @@ int main(){
     std::strcpy(addr.sun_path, SOCKET_PATH);
     if (connect(qtSocket,(struct sockaddr*)&addr, sizeof(addr) - 1) == -1){
         perror("Connection Error");
+        std::cout << "Connection";
         close(qtSocket);
         status = false;
         return 1;
@@ -37,14 +39,18 @@ int main(){
         rest.append(buffer, dataRecived);
 
         size_t pos;
-        while(pos = rest.find('\n') != std::string::npos){
+        while ((pos = rest.find('\n')) != std::string::npos) {
             std::string data = rest.substr(0, pos);
+
+            
+
             rest.erase(0, pos + 1);
             try { 
                 nlohmann::json jsonData = nlohmann::json::parse(data);
                 std::cout << "Received Data: " << jsonData.dump(4) << std::endl;
             }   catch (const std::exception& e) {
-                std::cerr << n"Error parsing JSON: " << e.what() << std::endl;
+                std::cerr << "Error parsing JSON: " << e.what() << std::endl;
+                close(qtSocket);
             }
         
         }
