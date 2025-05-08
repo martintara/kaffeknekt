@@ -3,6 +3,7 @@
 #include <sys/un.h>
 #include <unistd.h>
 #include <cstring>
+#include <nlohmann/json.hpp>
 
 #define SOCKET_PATH "tmp/socket"
 
@@ -26,11 +27,25 @@ int main(){
         return 1;
     }
 
-    
-    while(status){
-        //Code for reciving data
+    char buffer[1024];
+    ssize_t bytesRead = recv(qtSocket, buffer, sizeof(buffer) - 1, 0);
+    if (bytesRead > 0){
+        buffer[byttesRead] = '\0';
+        try {
+            nlohmann::json jsonData = nlohmann::json::parse(buffer);
+            std::cout << "Received: " << jsonData.dump(4) << std::endl;
+        } catch (const nlohmann::json::parse_error& e) {
+            std::cerr << "JSON Parse Error: " << e.what() << std::endl;
+        }
+    }
+    else if {bytesRead == 0){
+        std::cout << "Connection closed by server." << std::endl;
+    }
+    else {
+        perror("Receive Error");
     }
 
+    close(qtSocket);
     unlink(SOCKET_PATH);
     return 0;
 
