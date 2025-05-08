@@ -119,12 +119,12 @@ def main():
                         
                         data["readable_time"] = readable_time
                         
-                        socketjson = json.dumps(data) + '\n'
-                        #socketjson = socketjson + '\n'
+                        socketstring = json.dumps(data) + '\n'
+                        #socketstring = socketstring + '\n'
                         
-                        print(socketjson)
+                        print(socketstring)
                         
-                        server.send(socketjson)
+                        connection.send(socketstring.encode('utf-8'))
 
                     except json.JSONDecodeError:
                         print("Invalid JSON:", line)

@@ -83,7 +83,7 @@ def main():
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
                             if field != "timestamp" and field != "flag":
-                                point = point.field(field, float(value))
+                                point = point.field(field, float(round(value, 3)))
                                 
                             #elif field == "flag":
                                 #point = point.field(field, str(value))
