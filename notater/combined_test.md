@@ -48,3 +48,9 @@ i2c feil igjen
 
 implementert riktig med mutex. Discovery: Wire bruker i2c også
 ![[combined_test_pressure_implemented_correctly.png]]
+
+may 8:
+brew trigger live test. works. could be improved with timing tasks. maybe seperating out the watt meters in different tasks, give priority to brew trigger wattmeter.
+observation: timing skips a beat, should look into the rtc task
+
+![[combined_test_live_trigger_test.png]]

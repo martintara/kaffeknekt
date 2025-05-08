@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3f31be9f66341e8f",
+        "id": "fe5baadf7309b99b",
         "type": "tabs",
         "children": [
           {
-            "id": "06223a7dbbce4731",
+            "id": "1f1ebb24da60b37c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "combined_test.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "combined_test"
             }
           }
         ]
@@ -163,8 +167,10 @@
   },
   "active": "d976199049c7dadc",
   "lastOpenFiles": [
-    "screenshots/combined_test_pressure_implemented_correctly.png",
+    "screenshots/combined_test_live_trigger_test.png",
     "combined_test.md",
+    "bluetooth_test.md",
+    "screenshots/combined_test_pressure_implemented_correctly.png",
     "screenshots/combined_test_pressure_i2c_fault.png",
     "screenshots/combined_test_pressure_static.png",
     "screenshots/combined_test_temp_implemented.png",
@@ -174,12 +180,10 @@
     "screenshots/combined_test_assert.png",
     "screenshots/combined_test_acpower_static.png",
     "temp_test.md",
-    "screenshots/combined_test_sda_konflikt.png",
     "rtc_interface_test.md",
     "rtc_test.md",
     "gpt_example.md",
     "random_generator.md",
-    "bluetooth_test.md",
     "mqtt_test.md",
     "trykk_test.md",
     "wifi-instructions.md",

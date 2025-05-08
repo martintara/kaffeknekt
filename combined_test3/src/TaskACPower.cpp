@@ -90,9 +90,10 @@ void TaskACPower(void *pvParameters) {
     // }
 
     current = readACCurrentValue(1);
-    Serial.println(current);
-    Serial.println("ads1 " + String(current));
-    if(current >= 0.2){
+    //Serial.println(current);
+    //Serial.println("ads1 " + String(current));
+
+    if(current > 0.06){
       sharedMeasurement.flag = 1;
     } else {
       sharedMeasurement.flag = 0;
