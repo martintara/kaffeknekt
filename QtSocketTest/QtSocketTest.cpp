@@ -3,7 +3,6 @@
 #include <sys/un.h>
 #include <unistd.h>
 #include <cstring>
-#include <string>
 
 #define SOCKET_PATH "tmp/socket"
 
