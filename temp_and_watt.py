@@ -24,7 +24,10 @@ def main():
     clk = 0 #counter to add milliseconds to every other datawrite to avoid duplicate timestamps
     session = 1
 
+    #Define socket path
     path = '/tmp/socket'
+
+    #Declare socket 
     client = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) 
     
     try:
@@ -97,6 +100,7 @@ def main():
                             #.field("readable_time", readable_time) \
                             #.time(data["timestamp_ns"]) 
 
+                        #Printing point to console to compare with json string
                         print(point)
                         API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
                         print("Data written to Influx")
