@@ -10,7 +10,7 @@
 #include "TaskCalculateTime.h"
 #include "TaskShared.h"
 #include "DFRobot_DS323X.h"
-#include "I2CLock.h"
+//#include "I2CLock.h"
 
 extern SemaphoreHandle_t i2cMutex; /// External I2C mutex shared across tasks.
 extern DFRobot_DS323X rtc; /// External real-time clock (RTC) object.

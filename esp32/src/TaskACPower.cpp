@@ -11,7 +11,7 @@
 #include <Wire.h>
 #include "TaskShared.h"
 #include "TaskACPower.h"
-#include "I2CLock.h"
+//#include "I2CLock.h"
 
 // External shared variables
 extern Measurement sharedMeasurement;
