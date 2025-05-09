@@ -2,7 +2,7 @@
  * @file TaskCalculateTime.cpp
  * @brief Task that maintains a high-precision timestamp using an RTC and system timer.
  *
- * The RTC (DS323X) is queried once at boot to get the wall-clock time,
+ * The RTC (DS323X) is queried once at boot to get the current time,
  * and then `millis()` is used to track elapsed time for sub-second resolution.
  * The time is re-synchronized with the RTC every 3 hours to avoid drift.
  */
@@ -10,7 +10,6 @@
 #include "TaskCalculateTime.h"
 #include "TaskShared.h"
 #include "DFRobot_DS323X.h"
-//#include "I2CLock.h"
 
 extern SemaphoreHandle_t i2cMutex; /// External I2C mutex shared across tasks.
 extern DFRobot_DS323X rtc; /// External real-time clock (RTC) object.
