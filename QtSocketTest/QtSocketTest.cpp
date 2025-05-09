@@ -17,17 +17,15 @@ int main(){
     if (qtSocket < 0){
         perror("Socket Error");
         std::cout << "Socket";
-        status = false;
         return 1;
     }
 
     addr.sun_family = AF_UNIX;
     std::strcpy(addr.sun_path, SOCKET_PATH);
-    if (connect(qtSocket,(struct sockaddr*)&addr, sizeof(addr) - 1) == -1){
+    if (connect(qtSocket,(struct sockaddr*)&addr, sizeof(addr)) == -1){
         perror("Connection Error");
         std::cout << "Connection";
         close(qtSocket);
-        status = false;
         return 1;
     }
 
@@ -51,6 +49,7 @@ int main(){
             }   catch (const std::exception& e) {
                 std::cerr << "Error parsing JSON: " << e.what() << std::endl;
                 close(qtSocket);
+                return 1;
             }
         
         }

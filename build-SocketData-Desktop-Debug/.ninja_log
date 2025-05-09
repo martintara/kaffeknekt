@@ -1,0 +1,8 @@
+# ninja log v5
+2	69	1746781618799480061	SocketData_autogen/timestamp	c7e2010a0fe50c20
+2	69	1746781618799480061	SocketData_autogen/mocs_compilation.cpp	c7e2010a0fe50c20
+2	69	1746781618799480061	/home/kaffeknekt/kaffeknekt/build-SocketData-Desktop-Debug/SocketData_autogen/timestamp	c7e2010a0fe50c20
+2	69	1746781618799480061	/home/kaffeknekt/kaffeknekt/build-SocketData-Desktop-Debug/SocketData_autogen/mocs_compilation.cpp	c7e2010a0fe50c20
+69	102	1746781618843480061	CMakeFiles/SocketData.dir/SocketData_autogen/mocs_compilation.cpp.o	96bf518d74e6d203
+70	3961	1746781622687480059	CMakeFiles/SocketData.dir/main.cpp.o	5c145dff17c41baa
+3961	4204	1746781622947480059	SocketData	3115f604a447d956
