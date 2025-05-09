@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d6c231d970050c2ab81b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SocketData",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SocketData::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SocketData-Debug-9709b7dbdca945ff93f1.json",
+					"name" : "SocketData",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SocketData_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SocketData_autogen-Debug-c3e9708255dd0473bd3d.json",
+					"name" : "SocketData_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SocketData_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SocketData_autogen_timestamp_deps-Debug-1654f89d40ca40f449a3.json",
+					"name" : "SocketData_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kaffeknekt/kaffeknekt/build-SocketData-Desktop-Debug",
+		"source" : "/home/kaffeknekt/kaffeknekt/SocketData"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

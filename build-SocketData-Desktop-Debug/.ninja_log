@@ -6,3 +6,10 @@
 69	102	1746781618843480061	CMakeFiles/SocketData.dir/SocketData_autogen/mocs_compilation.cpp.o	96bf518d74e6d203
 70	3961	1746781622687480059	CMakeFiles/SocketData.dir/main.cpp.o	5c145dff17c41baa
 3961	4204	1746781622947480059	SocketData	3115f604a447d956
+1	31	1746783102791479177	SocketData_autogen/timestamp	c7e2010a0fe50c20
+1	31	1746783102791479177	SocketData_autogen/mocs_compilation.cpp	c7e2010a0fe50c20
+1	31	1746783102791479177	/home/kaffeknekt/kaffeknekt/build-SocketData-Desktop-Debug/SocketData_autogen/timestamp	c7e2010a0fe50c20
+1	31	1746783102791479177	/home/kaffeknekt/kaffeknekt/build-SocketData-Desktop-Debug/SocketData_autogen/mocs_compilation.cpp	c7e2010a0fe50c20
+32	58	1746783102815479177	CMakeFiles/SocketData.dir/SocketData_autogen/mocs_compilation.cpp.o	96bf518d74e6d203
+32	3971	1746783106711479174	CMakeFiles/SocketData.dir/main.cpp.o	5c145dff17c41baa
+3971	4192	1746783106947479174	SocketData	3115f604a447d956
