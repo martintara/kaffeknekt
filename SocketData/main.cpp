@@ -1,4 +1,5 @@
 #include <QCoreApplication>
+#include <QDebug>
 #include <iostream>
 #include <sys/socket.h>
 #include <sys/un.h>
@@ -40,13 +41,16 @@ int main(){
         size_t pos;
         while ((pos = rest.find('\n')) != std::string::npos) {
             std::string data = rest.substr(0, pos);
-
-
-
             rest.erase(0, pos + 1);
             try {
                 nlohmann::json jsonData = nlohmann::json::parse(data);
-                std::cout << "Received Data: " << jsonData.dump(4) << std::endl;
+
+                std::string flag = jsonData["flag"];
+                float pressure = jsonData["pressure"];
+                float temperature = jsonData["temperature"];
+            //NB:
+                //soki: når den er 1 skal jeg smelle dataen inn i dialogen -G_D -> koble det opp!!!!
+                std::cout << "Received Data: " << jsonData.dump(4) << std::endl; //fjernes etterhverrtt
             }   catch (const std::exception& e) {
                 std::cerr << "Error parsing JSON: " << e.what() << std::endl;
                 close(qtSocket);

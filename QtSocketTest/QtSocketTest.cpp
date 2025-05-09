@@ -39,10 +39,8 @@ int main(){
         size_t pos;
         while ((pos = rest.find('\n')) != std::string::npos) {
             std::string data = rest.substr(0, pos);
-
-            
-
             rest.erase(0, pos + 1);
+            std::cout << data;
             try { 
                 nlohmann::json jsonData = nlohmann::json::parse(data);
                 std::cout << "Received Data: " << jsonData.dump(4) << std::endl;
