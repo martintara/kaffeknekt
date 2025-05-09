@@ -1,6 +1,6 @@
 /**
  * @file TaskTemperature.cpp
- * @brief FreeRTOS task that reads data from a MAX31865 temperature sensor
+ * @brief Task that reads data from a MAX31865 RTD
  *        and updates the shared measurement structure.
  */
 
@@ -17,16 +17,16 @@ extern Measurement sharedMeasurement;
 #define MAX31865_DO_PIN    19     /// MISO pin
 #define MAX31865_CLK_PIN   18     /// SCK pin
 
-/// Use software SPI: CS, DI, DO, CLK
+/// Creation of MAX31865 object.
 Adafruit_MAX31865 thermo = Adafruit_MAX31865(MAX31865_CS_PIN, MAX31865_DI_PIN, MAX31865_DO_PIN, MAX31865_CLK_PIN);
 
-/// The value of the Rref resistor. Use 430.0 for PT100 and 4300.0 for PT1000
+/// The value of the Rref resistor. Use 430.0 for PT100 and 4300.0 for PT1000 (From datasheet)
 #define RREF      430.0
 /// The 'nominal' 0-degrees-C resistance of the sensor
 #define RNOMINAL  100.0
 
 /**
- * @brief FreeRTOS task to read temperature from the MAX31865 sensor.
+ * @brief Task that reads temperature from the MAX31865 RTD.
  *
  * Periodically reads the RTD value, computes the temperature, and stores
  * it in a shared structure.
@@ -37,7 +37,7 @@ Adafruit_MAX31865 thermo = Adafruit_MAX31865(MAX31865_CS_PIN, MAX31865_DI_PIN, M
 void TaskTemperature(void *pvParameters) {
   (void)pvParameters;
   
-  /// Initial delay to allow other initializations to complete
+  /// Initial delay to allow system to stabelize.
   vTaskDelay(2000 / portTICK_PERIOD_MS);
   
   Serial.println("Temperature sensor task starting...");
@@ -54,7 +54,7 @@ void TaskTemperature(void *pvParameters) {
   Serial.println(rtd_initial);
 
   if (rtd_initial == 0) {
-    Serial.println("WARNING: Temperature sensor not responding, check connections");
+    Serial.println("WARNING: Temperature sensor not responding");
   }
   
   /// Task loop
@@ -62,23 +62,21 @@ void TaskTemperature(void *pvParameters) {
     /// Read raw RTD value
     uint16_t rtd = thermo.readRTD();
 
-    float temperature = 22.0; /// Default value
+    float temperature = 0.0; /// Default value
     
     /// Only process if we got a valid reading
     if (rtd > 0) {
       /// Calculate temperature using the library function
       temperature = thermo.temperature(RNOMINAL, RREF) - 7.0;
-      
     
       float ratio = rtd;
       ratio /= 32768;
       float resistance = RREF * ratio;
-
       
       /// Check for out-of-range values
       if (temperature < -50 || temperature > 200) {
         Serial.println("Temperature out of reasonable range, using default");
-        temperature = 22.0;
+        temperature = 0.0;
       }
     } else {
       Serial.println("Invalid RTD reading, using default temperature");
@@ -98,7 +96,7 @@ void TaskTemperature(void *pvParameters) {
       vTaskDelay(100 / portTICK_PERIOD_MS);
     }
     
-      sharedMeasurement.temperature = temperature;
+    sharedMeasurement.temperature = temperature;
 
     vTaskDelay(2000 / portTICK_PERIOD_MS);
   }

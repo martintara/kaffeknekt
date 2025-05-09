@@ -73,18 +73,7 @@ float readACCurrentValue(int pinNumber) {
     currentValue = currentValue * CALIBRATION_FACTOR;
     
     return currentValue;
-  }
-  
-
-// slettes ? /**
-//  * @brief Calculates power in watts from current using a fixed voltage reference.
-//  *
-//  * @param current Current in amperes.
-//  * @return Power in watts.
-//  */
-// float calculatePower(float current) {
-//   return VOLTAGE_REFERENCE * current;
-// }
+}
 
 /**
  * @brief Task that periodically reads AC current and updates power measurements.
@@ -111,7 +100,7 @@ void TaskACPower(void *pvParameters) {
 
     current = readACCurrentValue(1);
 
-    /// This checks if there is a current running to the solinoid, acting as a trigger noticing when we are brewing.
+    /// This checks if there is a current flowing to the solenoid, indicating if the machine is brewing or not.
     if(current > 0.06){
       sharedMeasurement.flag = 1;
     } else {

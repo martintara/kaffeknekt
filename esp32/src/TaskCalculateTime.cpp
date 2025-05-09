@@ -1,9 +1,9 @@
 /**
  * @file TaskCalculateTime.cpp
- * @brief Task that maintains a high-precision timestamp using an RTC and system timer.
+ * @brief Task that maintains a high-precision timestamp using DFRobot_DS323X RTC module and system timer.
  *
- * The RTC (DS323X) is queried once at boot to get the current time,
- * and then `millis()` is used to track elapsed time for sub-second resolution.
+ * The RTC is queried once at boot to get the current time,
+ * and then millis() is used to track elapsed time for sub-second resolution.
  * The time is re-synchronized with the RTC every 3 hours to avoid drift.
  */
 
@@ -17,10 +17,10 @@ extern Measurement sharedMeasurement; /// Shared measurement structure updated w
 
 
 /**
- * @brief FreeRTOS task that calculates and updates a high-resolution timestamp.
+ * @brief Task that calculates and updates a high-resolution timestamp.
  *
- * This task initially syncs with the DS323X RTC to obtain the wall time, then uses
- * `millis()` to increment the time with millisecond resolution. Every 3 hours,
+ * This task initially syncs with the RTC module to obtain the current time, then uses
+ * millis() to increment the time with millisecond resolution. Every 3 hours,
  * it re-syncs with the RTC to correct any drift.
  *
  * @param pvParameters Unused task parameter (can be `NULL`).
@@ -39,7 +39,7 @@ void TaskCalculateTime(void *pvParameters) {
    * @brief Synchronizes the base time with the RTC.
    *
    * This internal helper (lambda) reads the current time from the RTC,
-   * converts it to Unix time, and stores the current `millis()` value
+   * converts it to Unix time (standard timestamp format used in influx DB), and stores the current millis() value
    * to use as a reference for future calculations.
    */
   auto syncWithRTC = [&]() {
@@ -67,13 +67,13 @@ void TaskCalculateTime(void *pvParameters) {
     }
   };
 
-  // Initial sync
+  /// Initial sync
   syncWithRTC();
 
   while (true) {
     uint64_t now = millis();
 
-    // Re-sync every 3 hours
+    /// Re-sync every 3 hours
     if ((now - last_sync_millis) >= THREE_HOURS_MS) {
       syncWithRTC();
     }
@@ -85,4 +85,3 @@ void TaskCalculateTime(void *pvParameters) {
     vTaskDelay(200 / portTICK_PERIOD_MS);
   }
 }
-
