@@ -54,3 +54,7 @@ brew trigger live test. works. could be improved with timing tasks. maybe sepera
 observation: timing skips a beat, should look into the rtc task
 
 ![[combined_test_live_trigger_test.png]]
+
+May 9
+Temp sensor installed in system. Normal operating conditions:
+![[combined_test_normal_conditions.png]]

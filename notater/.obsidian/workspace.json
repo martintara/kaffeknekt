@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "566099d10e2fcc84",
+        "id": "28c1b044918b1520",
         "type": "tabs",
         "children": [
           {
-            "id": "faae3e22bb154dce",
+            "id": "22ccef97356da77f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "rtc_test.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "rtc_test"
+              "title": "New tab"
             }
           }
         ]
@@ -165,11 +161,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "faae3e22bb154dce",
+  "active": "d976199049c7dadc",
   "lastOpenFiles": [
+    "combined_test.md",
+    "screenshots/combined_test_normal_conditions.png",
     "rtc_test.md",
     "screenshots/rtc_test_millis.png",
-    "combined_test.md",
     "screenshots/combined_test_live_trigger_test.png",
     "bluetooth_test.md",
     "screenshots/combined_test_pressure_implemented_correctly.png",
@@ -179,7 +176,6 @@
     "screenshots/combined_test_temperature_static.png",
     "screenshots/combined_test_timing_prob.png",
     "Pasted image 20250507082425.png",
-    "screenshots/combined_test_assert.png",
     "temp_test.md",
     "rtc_interface_test.md",
     "gpt_example.md",
