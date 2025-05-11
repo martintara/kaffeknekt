@@ -1,4 +1,6 @@
 #!bin/bash
-#./home/kaffeknekt/kaffeknekt/startupShell.sh
 
-export 
+source /home/kaffeknekt/influx_env/bin/activate
+
+python /home/kaffeknekt/kaffeknekt/temp_and_watt.py
+
