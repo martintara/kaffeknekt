@@ -13,11 +13,22 @@
         <file>../../../../Downloads/thermometer.svg</file>
         <file>../../kaffeknekt_logo.webp</file>
         <file>../../semcon_logo.webp</file>
+        <file>kaffemaskina.webp</file>
+        <file>espresso.jpg</file>
+        <file>espresso1.jpg</file>
+        <file>beans.jpg</file>
+        <file>beans1.png</file>
+        <file>../../../../Downloads/Sequence_Diagram.drawio.png</file>
+        <file>../../../../Downloads/Activity_Diagram.drawio.png</file>
+        <file>../../../../Downloads/Overall_Software_Interface.drawio.png</file>
+        <file>../../../../Downloads/Electrical_Diagram.drawio.png</file>
+        <file>alert-triangle.svg</file>
     </qresource>
     <qresource prefix="/">
         <file>../App_firstDraft/kaffeknekt_logo.png</file>
         <file>../../frame.png</file>
         <file>../../../../tullegraf.png</file>
         <file>../../semcon_logo.webp</file>
+        <file>../../../../Downloads/Activity_Diagram.drawio.svg</file>
     </qresource>
 </RCC>
