@@ -31,14 +31,14 @@ void GraphWidget::fetchAndRedraw() {
     // 1) Fetch
     m_temp     = fetchTemp();
     m_pressure = fetchPressure();
-    m_power    = fetchPower();
+   // m_power    = fetchPower();
 
     // 2) Clear & redraw
     m_scene->clear();
     drawAxes();
     drawSeries(m_temp,     Qt::red,    /*yOffset=*/ 0);
     drawSeries(m_pressure, Qt::blue,   /*yOffset=*/ -50);
-    drawSeries(m_power,    Qt::green,  /*yOffset=*/ -100);
+    //drawSeries(m_power,    Qt::green,  /*yOffset=*/ -100);
 }
 
 // ——— Drawing helpers ———
@@ -74,7 +74,33 @@ QVector<DataPoint> GraphWidget::fetchPressure() {
     QVector<DataPoint> v;
     return v;
 }
+
+/*
 QVector<DataPoint> GraphWidget::fetchPower() {
     QVector<DataPoint> v;
     return v;
+}*/
+
+
+//de nye endringeen siden jeg fhjerna de fra grapgdiaialog og slkengte de direkte i graphview ++ forklar mer senere :)
+
+// ─── NEW PUBLIC API ───
+
+// Legger til ett data‐punkt i m_pressure
+void GraphWidget::appendPressurePoint(const DataPoint& p) {
+    m_pressure.push_back(p);
+}
+
+// Legger til ett data‐punkt i m_temp
+void GraphWidget::appendTempPoint(const DataPoint& t) {
+    m_temp.push_back(t);
+}
+
+// Tegner alt på nytt (clear + aksser + alle kurver)
+void GraphWidget::refresh() {
+    if (scene()) scene()->clear();
+    drawAxes();
+    drawSeries(m_temp,     Qt::blue,  /*yOffset=*/0);
+    drawSeries(m_pressure, Qt::red,   /*yOffset=*/0);
+    //drawSeries(m_power,    Qt::green, /*yOffset=*/-100); // om du fortsatt vil ha power‐kurven
 }

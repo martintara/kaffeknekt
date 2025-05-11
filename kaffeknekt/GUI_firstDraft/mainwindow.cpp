@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 // 1) Create the dialog but don’t show yet:
-    m_graphDialog = new GraphDialog(this);
+    m_graphDialog = new graphDialog(this);
 
 // 2) Start your WebSocket client thread:
     m_ws = new WebSocketClient(this);

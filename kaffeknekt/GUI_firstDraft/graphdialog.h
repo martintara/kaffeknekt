@@ -4,19 +4,26 @@
 #include <QDialog>
 #include "graphview.h"
 
-namespace Ui { class GraphDialog; }
-class GraphDialog : public QDialog {
+#include "websocketclient.h"
+
+namespace Ui { class graphDialog; }
+class graphDialog : public QDialog {
     Q_OBJECT
 public:
-    explicit GraphDialog(QWidget *parent = nullptr);
-    ~GraphDialog();
+    explicit graphDialog(QWidget *parent = nullptr);
+    ~graphDialog();
 
 public slots:
+
     void appendData(double pressure, double temperature);
+    void onDataReceived(double pressure,
+                            double temperature,
+                            const QString& flag);
 
 private:
-    Ui::GraphDialog *ui;
+    Ui::graphDialog *ui;
     GraphWidget     *m_graph;
+    WebSocketClient *m_wsClient;
 };
 
 #endif // GRAPHDIALOG_H

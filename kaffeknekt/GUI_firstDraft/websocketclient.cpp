@@ -6,6 +6,10 @@
 #include <nlohmann/json.hpp>
 #include <QDebug>
 
+#include <cstring>  // for std::strcpy()
+
+#include <QCoreApplication> // for Qt’s event loop + qDebug()
+
 #define SOCKET_PATH "/tmp/socket"
 
 WebSocketClient::WebSocketClient(QObject* parent)

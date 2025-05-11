@@ -1,11 +1,23 @@
 #include "graphdialog.h"
 #include "ui_graphdialog.h"
 
-GraphDialog::GraphDialog(QWidget *parent)
+#include <QDateTime>
+
+graphDialog::graphDialog(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::GraphDialog)
+    , ui(new Ui::graphDialog)
 {
     ui->setupUi(this);
+
+
+        // --- Opprett og start WebSocketClient ---
+    m_wsClient = new WebSocketClient(this);
+    connect(m_wsClient, &WebSocketClient::dataReceived,
+                this,       &graphDialog::onDataReceived);
+    m_wsClient->start();
+
+
+
     setWindowModality(Qt::NonModal);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
@@ -18,20 +30,36 @@ GraphDialog::GraphDialog(QWidget *parent)
     // We will call m_graph->start() only after we hook up data
 }
 
-GraphDialog::~GraphDialog() {
+graphDialog::~graphDialog() {
     delete ui;
 }
 
-void GraphDialog::appendData(double pressure, double temperature) {
+void graphDialog::onDataReceived(double pressure,
+                                 double temperature,
+                                 const QString& flag)
+{
+    qDebug() << "[WebSocket flag]" << flag;
+    qreal t = QDateTime::currentMSecsSinceEpoch() / 1000.0;
+    m_graph->appendPressurePoint({ t, pressure });
+    m_graph->appendTempPoint    ({ t, temperature });
+    m_graph->refresh();
+}
+
+void graphDialog::appendData(double pressure, double temperature) {
     // Each call, push new points into GraphWidget’s internal vectors
     // We treat timestamp as QDateTime::currentMSecsSinceEpoch() / 1000.0
     qreal t = QDateTime::currentMSecsSinceEpoch() / 1000.0;
-    m_graph->m_pressure.push_back({t, pressure});
+   /* m_graph->m_pressure.push_back({t, pressure});
     m_graph->m_temp.push_back({t, temperature});
-
+    */
+    m_graph->appendPressurePoint({ t, pressure });
+    m_graph->appendTempPoint({ t, temperature });
     // then clear and redraw immediately:
-    m_graph->scene()->clear();
-    m_graph->drawAxes();
-    m_graph->drawSeries(m_graph->m_temp,     Qt::blue,  /*yOffset=*/0);
-    m_graph->drawSeries(m_graph->m_pressure, Qt::red,   /*yOffset=*/0);
+
+
+    //m_graph->scene()->clear();
+    //m_graph->drawAxes();
+    //m_graph->drawSeries(m_graph->m_temp,     Qt::blue,  /*yOffset=*/0);
+    //m_graph->drawSeries(m_graph->m_pressure, Qt::red,   /*yOffset=*/0);
+
 }

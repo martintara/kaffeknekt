@@ -64,4 +64,5 @@ RESOURCES += \
 
 DISTFILES += \
     ../../../../kaffemaskina.webp \
-    ../App_firstDraft/tullegraf.png
+    ../App_firstDraft/tullegraf.png \
+    socketdata.pri

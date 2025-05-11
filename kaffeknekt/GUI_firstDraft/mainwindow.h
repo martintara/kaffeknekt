@@ -80,7 +80,7 @@ private:
     bool sideMenuVisible;
 
     WebSocketClient *m_ws;
-    GraphDialog     *m_graphDialog;
+    graphDialog     *m_graphDialog;
 };
 
 #endif // MAINWINDOW_H
