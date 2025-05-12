@@ -7,6 +7,8 @@
 #include "optionsdialog.h"
 #include "coffeeinstructionsdialog.h"
 #include "warningdialog.h"
+#include "graphdialog.h"
+//#include "graphview.h"
 
 #include "QDialog"
 #include "QIcon"
@@ -23,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 // 1) Create the dialog but don’t show yet:
     m_graphDialog = new graphDialog(this);
-
+/*
 // 2) Start your WebSocket client thread:
     m_ws = new WebSocketClient(this);
     connect(m_ws, &WebSocketClient::dataReceived,
@@ -35,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
         m_graphDialog->appendData(p, t);
     }
     });
-    m_ws->start();
+    m_ws->start();*/
 
     // --- Test‐knapp for å prøve warning‐dialogen nå ---
     auto *btnTest = new QPushButton(tr("Test Warning"), this);
@@ -61,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-
+/*
     // --- 3) Rad‐strekkfaktorer: hovedinnhold expanderer, bunn er fast ---
     ui->gridLayout->setRowStretch(1, 1);
     ui->gridLayout->setRowStretch(1, 0);
@@ -71,6 +73,7 @@ MainWindow::MainWindow(QWidget *parent)
         QSizePolicy::Expanding,
         QSizePolicy::Expanding
         );
+    */
 
     // --- 2) Kolonne‐strekkfaktorer: kun midtkolonnen (graphFrame) vokser ---
     ui->gridLayout->setColumnStretch(0, 0);

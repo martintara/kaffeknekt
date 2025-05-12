@@ -79,7 +79,7 @@ private:
 
     bool sideMenuVisible;
 
-    WebSocketClient *m_ws;
+    //WebSocketClient *m_ws;
     graphDialog     *m_graphDialog;
 };
 

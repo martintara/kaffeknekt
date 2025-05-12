@@ -5,6 +5,10 @@
 #include <QGraphicsScene>
 #include <QTimer>
 
+#include <QResizeEvent>
+#include <QGraphicsSimpleTextItem>
+
+
 // Simple struct for a time-value sample
 struct DataPoint {
     qreal timestamp;  // seconds since epoch, or relative t=0
@@ -16,6 +20,10 @@ class GraphWidget : public QGraphicsView {
 public:
     explicit GraphWidget(QWidget* parent = nullptr);
     ~GraphWidget();
+    // Legg til:
+    /*
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    setMinimumSize(500, 300);    // juster etter behov*/
 
     // Start the periodic updates
     void start();
@@ -34,6 +42,9 @@ public:
                        qreal yOffset);
 private slots:
     void fetchAndRedraw();
+
+protected:
+    void resizeEvent(QResizeEvent* event) override;
 
 private:
     QGraphicsScene* m_scene;

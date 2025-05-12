@@ -2,6 +2,9 @@
 #define GRAPHDIALOG_H
 
 #include <QDialog>
+
+#include <QSizePolicy>
+
 #include "graphview.h"
 
 #include "websocketclient.h"
