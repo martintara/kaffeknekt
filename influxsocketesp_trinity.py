@@ -31,7 +31,7 @@ def main():
         os.unlink(path)
     
     server = socket.socket(
-        socket.AF_UNIX, #
+        socket.AF_UNIX, #Declares a local 
         socket.SOCK_STREAM
     )
     
