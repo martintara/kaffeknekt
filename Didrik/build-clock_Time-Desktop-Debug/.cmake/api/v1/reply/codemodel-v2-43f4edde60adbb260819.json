@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-097b878c51188f2db19d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "clock_Time",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "clock_Time::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clock_Time-Debug-065cb6b269dafc05f4cf.json",
+					"name" : "clock_Time",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clock_Time_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clock_Time_autogen-Debug-69236d402dffeb22fb12.json",
+					"name" : "clock_Time_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clock_Time_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clock_Time_autogen_timestamp_deps-Debug-5b4a17c5b3e1287215bf.json",
+					"name" : "clock_Time_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug",
+		"source" : "/home/kaffeknekt/kaffeknekt/clock_Time"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
