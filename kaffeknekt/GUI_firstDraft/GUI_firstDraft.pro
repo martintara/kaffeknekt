@@ -60,9 +60,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources.qrc \
-    resources.qrc
+    # resources.qrc
 
 DISTFILES += \
     ../../../../kaffemaskina.webp \
-    ../App_firstDraft/tullegraf.png \
     socketdata.pri

@@ -1,34 +1,22 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>calendar.svg</file>
+        <file>espresso1.jpg</file>
+        <file>espresso.jpg</file>
+        <file>coffeinstructionsdialog.ui</file>
+        <file>coffeeinstructionsdialog.h</file>
+        <file>coffeeinstructionsdialog.cpp</file>
         <file>coffee.svg</file>
-        <file>home.svg</file>
-        <file>info.svg</file>
-        <file>kaffeknekt_logo.png</file>
-        <file>menu.svg</file>
+        <file>calendar.svg</file>
+        <file>beans1.png</file>
+        <file>beans.jpg</file>
+        <file>alert-triangle.svg</file>
         <file>settings.svg</file>
         <file>pie-chart.svg</file>
-        <file>../../../../Downloads/battery-charging(1).svg</file>
-        <file>../../../../Downloads/droplet.svg</file>
-        <file>../../../../Downloads/thermometer.svg</file>
-        <file>../../kaffeknekt_logo.webp</file>
-        <file>../../semcon_logo.webp</file>
+        <file>menu.svg</file>
         <file>kaffemaskina.webp</file>
-        <file>espresso.jpg</file>
-        <file>espresso1.jpg</file>
-        <file>beans.jpg</file>
-        <file>beans1.png</file>
-        <file>../../../../Downloads/Sequence_Diagram.drawio.png</file>
-        <file>../../../../Downloads/Activity_Diagram.drawio.png</file>
-        <file>../../../../Downloads/Overall_Software_Interface.drawio.png</file>
-        <file>../../../../Downloads/Electrical_Diagram.drawio.png</file>
-        <file>alert-triangle.svg</file>
-    </qresource>
-    <qresource prefix="/">
-        <file>../App_firstDraft/kaffeknekt_logo.png</file>
-        <file>../../frame.png</file>
-        <file>../../../../tullegraf.png</file>
-        <file>../../semcon_logo.webp</file>
-        <file>../../../../Downloads/Activity_Diagram.drawio.svg</file>
+        <file>kaffeknekt_logo.png</file>
+        <file>info.svg</file>
+        <file>home.svg</file>
+        <file>SpyBot.png</file>
     </qresource>
 </RCC>

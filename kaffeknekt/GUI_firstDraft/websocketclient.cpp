@@ -22,7 +22,7 @@ void WebSocketClient::run() {
     struct sockaddr_un addr{};
     addr.sun_family = AF_UNIX;
     std::strcpy(addr.sun_path, SOCKET_PATH);
-    if (connect(qtSocket, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
+    if (::connect(qtSocket, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
         close(qtSocket);
         return;
     }
