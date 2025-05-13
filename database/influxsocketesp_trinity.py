@@ -68,10 +68,10 @@ def main():
                         point = Point("Esp32Metrics") \
                         .field("readable_time", readable_time)
 
-                        if data["flag"] == "U":
-                            session = 1
-                        elif data["flag"] == "D":
-                            session = 0
+                        #if data["flag"] == "U":
+                            #session = 1
+                        #elif data["flag"] == "D":
+                            #session = 0
 
                         #Dropped condition to add tags for session activity
                         #if session == 1:
