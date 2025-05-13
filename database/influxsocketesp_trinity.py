@@ -91,10 +91,10 @@ def main():
                         #        point = point.field("flag", str("D"))
 
                         #Another method of filling out flag values with get()
-                        if session == 1:
-                            point = point.field("flag", data.get('flag', 1))
-                        else:
-                            point = point.field("flag", data.get('flag', 0))
+                        #if session == 1:
+                            #point = point.field("flag", data.get('flag', 1))
+                        #else:
+                            #point = point.field("flag", data.get('flag', 0))
 
                         #clock to granulate timestamp
                         if clk == 0:
