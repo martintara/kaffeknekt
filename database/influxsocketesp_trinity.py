@@ -98,10 +98,10 @@ def main():
                             #point = point.field("flag", data.get('flag', 0))
 
                         #clock to granulate timestamp
-                        if clk == 0:
-                            clk = 1
-                        elif clk == 1:
-                             clk = 0
+                        #if clk == 0:
+                            #clk = 1
+                        #elif clk == 1:
+                            #clk = 0
                        
                         #adder dataen for hver verdi i rekken
                         for field, value in data.items():
