@@ -9,7 +9,8 @@
 
 #define SOCKET_PATH "/tmp/socket"
 
-
+/// @brief UNIX domain socket client.
+/// Connects to a UNIX domain socket as a client and receives data. 
 int main(){
     int qtSocket;
     struct sockaddr_un addr;
@@ -48,9 +49,9 @@ int main(){
                 std::string flag = jsonData["flag"];
                 float pressure = jsonData["pressure"];
                 float temperature = jsonData["temperature"];
-            //NB:
-                //soki: når den er 1 skal jeg smelle dataen inn i dialogen -G_D -> koble det opp!!!!
-                std::cout << "Received Data: " << jsonData.dump(4) << std::endl; //fjernes etterhverrtt
+            
+
+                std::cout << "Received Data: " << jsonData.dump(4) << std::endl;
             }   catch (const std::exception& e) {
                 std::cerr << "Error parsing JSON: " << e.what() << std::endl;
                 close(qtSocket);

@@ -1,7 +1,5 @@
 #include "clock_time.h"
 #include <QVBoxLayout>
-#include <QProcess>
-#include <QMessageBox>
 #include <QTimeEdit>
 #include <QPushButton>
 #include <QDebug>
