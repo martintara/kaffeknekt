@@ -8,6 +8,8 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 
+/// @brief 
+/// @param parent 
 clock_time::clock_time(QWidget *parent)
     : QWidget(parent)
 {
@@ -20,6 +22,7 @@ clock_time::clock_time(QWidget *parent)
     connect(setButton, &QPushButton::clicked, this, &clock_time::setTime);
 }
 
+/// @brief 
 void clock_time::setTime(){
     QDateTime dateTime = dateTimeEdit->dateTime();
 
