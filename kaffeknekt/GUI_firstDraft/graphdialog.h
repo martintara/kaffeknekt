@@ -1,3 +1,4 @@
+//graphdialog.h
 #ifndef GRAPHDIALOG_H
 #define GRAPHDIALOG_H
 

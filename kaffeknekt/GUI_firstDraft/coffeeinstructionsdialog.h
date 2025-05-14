@@ -3,13 +3,6 @@
 
 #include <QDialog>
 
-/*
-class CoffeeInstructionsDialog : public QDialog
-{
-public:
-    CoffeeInstructionsDialog();
-};
-*/
 
 
 namespace Ui {

@@ -1,3 +1,4 @@
+//graphview.h
 #ifndef GRAPHWIDGET_H
 #define GRAPHWIDGET_H
 
@@ -20,10 +21,6 @@ class GraphWidget : public QGraphicsView {
 public:
     explicit GraphWidget(QWidget* parent = nullptr);
     ~GraphWidget();
-    // Legg til:
-    /*
-    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setMinimumSize(500, 300);    // juster etter behov*/
 
     // Start the periodic updates
     void start();
@@ -50,17 +47,11 @@ private:
     QGraphicsScene* m_scene;
     QTimer*         m_timer;
 
-    // Your three series of points
-    //QVector<DataPoint> m_temp, m_pressure, m_power;
 
     //2 parametere somm skal vises:
     QVector<DataPoint> m_pressure;
     QVector<DataPoint> m_temp;
-    /*
-    // Helpers
-    void drawAxes();
-    void drawSeries(const QVector<DataPoint>& series, const QColor& color, qreal yOffset);
-*/
+
     // These should call into your existing Influx-HTTP functions:
     QVector<DataPoint> fetchTemp();
     QVector<DataPoint> fetchPressure();

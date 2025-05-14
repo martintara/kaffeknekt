@@ -25,22 +25,14 @@ MainWindow::MainWindow(QWidget *parent)
 
 // 1) Create the dialog but don’t show yet:
     m_graphDialog = new graphDialog(this);
-/*
-// 2) Start your WebSocket client thread:
-    m_ws = new WebSocketClient(this);
-    connect(m_ws, &WebSocketClient::dataReceived,
-        this, [this](double p, double t, const QString& flag){
-    if (flag == "1") {
-        if (!m_graphDialog->isVisible())
-            m_graphDialog->show();
-        // append and redraw:
-        m_graphDialog->appendData(p, t);
-    }
-    });
-    m_ws->start();*/
+
 
     // --- Test‐knapp for å prøve warning‐dialogen nå ---
     auto *btnTest = new QPushButton(tr("Test Warning"), this);
+
+    //ny
+    btnTest->setObjectName("btnTestWarning");
+
     ui->statusbar->addPermanentWidget(btnTest);
     connect(btnTest, &QPushButton::clicked,
             this,   &MainWindow::on_btnTestWarning_clicked);
@@ -63,17 +55,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-/*
-    // --- 3) Rad‐strekkfaktorer: hovedinnhold expanderer, bunn er fast ---
-    ui->gridLayout->setRowStretch(1, 1);
-    ui->gridLayout->setRowStretch(1, 0);
-
-    // 2) Ensure your graphFrame actually does expand:
-    ui->graphFrame->setSizePolicy(
-        QSizePolicy::Expanding,
-        QSizePolicy::Expanding
-        );
-    */
 
     // --- 2) Kolonne‐strekkfaktorer: kun midtkolonnen (graphFrame) vokser ---
     ui->gridLayout->setColumnStretch(0, 0);
@@ -98,15 +79,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    // --- Gjør frame_3 responsiv med tekst og knapp ---
-    // (btw!!frame_3 inneholder textEdit_2 og btnHere)
-    // Make sure frame_3 itself can grow when the window grows: altså når jeg "ekspanderer vinduet"
-    ui->frame_3->setSizePolicy(
-        QSizePolicy::Expanding,
-        QSizePolicy::Expanding
-        );
-
     // Oppretter et fresh QVBoxLayout for frame_3:
+
     auto *f3lay = new QVBoxLayout(ui->frame_3);
     f3lay->setContentsMargins(10,10,10,10);
     f3lay->setSpacing(10);
@@ -208,7 +182,7 @@ void MainWindow::on_btnSettings_clicked()
 void MainWindow::on_btnInfo_clicked()
 {
     // ui->statusbar->showMessage("Info button clicked!");
-   //ui->infoFrame->setVisible(true);
+
     //TOGGLE SYNLIGHet:
     bool visible = ui->frame_3->isVisible();
     ui->frame_3->setVisible(!visible);

@@ -43,28 +43,6 @@ void WebSocketClient::run() {
     char buffer[1024];
     std::string rest;
 
-    /*
-    while (true) {
-        ssize_t bytesRead = recv(qtSocket, buffer, sizeof(buffer), 0);
-        if (bytesRead <= 0)
-            break;
-            qDebug() << "WebSocketClient: recv() returned" << rec << "; exiting loop";
-            break;
-        }
-        rest.append(buffer, rec);
-        size_t pos;
-        while ((pos = rest.find('\n')) != std::string::npos) {
-            auto line = rest.substr(0, pos);
-            rest.erase(0, pos+1);
-            try {
-                auto jsonData = nlohmann::json::parse(line);
-                QString flag = QString::fromStdString(jsonData["flag"]);
-                double pressure    = jsonData["pressure"];
-                double temperature = jsonData["temperature"];
-                emit dataReceived(pressure, temperature, flag);*/
-            //} catch (...) { /* ignore parse errors */ }
-        //}
-    //}
     while (true) {
         // Read into buffer and store the number of bytes read
         ssize_t bytesRead = ::recv(qtSocket, buffer, sizeof(buffer), 0);
@@ -85,6 +63,12 @@ void WebSocketClient::run() {
             try {
                 auto jsonData = nlohmann::json::parse(line);
                 QString flag       = QString::fromStdString(jsonData["flag"]);
+
+                    /*
+                int flagInt = jsonData["flag"].get<int>();
+                QString flag = QString::number(flagInt);*/
+
+
                 double pressure    = jsonData["pressure"];
                 double temperature = jsonData["temperature"];
                 emit dataReceived(pressure, temperature, flag);
