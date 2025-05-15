@@ -20,14 +20,14 @@ int createSocket(){
     qtSocket = socket(AF_UNIX, SOCK_STREAM, 0);
     if (qtSocket < 0){
         perror("Socket Error");
-        return 1;
+        return -1;
     }
     addr.sun_family = AF_UNIX;
     std::strcpy(addr.sun_path, SOCKET_PATH);
     if (connect(qtSocket,(struct sockaddr*)&addr, sizeof(addr)) == -1){
         perror("Connection Error");
         close(qtSocket);
-        return 1;
+        return -1;
     }
     return qtSocket;
 }
@@ -68,6 +68,7 @@ void getData(int socket){
 ///Connects to a UNIX domain socket using @ref createSocket() and receives data using @ref getData(). 
 int main(){
     int newSocket = createSocket();
+    if (newSocket = -1) return 1;
     getData(newSocket);
     close(newSocket);
     return 0;
