@@ -108,12 +108,11 @@ $(function(){initNavTree('main_8cpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QCoreApplication&gt;</code><br />
-<code>#include &lt;QDebug&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;sys/socket.h&gt;</code><br />
 <code>#include &lt;sys/un.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;nlohmann/json.hpp&gt;</code><br />
 </div><table class="memberdecls">
@@ -125,12 +124,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2dc4d53788639dd67593854a8701ea7d" id="r_a2dc4d53788639dd67593854a8701ea7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dc4d53788639dd67593854a8701ea7d">createSocket</a> ()</td></tr>
-<tr class="memdesc:a2dc4d53788639dd67593854a8701ea7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a UNXI socket and connects it to the data handling server.  <br /></td></tr>
-<tr class="separator:a2dc4d53788639dd67593854a8701ea7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63e4aea9eb9a73812933b509b20b82e5" id="r_a63e4aea9eb9a73812933b509b20b82e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63e4aea9eb9a73812933b509b20b82e5">getData</a> ()</td></tr>
-<tr class="memdesc:a63e4aea9eb9a73812933b509b20b82e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the connected socket.  <br /></td></tr>
-<tr class="separator:a63e4aea9eb9a73812933b509b20b82e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ece610682861d1713357ebe3d61997f" id="r_a5ece610682861d1713357ebe3d61997f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ece610682861d1713357ebe3d61997f">createSocket</a> ()</td></tr>
+<tr class="memdesc:a5ece610682861d1713357ebe3d61997f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a UNXI socket and connects it to the data handling server.  <br /></td></tr>
+<tr class="separator:a5ece610682861d1713357ebe3d61997f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a4a1fa435c74cd572b34425ddc3f88" id="r_a86a4a1fa435c74cd572b34425ddc3f88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86a4a1fa435c74cd572b34425ddc3f88">getData</a> (int socket)</td></tr>
+<tr class="memdesc:a86a4a1fa435c74cd572b34425ddc3f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the connected socket.  <br /></td></tr>
+<tr class="separator:a86a4a1fa435c74cd572b34425ddc3f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">UNIX domain socket client.  <br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,14 +153,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2dc4d53788639dd67593854a8701ea7d" name="a2dc4d53788639dd67593854a8701ea7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dc4d53788639dd67593854a8701ea7d">&#9670;&#160;</a></span>createSocket()</h2>
+<a id="a5ece610682861d1713357ebe3d61997f" name="a5ece610682861d1713357ebe3d61997f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ece610682861d1713357ebe3d61997f">&#9670;&#160;</a></span>createSocket()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void createSocket </td>
+          <td class="memname">int createSocket </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -174,8 +173,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a63e4aea9eb9a73812933b509b20b82e5" name="a63e4aea9eb9a73812933b509b20b82e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63e4aea9eb9a73812933b509b20b82e5">&#9670;&#160;</a></span>getData()</h2>
+<a id="a86a4a1fa435c74cd572b34425ddc3f88" name="a86a4a1fa435c74cd572b34425ddc3f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86a4a1fa435c74cd572b34425ddc3f88">&#9670;&#160;</a></span>getData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +182,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void getData </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -210,7 +209,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>UNIX domain socket client. </p>
-<p>Connects to a UNIX domain socket using <a class="el" href="#a2dc4d53788639dd67593854a8701ea7d">createSocket()</a> and receives data using <a class="el" href="#a63e4aea9eb9a73812933b509b20b82e5">getData()</a>. </p>
+<p>Connects to a UNIX domain socket using <a class="el" href="#a5ece610682861d1713357ebe3d61997f">createSocket()</a> and receives data using <a class="el" href="#a86a4a1fa435c74cd572b34425ddc3f88">getData()</a>. </p>
 
 </div>
 </div>

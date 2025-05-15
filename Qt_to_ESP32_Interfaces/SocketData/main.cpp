@@ -68,7 +68,7 @@ void getData(int socket){
 ///Connects to a UNIX domain socket using @ref createSocket() and receives data using @ref getData(). 
 int main(){
     int newSocket = createSocket();
-    if (newSocket = -1) return 1;
+    if (newSocket == -1) return 1;
     getData(newSocket);
     close(newSocket);
     return 0;
