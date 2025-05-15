@@ -5,6 +5,9 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QGraphicsView>
+#include <QScreen>
+#include <QGuiApplication>
+
 
 
 

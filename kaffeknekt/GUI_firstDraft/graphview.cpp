@@ -15,6 +15,7 @@ GraphWidget::GraphWidget(QWidget* parent)
     setRenderHint(QPainter::Antialiasing);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy  (Qt::ScrollBarAlwaysOff);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     m_timer->setInterval(25*1000);
     connect(m_timer, &QTimer::timeout, this, &GraphWidget::fetchAndRedraw);
@@ -49,16 +50,48 @@ void GraphWidget::drawAxes() {
 
     QPen pen(Qt::black); pen.setWidth(2);
     auto r = m_scene->sceneRect();
-    qreal w = r.width(), h = r.height(), m = 20;
+    qreal w = r.width(), h = r.height(),margin = 30;
 
     // X‐axis at the bottom
     m_scene->addLine(0,    0, w,    0, pen);
     // Y‐axis on the left
     m_scene->addLine(0,    0, 0,    h, pen);
+   QPen axisPen(Qt::black,2);
+
+   // X-axis (horizontal) from left to right at bottom
+   m_scene->addLine(0, 0, w, 0, axisPen);
+
+   // Y-axis (vertical) from bottom to top
+   m_scene->addLine(0, 0, 0, h, axisPen);
+
+   // Helper lambda to make text labels that are not affected by flipping
+   auto makeLabel = [&](const QString& text) {
+       QGraphicsSimpleTextItem* label = m_scene->addSimpleText(text);
+       label->setFlag(QGraphicsItem::ItemIgnoresTransformations);  // Important for readable text
+       return label;
+   };
+
+   // Add X-axis label (centered below axis)
+   QGraphicsSimpleTextItem* xLabel = makeLabel("Time (s)");
+   QRectF xLabelRect = xLabel->boundingRect();
+    xLabel->setPos((w - xLabelRect.width()) / 2, 18);
+
+   // Y-axis label (vertical text, rotated)
+   QGraphicsSimpleTextItem* yLabel = makeLabel("Pressure (bar)");
+   yLabel->setRotation(90);  // rotate vertical
+   QRectF yLabelRect = yLabel->boundingRect();
+   qDebug() << "pressure place" << yLabelRect.width()/2 -10 << w/2 -10;
+   yLabel->setPos(yLabelRect.width()/2 -10 , w/2 -10);  // left of Y-axis
+
+   // Optional: add right Y-axis label for something else (e.g., temperature)
+   QGraphicsSimpleTextItem* rightYLabel = makeLabel("Temperature (°C)");
+   rightYLabel->setRotation(90);
+   QRectF ryLabelRect = rightYLabel->boundingRect();
+   qDebug() << "temp place" << yLabelRect.width()/2<< w/2;
+   rightYLabel->setPos(yLabelRect.width()/2, w/2 );  // right of graph
 
 
-
-
+/*
     // Labels must ignore the flip transform:
     auto makeLabel = [&](const QString &text){
         auto *t = m_scene->addSimpleText(text);
@@ -85,7 +118,7 @@ void GraphWidget::drawAxes() {
       t->setRotation(90);
       auto br = t->boundingRect();
       t->setPos(w + m - br.width(), (h - br.width())/2);
-    }
+    }*/
 
 }
 
@@ -159,6 +192,7 @@ void GraphWidget::resizeEvent(QResizeEvent* event) {
         // 4) make the scene cover exactly the widget’s area, now in positive coords
         QSize s = event->size();
         m_scene->setSceneRect(0, 0, s.width(), s.height());
+        qDebug() << "Current transform:" << transform();
 
         qDebug() << "GraphWidget::resizeEvent → sceneRect =" << m_scene->sceneRect();
 }

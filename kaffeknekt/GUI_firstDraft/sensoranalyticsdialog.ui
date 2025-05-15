@@ -33,7 +33,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>:/icons/Downloads/thermometer.svg</normaloff>:/icons/Downloads/thermometer.svg</iconset>
+     <normaloff>thermometer.svg</normaloff>thermometer.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -62,7 +62,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>:/icons/Downloads/droplet.svg</normaloff>:/icons/Downloads/droplet.svg</iconset>
+     <normaloff>droplet.svg</normaloff>droplet.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -91,7 +91,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>:/icons/Downloads/battery-charging(1).svg</normaloff>:/icons/Downloads/battery-charging(1).svg</iconset>
+     <normaloff>battery-charging.svg</normaloff>battery-charging.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
