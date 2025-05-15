@@ -1,9 +1,10 @@
-#include <QCoreApplication>
-#include <QDebug>
+//#include <QCoreApplication>
+//#include <QDebug>
 #include <iostream>
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <unistd.h>
+#include <cstring>
 #include <string>
 #include <nlohmann/json.hpp>
 
@@ -13,7 +14,7 @@
 
 ///@brief Creates a UNXI socket and connects it to the data handling server.
 ///Creates a UNIX domain socket, connects to the data handling server, and handles errors.
-void createSocket(){
+int createSocket(){
     int qtSocket;
     struct sockaddr_un addr;
     qtSocket = socket(AF_UNIX, SOCK_STREAM, 0);
@@ -28,15 +29,17 @@ void createSocket(){
         close(qtSocket);
         return 1;
     }
+    return qtSocket;
 }
 
 ///@brief Reads data from the connected socket.
 ///Reads data from the connected socket, adds the specified values to variables. 
-void getData(){
+void getData(int socket){
     char buffer[1024];
     std::string rest;
-    while(true){
-        ssize_t dataReceived = recv(qtSocket, buffer, sizeof(buffer), 0);
+    bool status = true;
+    while(status){
+        ssize_t dataReceived = recv(socket, buffer, sizeof(buffer), 0);
         if (dataReceived <= 0) break;
         rest.append(buffer, dataReceived);
 
@@ -52,6 +55,7 @@ void getData(){
                 std::cout << "Received JSON: " << jsonData.dump(4) << std::endl; //Prints the received JSON (is not needed)
             } else {
                 std::cout << "Invalid JSON data: " << data << std::endl;
+                status = false;
                 break;
             }
 
@@ -63,10 +67,8 @@ void getData(){
 ///@brief UNIX domain socket client.
 ///Connects to a UNIX domain socket using @ref createSocket() and receives data using @ref getData(). 
 int main(){
-    createSocket();
-    while(true){
-        getData();
-    }
-    close(qtSocket);
+    int newSocket = createSocket();
+    getData(newSocket);
+    close(newSocket);
     return 0;
 }
