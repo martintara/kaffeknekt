@@ -7,37 +7,38 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
+///@brief Path for the UNIX domain socket.
+///This path is used to create the socket and connect to it.
 #define SOCKET_PATH "/tmp/socket"
 
-///@brief UNIX domain socket client.
-///Connects to a UNIX domain socket as a client and receives data. 
-int main(){
-    int qtSocket; ///Socket descriptor
-    struct sockaddr_un addr; ///Socket address
-    bool status = true; ///Bool that can be used to stop sending of data
-    qtSocket = socket(AF_UNIX, SOCK_STREAM, 0); ///Create socket
-    ///@if Checks if socket was created
+///@brief Creates a UNXI socket and connects it to the data handling server.
+///Creates a UNIX domain socket, connects to the data handling server, and handles errors.
+void createSocket(){
+    int qtSocket;
+    struct sockaddr_un addr;
+    qtSocket = socket(AF_UNIX, SOCK_STREAM, 0);
     if (qtSocket < 0){
         perror("Socket Error");
         return 1;
     }
-    addr.sun_family = AF_UNIX; ///Sets address to UNIX
-    std::strcpy(addr.sun_path, SOCKET_PATH); ///Sets address to file path
-    ///@if Checks if address was set
+    addr.sun_family = AF_UNIX;
+    std::strcpy(addr.sun_path, SOCKET_PATH);
     if (connect(qtSocket,(struct sockaddr*)&addr, sizeof(addr)) == -1){
         perror("Connection Error");
         close(qtSocket);
         return 1;
     }
+}
 
-    char buffer[1024]; ///Buffer for stored data
-    std::string rest; ///String for remainder of data
-    ///@brief While loop that receives data from socket.
-    ///
-    while(status){
-        ssize_t dataRecived = recv(qtSocket, buffer, sizeof(buffer), 0);
-        if (dataRecived <= 0) break;
-        rest.append(buffer, dataRecived);
+///@brief Reads data from the connected socket.
+///Reads data from the connected socket, adds the specified values to variables. 
+void getData(){
+    char buffer[1024];
+    std::string rest;
+    while(true){
+        ssize_t dataReceived = recv(qtSocket, buffer, sizeof(buffer), 0);
+        if (dataReceived <= 0) break;
+        rest.append(buffer, dataReceived);
 
         size_t pos;
         while ((pos = rest.find('\n')) != std::string::npos) {
@@ -48,15 +49,24 @@ int main(){
                 std::string flag = jsonData["flag"];
                 float pressure = jsonData["pressure"];
                 float temperature = jsonData["temperature"];
-                std::cout << "Received JSON: " << jsonData.dump(4) << std::endl;
+                std::cout << "Received JSON: " << jsonData.dump(4) << std::endl; //Prints the received JSON (is not needed)
             } else {
-                std::cerr << "Invalid JSON data: " << data << std::endl;
+                std::cout << "Invalid JSON data: " << data << std::endl;
+                break;
             }
 
         }
 
     }
+}
+
+///@brief UNIX domain socket client.
+///Connects to a UNIX domain socket using @ref createSocket() and receives data using @ref getData(). 
+int main(){
+    createSocket();
+    while(true){
+        getData();
+    }
     close(qtSocket);
     return 0;
-
 }
