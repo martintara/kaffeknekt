@@ -24,8 +24,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>2247</width>
-        <height>2473</height>
+        <width>2094</width>
+        <height>2018</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -44,7 +44,7 @@
           </size>
          </property>
          <property name="layoutDirection">
-          <enum>Qt::LayoutDirection::LeftToRight</enum>
+          <enum>Qt::LeftToRight</enum>
          </property>
          <property name="text">
           <string/>
@@ -77,13 +77,13 @@ color: #000000;
 </string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h2 align=&quot;center&quot; style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:700;&quot;&gt;☕️ Brewing the Perfect Espresso ☕️&lt;/span&gt;&lt;/h2&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:26pt; font-weight:700;&quot;&gt;1. Fresh Grind&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Grind fresh beans to a fine, even texture.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700;&quot;&gt;2. Precise Dose&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Weigh out 18–20 g of grounds and gently mound them in the portafilter.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700;&quot;&gt;3. Even Distribution&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Tap the side of the portafilter to settle the coffee and sweep off any stray grounds to create a flat surface.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700;&quot;&gt;4. Firm Tamp&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Press down with 30–40 lbs of pressure using a level tamper. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700;&quot;&gt;5. Secure Lock-In&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Twist the portafilter firmly into the group head.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700;&quot;&gt;6. Flow Check&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Watch for a smooth, caramel-colored stream, no drips or spurts. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700;&quot;&gt;7. Clean &amp;amp; Reset&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;After the brewing process ends, eject the coffee-puck, wipe the basket, and prepare for your next shot.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:72pt; font-weight:700;&quot;&gt;✨ Enjoy your coffee ✨&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="textFormat">
-          <enum>Qt::TextFormat::RichText</enum>
+          <enum>Qt::PlainText</enum>
          </property>
          <property name="wordWrap">
           <bool>true</bool>

@@ -291,9 +291,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>300</y>
-      <width>274</width>
-      <height>232</height>
+      <y>191</y>
+      <width>581</width>
+      <height>341</height>
      </rect>
     </property>
     <property name="font">
@@ -402,8 +402,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="GraphWidget" name="frameGraph">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>271</y>
+      <x>420</x>
+      <y>-60</y>
       <width>461</width>
       <height>211</height>
      </rect>
