@@ -1,11 +1,3 @@
-import serial
-import json
-from influxdb_client import InfluxDBClient, Point
-from influxdb_client.client.write_api import SYNCHRONOUS
-from datetime import datetime
-import socket
-import os
-
 """ESP32 to InfluxDB and Socket Connection data bridge
 
 This script reads JSON-formatted sensor data from an ESP32 over a serial
@@ -17,6 +9,15 @@ Requirements:
     - A running InfluxDB instance with a configured bucket
     - ESP32 sending JSON-encoded data via serial
 """
+
+import serial
+import json
+from influxdb_client import InfluxDBClient, Point
+from influxdb_client.client.write_api import SYNCHRONOUS
+from datetime import datetime
+import socket
+import os
+
 
 # InfluxDB settings
 URL = 'http://localhost:8086'
@@ -65,7 +66,7 @@ def main():
     if os.path.exists(path):
         os.unlink(path)
 
-    #Defining 'server'
+    #Creating a UNIX socket for local client
     server = socket.socket(
         socket.AF_UNIX, #Declares a local socket
         socket.SOCK_STREAM #Ensures secure connection-based communication between server and client
