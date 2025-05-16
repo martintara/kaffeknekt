@@ -1,0 +1,108 @@
+import serial
+import json
+from influxdb_client import InfluxDBClient, Point
+from influxdb_client.client.write_api import SYNCHRONOUS
+import socket
+import os
+
+# InfluxDB settings
+URL = 'http://localhost:8086'
+ORG = 'Kaffeknekt'
+TOKEN = 'ETV_6VBhkfF7HzNGfOjN6F7nTvX0ye_tblcGObcB1OVJDLYxQXUWpt8NU84PJmrn6R6IV921X2eWLLJDg1wgdQ=='
+BUCKET = 'sensor_data'
+
+client = InfluxDBClient(url=URL, token=TOKEN, org=ORG)
+API = client.write_api(write_options=SYNCHRONOUS)
+
+serial_port = '/dev/ttyUSB0'
+baud_rate = 115200
+
+def main(): 
+
+    #Define socket path
+    path = '/tmp/socket'
+
+    if os.path.exists(path):
+        os.unlink(path)
+    
+    server = socket.socket(
+        socket.AF_UNIX, #Declares a local 
+        socket.SOCK_STREAM
+    )
+    
+    server.bind(path)
+    server.listen(1)
+    
+    
+    try:
+        #Opens port to esp32 temporarily
+        with serial.Serial(serial_port, baud_rate, timeout=1) as ser:
+            print("Esp connected")
+            
+            print("Waiting for client connection")
+            connection, cli_addr = server.accept()
+            print("Connected:", cli_addr)
+            
+            while True:
+                line = ser.readline().decode('utf-8').strip() #reads line, converts byte to string, and cleans excess characters like \n
+                
+                if line: #checks if line exists
+                    try:
+                        #Convert json string to python dictionary
+                        data = json.loads(line)
+                        print(data)
+
+
+                        stamp = datetime.fromtimestamp(int(data["timestamp"]) / 1e9).replace(microsecond=0)
+                        iso = stamp.isoformat()
+                        date_part, time_part = iso.split("T")
+                        readable_time = f"{date_part} {time_part}"
+
+                        #Inisialiserer Point() bygging
+                        point = Point("Esp32Metrics") \
+                        .field("readable_time", readable_time)
+
+                       
+                        #adder dataen for hver verdi i rekken
+                        for field, value in data.items():
+                            if field != "timestamp" and field != "flag":
+                                point = point.field(field, float(value))
+                                
+                            elif field == "flag":
+                                point = point.field(field, str(value))
+
+                            elif field == "timestamp":
+                                point = point.time(int(value))
+
+                        print(point)
+                        API.write(bucket=BUCKET, org=ORG, record=point, write_precision='ns')
+                        print("Data written to Influx")
+                        
+                        #Adding readable time to the json string
+                        data["readable_time"] = readable_time
+
+                        #Converting python dictionary back to json string and adding newline for the recieving code to detect
+                        socketstring = json.dumps(data) + '\n'
+                        
+                        print(socketstring)
+                        
+                        connection.send(socketstring.encode('utf-8'))
+
+                    except json.JSONDecodeError:
+                        print("Invalid JSON:", line)
+                        
+                    except KeyError as e:
+                        print(f"{e} is missing.")
+                        
+    except KeyboardInterrupt:
+        print("Stopped by user.")
+
+    except serial.SerialException as e:
+        print(f"Serial error: {e}")
+        
+    finally:
+        connection.close()
+        os.unlink(path)
+
+if __name__ == "__main__":
+    main()
