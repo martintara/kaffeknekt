@@ -1,38 +1,18 @@
-import "date"
-import "join"
+import "experimental"
 
-option task = {name: "actually_event_log", every: 1m, offset: 0m}
+option task = {name: "actually_actually_event_log", every: 22s}
 
 kaffe =
     from(bucket: "sensor_data")
-        |> range(start: -2m)
-        |> filter(fn: (r) => r._measurement == "Esp32Metrics")
-        |> filter(fn: (r) => r._field == "flag")
-        |> filter(fn: (r) => r._value == "1")
-
-//|> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value")
-monitor =
-    from(bucket: "sensor_data")
-        |> range(start: -2m)
-        |> filter(fn: (r) => r._measurement == "Esp32Metrics")
-        |> drop(
-            columns: [
-                //"readable_time",
-                //"_measurement",
-                "_start",
-                "_stop",
-            ],
+        |> range(start: -1m)
+        |> filter(
+            fn: (r) => r._measurement == "Esp32Metrics",
+        //and r._field == "flaag" and r._value == "1",
         )
+        |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value")
+        |> filter(fn: (r) => r.flag == "1")
+        |> drop(columns: ["flag"])
+        //|> group(columns: ["_time"])
+        |> experimental.unpivot()
+        |> to(bucket: "event_data", org: "Kaffeknekt")
 
-//|> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value")
-combine =
-    join.left(
-        left: kaffe,
-        right: monitor,
-        on: (l, r) => l._flag == r._flag,
-        as: (l, r) => ({l with _value: r._value}),
-    )
-        |> group(columns: ["_time"])
-
-combine
-    |> to(bucket: "event_data", org: "Kaffeknekt")
