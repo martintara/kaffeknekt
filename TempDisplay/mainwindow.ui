@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+
+  <widget class="QWidget" name="centralwidget"/>
+
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="FetchButton">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>250</y>
+      <width>141</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FetchButton</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textOutput">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>511</width>
+      <height>451</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+>>>>>>> 2f35e43 (koden B&K, men ikke nor data RTS)
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+<<<<<<< HEAD
+     <height>21</height>
+=======
+     <height>19</height>
+>>>>>>> 2f35e43 (koden B&K, men ikke nor data RTS)
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

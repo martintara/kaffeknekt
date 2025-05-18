@@ -14,7 +14,7 @@ TOKEN = 'dlatvWih4FyEIXjqDQS0L1LVU33YcUzdcq5FF81z_cJ6Mw6cnqe5mn_C__n3pDt0rmFKqRX
 TOKEN_2 = 'ETV_6VBhkfF7HzNGfOjN6F7nTvX0ye_tblcGObcB1OVJDLYxQXUWpt8NU84PJmrn6R6IV921X2eWLLJDg1wgdQ=='
 BUCKET = 'sensor_data'
 
-client = InfluxDBClient(url=URL, token=TOKEN_2, org=ORG)
+client = InfluxDBClient(url=URL, token=TOKEN, org=ORG)
 API = client.write_api(write_options=SYNCHRONOUS)
 
 serial_port = '/dev/ttyUSB0'
