@@ -199,7 +199,7 @@ color: #000000;
    <property name="frameShape">
     <enum>QFrame::NoFrame</enum>
    </property>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="day">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -218,7 +218,7 @@ color: #000000;
      <string>24h</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="week">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -237,7 +237,7 @@ color: #000000;
      <string>Week</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="month">
     <property name="geometry">
      <rect>
       <x>30</x>

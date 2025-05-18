@@ -41,6 +41,7 @@ public:
     ~MainWindow();
     void hideInfoFrame();
 
+
 private slots:
     // For hovedmeny (frame_1) som egt frame
     void on_btnHamburger_clicked();
@@ -76,8 +77,9 @@ protected:
 
 private:
     Ui::Kaffeknekt *ui;
-    GraphWidget    *m_graph;      // our real-time graph view
-
+    GraphWidget    *m_graph;
+    SensorAnalyticsDialog *m_saDialog;// our real-time graph view
+    WebSocketClient       *m_ws;
     bool sideMenuVisible;
 
     //WebSocketClient *m_ws;

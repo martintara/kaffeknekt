@@ -4,6 +4,8 @@
 #include <QPainterPath>
 #include <QtGlobal>
 #include <QSizePolicy>
+#include <QDateTime>
+
 
 // ——— Constructor & Destructor ———
 GraphWidget::GraphWidget(QWidget* parent)
@@ -17,7 +19,7 @@ GraphWidget::GraphWidget(QWidget* parent)
     setVerticalScrollBarPolicy  (Qt::ScrollBarAlwaysOff);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    m_timer->setInterval(25*1000);
+    m_timer->setInterval(20*1000);
     connect(m_timer, &QTimer::timeout, this, &GraphWidget::fetchAndRedraw);
 
 }
@@ -74,51 +76,71 @@ void GraphWidget::drawAxes() {
    // Add X-axis label (centered below axis)
    QGraphicsSimpleTextItem* xLabel = makeLabel("Time (s)");
    QRectF xLabelRect = xLabel->boundingRect();
-    xLabel->setPos((w - xLabelRect.width()) / 2, 18);
+    xLabel->setPos((w - xLabelRect.width()) / 2, 30);
 
    // Y-axis label (vertical text, rotated)
    QGraphicsSimpleTextItem* yLabel = makeLabel("Pressure (bar)");
    yLabel->setRotation(90);  // rotate vertical
    QRectF yLabelRect = yLabel->boundingRect();
-   qDebug() << "pressure place" << yLabelRect.width()/2 -10 << w/2 -10;
+   //qDebug() << "pressure place" << yLabelRect.width()/2 -10 << w/2 -10;
    yLabel->setPos(yLabelRect.width()/2 -10 , w/2 -10);  // left of Y-axis
 
    // Optional: add right Y-axis label for something else (e.g., temperature)
    QGraphicsSimpleTextItem* rightYLabel = makeLabel("Temperature (°C)");
    rightYLabel->setRotation(90);
    QRectF ryLabelRect = rightYLabel->boundingRect();
-   qDebug() << "temp place" << yLabelRect.width()/2<< w/2;
-   rightYLabel->setPos(yLabelRect.width()/2, w/2 );  // right of graph
+//   qDebug() << "temp place" << yLabelRect.width()/2<< w/2;
+   rightYLabel->setPos(yLabelRect.width()/2 + 7, w/2 );  // right of graph
+
+   int numFineTicks = 15;   // 0 to 15 (inclusive)
+   int numCoarseTicks = 5;  // 20, 40, 60, 80, 100
+   qreal totalTicks = numFineTicks + numCoarseTicks;  // 21 total levels
+   qreal tickSpacing = h / totalTicks;
+
+   for (int i = 0; i <= numFineTicks; ++i) {
+       qreal y = i * tickSpacing;
+       m_scene->addLine(0, y, 5, y, QPen(Qt::black));
+
+       auto* label = m_scene->addSimpleText(QString::number(i));  // 0 to 15
+       label->setFlag(QGraphicsItem::ItemIgnoresTransformations);
+       QRectF br = label->boundingRect();
+       label->setPos(br.width(), y + br.height() / 2);  // Left of Y-axis
+   }
+
+   for (int j = 1; j <= numCoarseTicks; ++j) {
+       qreal y = (numFineTicks + j) * tickSpacing;
+       int value = j * 20;  // 20, 40, ..., 100
+       m_scene->addLine(0, y, 5, y, QPen(Qt::black));
+
+       auto* label = m_scene->addSimpleText(QString::number(value));
+       label->setFlag(QGraphicsItem::ItemIgnoresTransformations);
+       QRectF br = label->boundingRect();
+       label->setPos(br.width(), y + br.height() / 2);  // Left of Y-axis
+   }
 
 
-/*
-    // Labels must ignore the flip transform:
-    auto makeLabel = [&](const QString &text){
-        auto *t = m_scene->addSimpleText(text);
-        t->setFlag(QGraphicsItem::ItemIgnoresTransformations);
-        return t;
-    };
+int numXTicks = 12;
+qreal now = QDateTime::currentMSecsSinceEpoch() / 1000.0;
+qreal windowStart = now - 10;
+qreal windowEnd = now;
 
-    // X‐label
-    {
-      auto *t = makeLabel(tr("Time (s)"));
-      auto br = t->boundingRect();
-      t->setPos((w - br.width())/2, -m);
-    }
-    // Left Y‐label
-    {
-      auto *t = makeLabel(tr("Pressure (bar)"));
-      t->setRotation(90);
-      auto br = t->boundingRect();
-      t->setPos(-br.width(), (h - br.width())/2);
-    }
-    // Right Y‐label
-    {
-      auto *t = makeLabel(tr("Temperature (°C)"));
-      t->setRotation(90);
-      auto br = t->boundingRect();
-      t->setPos(w + m - br.width(), (h - br.width())/2);
-    }*/
+for (int i = 0; i <= numXTicks; ++i) {
+    qreal t = windowStart + i * (windowEnd - windowStart) / numXTicks;
+    qreal x = i * (w / numXTicks);
+
+    // Draw the tick
+    m_scene->addLine(x, 0, x, -5, QPen(Qt::black));
+
+    // Convert t (in seconds) to readable time string
+    QDateTime time = QDateTime::fromSecsSinceEpoch(static_cast<qint64>(t));
+    QString timeText = time.toString("hh:mm:ss");  // or "mm:ss"
+
+    // Create the label
+    auto* label = m_scene->addSimpleText(timeText);
+    label->setFlag(QGraphicsItem::ItemIgnoresTransformations);
+    QRectF br = label->boundingRect();
+    label->setPos(x - br.width() / 2, 20);  // Below tick
+}
 
 }
 
@@ -126,16 +148,43 @@ void GraphWidget::drawSeries(const QVector<DataPoint>& s, const QColor& c, qreal
     if (s.size() < 2)
         return;
 
-    qDebug() << "   drawSeries() first point at"
+   /* qDebug() << "   drawSeries() first point at"
              << s[0].timestamp << s[0].value
              << "offset=" <<yOffset;
-
+|rv
     if (s.size() < 2)
         return;
     QPainterPath path;
     path.moveTo(s[0].timestamp, s[0].value + yOffset);
     for (int i = 1; i < s.size(); ++i)
         path.lineTo(s[i].timestamp, s[i].value + yOffset);
+    m_scene->addPath(path, QPen(c, 1.5));*/
+    qreal w = m_scene->width();
+    qreal h = m_scene->height();
+
+    qreal xMin = s.first().timestamp;
+    qreal xMax = s.last().timestamp;
+    qreal xRange = xMax - xMin;
+
+    // Safety
+    if (xRange == 0) xRange = 1;
+
+    // Use full scene height for scaling Y (example ranges)
+    qreal yMin = 0;
+    qreal yMax = (c == Qt::red) ? 20 : 120;  // red = pressure, blue = temp
+
+    auto mapX = [&](qreal t) {
+        return (t - xMin) / xRange * w;
+    };
+    auto mapY = [&](qreal v) {
+        return (v - yMin) / (yMax - yMin) * h;
+    };
+
+    QPainterPath path;
+    path.moveTo(mapX(s[0].timestamp), mapY(s[0].value + yOffset));
+    for (int i = 1; i < s.size(); ++i)
+        path.lineTo(mapX(s[i].timestamp), mapY(s[i].value + yOffset));
+
     m_scene->addPath(path, QPen(c, 1.5));
 
 }
@@ -162,11 +211,20 @@ QVector<DataPoint> GraphWidget::fetchPressure() {
 // Legger til ett data‐punkt i m_pressure
 void GraphWidget::appendPressurePoint(const DataPoint& p) {
     m_pressure.push_back(p);
+// remove any points older than our current window
+// remove any points older than our current window
+    qreal cutoff = p.timestamp - m_windowSeconds;
+    while (!m_pressure.isEmpty() && m_pressure.first().timestamp < cutoff) {
+        m_pressure.removeFirst();
+    }
 }
-
 // Legger til ett data‐punkt i m_temp
 void GraphWidget::appendTempPoint(const DataPoint& t) {
     m_temp.push_back(t);
+    qreal cutoff = t.timestamp - m_windowSeconds;
+    while (!m_temp.isEmpty() && m_temp.first().timestamp < cutoff) {
+        m_temp.removeFirst();
+    }
 }
 
 // Tegner alt på nytt (clear + aksser + alle kurver)
@@ -183,17 +241,14 @@ void GraphWidget::resizeEvent(QResizeEvent* event) {
 
 
 
-    // 1) clear out any old scale/translate
-        resetTransform();
-        // 2) flip the vertical axis
-        scale(1, -1);
-        // 3) move the origin down to the bottom of the view
-        translate(0, -viewport()->height());
-        // 4) make the scene cover exactly the widget’s area, now in positive coords
-        QSize s = event->size();
-        m_scene->setSceneRect(0, 0, s.width(), s.height());
-        qDebug() << "Current transform:" << transform();
-
-        qDebug() << "GraphWidget::resizeEvent → sceneRect =" << m_scene->sceneRect();
+// 1) clear out any old scale/translate
+    resetTransform();
+    // 2) flip the vertical axis
+    scale(1, -1);
+    // 3) move the origin down to the bottom of the view
+    translate(0, -viewport()->height());
+    // 4) make the scene cover exactly the widget’s area, now in positive coords
+    QSize s = event->size();
+    m_scene->setSceneRect(0, 0, s.width(), s.height());
 }
 

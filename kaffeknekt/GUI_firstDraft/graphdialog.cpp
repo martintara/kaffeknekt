@@ -7,7 +7,8 @@
 #include <QGraphicsView>
 #include <QScreen>
 #include <QGuiApplication>
-
+#include <QShowEvent>
+#include <QHideEvent>
 
 
 
@@ -20,6 +21,7 @@ graphDialog::graphDialog(QWidget *parent)
     , ui(new Ui::graphDialog)
 {
     ui->setupUi(this);
+
     // Sett en fornuftig startstørrelse på dialogen:
     resize(800, 600);
 
@@ -59,10 +61,6 @@ void graphDialog::onDataReceived(double pressure,
     qDebug() << " graphDialog::onDataReceived() called";
 
     qDebug() << "[WebSocket flag]" << flag;
-    //static qreal startTime =
-        //QDateTime::currentMSecsSinceEpoch() / 1000.0;
-
-
 
     // Pop up as soon as we receive any data
     // show dialog on first data
@@ -82,6 +80,19 @@ void graphDialog::onDataReceived(double pressure,
     m_graph->appendPressurePoint({ t, pressure });
     m_graph->appendTempPoint    ({ t, temperature });
     m_graph->refresh();
+}
+void graphDialog::showEvent(QShowEvent* ev) {
+    QDialog::showEvent(ev);
+    emit dialogShown();
+
+}
+
+
+
+
+void graphDialog::hideEvent(QHideEvent* ev) {
+    QDialog::hideEvent(ev);
+    emit dialogHidden();
 }
 
 void graphDialog::appendData(double pressure, double temperature) {

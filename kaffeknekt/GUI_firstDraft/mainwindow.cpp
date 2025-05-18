@@ -9,7 +9,7 @@
 #include "warningdialog.h"
 #include "graphdialog.h"
 //#include "graphview.h"
-
+#include <QDateTime>
 #include "QDialog"
 #include "QIcon"
 //nye bibilioteker for sub-sub side meny:
@@ -23,9 +23,73 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+//    GraphWidget*      m_graph;
+//    WebSocketClient*  m_ws;
+
+// ─── START LIVE-GRAPH SETUP ───
+
+    // 1) Embed your GraphWidget into the QFrame named "frameGraph"
+    m_graph = new GraphWidget(ui->frameGraph);
+    auto *graphLay = new QVBoxLayout(ui->frameGraph);
+    graphLay->setContentsMargins(0, 0, 0, 0);
+    graphLay->setSpacing(0);
+    graphLay->addWidget(m_graph);
+
+    // 2) Set initial window and start its internal timer
+    m_graph->setWindowSeconds(600.0);  // 10 minutes
+    m_graph->start();
+
+    // 3) Create the analytics dialog before wiring it
+    m_saDialog = new SensorAnalyticsDialog(this);
+
+    // 4) When an interval is selected, update the graph
+    connect(m_saDialog, &SensorAnalyticsDialog::intervalSelected,
+            this, [this](qreal secs){
+        m_graph->setWindowSeconds(secs);
+        m_graph->refresh();
+        m_saDialog->hide();
+    });
+
+    // 5) Show the analytics dialog when clicking the Analytics button
+    connect(ui->btnSensorAnalytics, &QPushButton::clicked, this, [this](){
+        ui->frame_2->setVisible(true);
+        m_saDialog->setModal(false);
+        m_saDialog->show();
+    });
+
+    // 6) Start the WebSocket client and feed live data into the member graph
+    m_ws = new WebSocketClient(this);
+        qDebug() << "Websocket attachement";
+    connect(m_ws, &WebSocketClient::dataReceived, this, [this](double pressure, double temp, const QString& flag){
+        if (flag == QLatin1String("1")) {
+            qreal now = QDateTime::currentMSecsSinceEpoch()/1000.0;
+            m_graph->appendPressurePoint({ now, pressure });
+            m_graph->appendTempPoint    ({ now, temp     });
+        }
+    });
+    m_ws->start();
+   /*
+   m_ws = new WebSocketClient(this);
+   connect(m_ws, &WebSocketClient::dataReceived(),
+           this, [this](double pressure, double temp, const QString& flag){
+       if (flag == QLatin1String("1")) {
+           qreal now = QDateTime::currentMSecsSinceEpoch()/1000.0;
+           m_graph->appendPressurePoint({ now, pressure });
+           m_graph->appendTempPoint    ({ now, temp     });
+        }
+   });*/
+   m_ws->start();
+
 // 1) Create the dialog but don’t show yet:
     m_graphDialog = new graphDialog(this);
 
+// ─── Hide/Show the in‐window frameGraph around the GraphWidget ───
+    connect(m_graphDialog, &graphDialog::dialogShown, this, [this]() {
+        ui->frameGraph->hide();
+    });
+    connect(m_graphDialog, &graphDialog::dialogHidden, this, [this]() {
+        ui->frameGraph->show();
+    });
 
     // --- Test‐knapp for å prøve warning‐dialogen nå ---
     auto *btnTest = new QPushButton(tr("Test Warning"), this);
@@ -38,24 +102,24 @@ MainWindow::MainWindow(QWidget *parent)
             this,   &MainWindow::on_btnTestWarning_clicked);
 
 
-    //jeg velger denne layout typen:
-    auto *gl = ui->gridLayout;
+//    //jeg velger denne layout typen:
+//    auto *gl = ui->gridLayout;
 
 
 
-    // --- 1) Sett gridLayout uten marger og spacing ---
-    ui->gridLayout->setContentsMargins(0, 0, 0, 0);
-    ui->gridLayout->setSpacing(5);
+//    // --- 1) Sett gridLayout uten marger og spacing ---
+//    ui->gridLayout->setContentsMargins(0, 0, 0, 0);
+//    ui->gridLayout->setSpacing(5);
 
 
-    // --- 2) Kolonne‐strekkfaktorer: venstre fast, midt expanderer, høyre fast ---
-    ui->gridLayout->setColumnStretch(0, 0);
-    ui->gridLayout->setColumnStretch(1, 1);
-    ui->gridLayout->setColumnStretch(2, 0);
+//    // --- 2) Kolonne‐strekkfaktorer: venstre fast, midt expanderer, høyre fast ---
+//    ui->gridLayout->setColumnStretch(0, 0);
+//    ui->gridLayout->setColumnStretch(1, 1);
+//    ui->gridLayout->setColumnStretch(2, 0);
 
 
 
-
+/*
     // --- 2) Kolonne‐strekkfaktorer: kun midtkolonnen (graphFrame) vokser ---
     ui->gridLayout->setColumnStretch(0, 0);
     ui->gridLayout->setColumnStretch(1, 1);
@@ -75,7 +139,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->gridLayout->setAlignment(ui->label_2,
                                  Qt::AlignTop   |
                                      Qt::AlignRight);
+*/                                                                                                                                                                                                                                                                            #include "graphview.h"
 
+
+        //de nye endringeen siden jeg fhjerna de fra grapgdiaialog og slkengte de direkte i graphview ++ forklar mer senere :)
 
 
 
@@ -206,8 +273,9 @@ void MainWindow::on_btnHome_clicked()
     sideMenuVisible = true;
     ui->frame_2->setVisible(true);
 
-
 }
+
+
 void MainWindow::on_btnHere_clicked()
 {
     InfoDetailDialog *dialog = new InfoDetailDialog(this);

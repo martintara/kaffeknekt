@@ -38,3 +38,26 @@ void SensorAnalyticsDialog::on_btnPowerConsumption_clicked()
     ui->frameTimescale->setVisible(true);
 
 }
+
+void SensorAnalyticsDialog::on_day_clicked()
+{
+// 10 minutes → 600 s
+    emit intervalSelected(600.0);
+
+}
+
+
+void SensorAnalyticsDialog::on_week_clicked()
+{
+// 30 minutes → 1800 s
+    emit intervalSelected(1800.0);
+
+}
+
+
+void SensorAnalyticsDialog::on_month_clicked()
+{
+// 1 hour → 3600 s
+   emit intervalSelected(3600.0);
+}
+

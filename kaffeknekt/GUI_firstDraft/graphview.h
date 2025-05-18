@@ -25,6 +25,8 @@ public:
     // Start the periodic updates
     void start();
 
+    void setWindowSeconds(qreal seconds) { m_windowSeconds = seconds; }
+
     // append one point at a time
     void appendPressurePoint(const DataPoint& p);
     void appendTempPoint    (const DataPoint& t);
@@ -56,6 +58,10 @@ private:
     QVector<DataPoint> fetchTemp();
     QVector<DataPoint> fetchPressure();
     //QVector<DataPoint> fetchPower();
+
+// <<< Insert here >>>
+    qreal                 m_windowSeconds = 600.0;  // sliding-window in seconds aka 10min
+
 };
 
 #endif // GRAPHWIDGET_H
