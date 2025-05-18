@@ -12,4 +12,4 @@
 ![Alt Text](Overall_Software_Interface.drawio.svg)
 ![Alt Text](Activity_Diagram.drawio.svg)
 ![Alt Text](Sequence_Diagram.drawio.svg)
-![Alt Text](DFDGUI_esp.png)
+![Alt Text](DFDGUI_esp.drawio.png)
