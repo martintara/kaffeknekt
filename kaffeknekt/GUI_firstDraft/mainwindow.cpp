@@ -10,6 +10,7 @@
 #include "graphdialog.h"
 //#include "graphview.h"
 #include <QDateTime>
+#include <QMessageBox>
 #include "QDialog"
 #include "QIcon"
 //nye bibilioteker for sub-sub side meny:
@@ -26,7 +27,8 @@ MainWindow::MainWindow(QWidget *parent)
 //    GraphWidget*      m_graph;
 //    WebSocketClient*  m_ws;
 
-// ─── START LIVE-GRAPH SETUP ───
+
+
 
     // 1) Embed your GraphWidget into the QFrame named "frameGraph"
     m_graph = new GraphWidget(ui->frameGraph1);
@@ -71,6 +73,7 @@ MainWindow::MainWindow(QWidget *parent)
 // 1) Create the dialog but don’t show yet:
     m_graphDialog = new graphDialog(this);
 
+     m_statsDialog = new Statistics(this);
 // ─── Hide/Show the in‐window frameGraph around the GraphWidget ───
     connect(m_graphDialog, &graphDialog::dialogShown, this, [this]() {
         ui->frameGraph1->hide();
@@ -88,6 +91,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->addPermanentWidget(btnTest);
     connect(btnTest, &QPushButton::clicked,
             this,   &MainWindow::on_btnTestWarning_clicked);
+    // … after  m_graphDialog = new graphDialog(this);
+
+    connect(m_graphDialog, &graphDialog::flagsent,
+            this,         &MainWindow::on_flagsent);
 
 
 
@@ -158,6 +165,25 @@ MainWindow::~MainWindow()
 }
 
 
+void MainWindow::on_flagsent(){
+    ++m_cupCount;
+        // if stats dialog is visible, update immediately:
+        if (m_statsDialog && m_statsDialog->isVisible()) {
+            // whenever you detect flag==1, emit this
+               ++m_cupCount;
+               m_statsDialog->setCupCount(m_cupCount);
+        }
+
+        if (m_cupCount > 20 && !m_warningShown) {
+            QMessageBox::warning(
+                        this,
+                        tr("Time to Wash"),
+                        tr("You’ve brewed %1 cups!\nTime to clean the machine.").arg(m_cupCount)
+                    );
+            m_warningShown = true;
+        }
+
+}
 void MainWindow::showEvent(QShowEvent *event)
 {
     QMainWindow::showEvent(event);
@@ -206,8 +232,10 @@ void MainWindow::on_btnInstructions_clicked()
 }
 
 void MainWindow::on_btnStatistics_clicked()
-{
-    // ui->statusbar->showMessage("Statistics button clicked!");
+{// modal popup
+    // whenever you detect flag==1, emit this
+       m_statsDialog->setCupCount(m_cupCount);
+       m_statsDialog->exec();
 }
 
 void MainWindow::on_btnHome_clicked()

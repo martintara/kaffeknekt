@@ -8,6 +8,7 @@ namespace Ui { class WarningDialog; }
 class WarningDialog : public QDialog {
     Q_OBJECT
 public:
+
     explicit WarningDialog(double temp, QWidget *parent = nullptr);
     ~WarningDialog();
 private slots:

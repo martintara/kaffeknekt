@@ -25,18 +25,22 @@ QVector<DataPoint> DataFetcher::fetchPressureWindow(qreal windowSeconds,
     req.setRawHeader("Accept", "application/csv");
 
     // 2) Flux query: only ESp32Metrics measurement, pressure field
-    QByteArray fluxQuery = (R"(
-    option start = -1h
-option stop  = now()
-option windowPeriod = %1s
-from(bucket:"sensor_data")
+    static const QString fluxTpl = QStringLiteral(R"__(
+    option start = -%1s
+    option stop  = now()
+    option windowPeriod = %1s
+
+    from(bucket:"sensor_data")
   |> range(start: start, stop: stop)
   |> filter(fn: (r) => r._measurement == "Esp32Metrics")
   |> filter(fn: (r) => r._field == "pressure")
   |> aggregateWindow(every: windowPeriod, fn: mean, createEmpty: false)
   |> yield()
+    )__");
+    QString fluxStr = fluxTpl
+        .arg(windowSeconds);       // "pressure" or "temperature"
 
-)");
+    QByteArray fluxQuery = fluxStr.toUtf8();
 
     QNetworkAccessManager manager;
     QNetworkReply* reply = manager.post(req, fluxQuery);
@@ -112,23 +116,27 @@ QVector<DataPoint> DataFetcher::fetchTempWindow(qreal windowSeconds,
     req.setRawHeader("Accept", "application/csv");
 
     // 2) Flux query: only ESp32Metrics measurement, pressure field
-    QByteArray fluxQuery = (R"(
-    option start = -1h
-option stop  = now()
-option windowPeriod = 1m
+       // 2) Flux query: only ESp32Metrics measurement, pressure field
+            static const QString fluxTpl = QStringLiteral(R"__(
+            option start = -%1s
+            option stop  = now()
+            option windowPeriod = %1s
 
-  from(bucket:"sensor_data")
-  |> range(start: start, stop: stop)
-  |> filter(fn: (r) => r._measurement == "Esp32Metrics")
-  |> filter(fn: (r) => r._field == "temperature")
-  |> aggregateWindow(every: windowPeriod, fn: mean, createEmpty: false)
-  |> yield()
+            from(bucket:"sensor_data")
+          |> range(start: start, stop: stop)
+          |> filter(fn: (r) => r._measurement == "Esp32Metrics")
+          |> filter(fn: (r) => r._field == "temperature")
+          |> aggregateWindow(every: windowPeriod, fn: mean, createEmpty: false)
+          |> yield()
+            )__");
 
-)");
+    QString fluxStr = fluxTpl
+        .arg(windowSeconds);       // "pressure" or "temperature"
+
+    QByteArray fluxQuery = fluxStr.toUtf8();
 
     QNetworkAccessManager manager;
     QNetworkReply* reply = manager.post(req, fluxQuery);
-
     // 3) Wait synchronously
     QEventLoop loop;
     QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);

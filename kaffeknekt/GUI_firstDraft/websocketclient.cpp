@@ -63,13 +63,6 @@ void WebSocketClient::run() {
             try {
                 auto jsonData = nlohmann::json::parse(line);
                 QString flag       = QString::fromStdString(jsonData["flag"]);
-
-
-//                int flagInt = jsonData["flag"].get<int>();
-//                QString flag = QString::number(flagInt);
-                qDebug() << flag;
-
-
                 double pressure    = jsonData["pressure"];
                 double temperature = jsonData["temperature"];
                 emit dataReceived(pressure, temperature, flag);

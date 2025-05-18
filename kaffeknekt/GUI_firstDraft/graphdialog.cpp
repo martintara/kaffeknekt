@@ -60,7 +60,10 @@ void graphDialog::onDataReceived(double pressure,
 {
 
 
-    qDebug() << "[WebSocket flag]" << flag;
+    if (flag == QLatin1String("1")) {
+          // each time flag==1, we brewed a cup
+        emit flagsent();
+    }
 
     // Pop up as soon as we receive any data
     // show dialog on first data

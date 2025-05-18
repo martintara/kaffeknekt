@@ -22,6 +22,7 @@ public:
 signals:
     void dialogShown();
     void dialogHidden();
+    void flagsent();
 
 public slots:
 

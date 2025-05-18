@@ -48,7 +48,7 @@ void GraphWidget::drawAxes() {
 
     QPen pen(Qt::black); pen.setWidth(2);
     auto r = m_scene->sceneRect();
-    qreal w = r.width(), h = r.height(),margin = 30;
+    qreal w = r.width(), h = r.height();
 
     // X‐axis at the bottom
     m_scene->addLine(0,    0, w,    0, pen);
@@ -57,7 +57,7 @@ void GraphWidget::drawAxes() {
    QPen axisPen(Qt::black,2);
 
    // X-axis (horizontal) from left to right at bottom
-   m_scene->addLine(0, 0, w, 0, axisPen);
+   m_scene->addLine(0, 0, w+40, 0, axisPen);
 
    // Y-axis (vertical) from bottom to top
    m_scene->addLine(0, 0, 0, h, axisPen);
@@ -81,66 +81,84 @@ void GraphWidget::drawAxes() {
    //qDebug() << "pressure place" << yLabelRect.width()/2 -10 << w/2 -10;
    yLabel->setPos(yLabelRect.width()/2 -10 , w/2 -10);  // left of Y-axis
 
-   // Optional: add right Y-axis label for something else (e.g., temperature)
+    //Optional: add right Y-axis label for something else (e.g., temperature)
    QGraphicsSimpleTextItem* rightYLabel = makeLabel("Temperature (°C)");
    rightYLabel->setRotation(90);
    QRectF ryLabelRect = rightYLabel->boundingRect();
-//   qDebug() << "temp place" << yLabelRect.width()/2<< w/2;
-   rightYLabel->setPos(yLabelRect.width()/2 + 7, w/2 );  // right of graph
+   qDebug() << "temp place" << yLabelRect.width()/2<< w/2;
+    rightYLabel->setPos(yLabelRect.width() + 850, w/2 -30);  // right of graph
 
-   qreal totalRange = 100.0;            // full axis span
-   qreal tickSpacing = h / totalRange;  // px per unit
-
-   // 2) Minor ticks 0–15 (length 3px)
-   for (int value = 0; value <= 15; value +=2) {
-       qreal y = value * tickSpacing;
-       m_scene->addLine(0, y, 4, y, axisPen);
-       // optional: only label the really important ones, e.g. 0, 5, 10, 15
-
-         auto *lbl = m_scene->addSimpleText(QString::number(value));
-         lbl->setFlag(QGraphicsItem::ItemIgnoresTransformations);
-         QRectF br = lbl->boundingRect();
-         lbl->setPos(5, y - br.height()/2-3);
-   }
-
-   // 3) Major ticks every 20 (length 7px) from 20 up to 100
-   for (int value = 20; value <= 100; value += 20) {
-       qreal y = value * tickSpacing;
-       m_scene->addLine(0, y, 7, y, axisPen);
-       auto *lbl = m_scene->addSimpleText(QString::number(value));
-       lbl->setFlag(QGraphicsItem::ItemIgnoresTransformations);
-       QRectF br = lbl->boundingRect();
-       lbl->setPos(8, y - br.height()/2);
-   }
-
-   // 4) (Re-draw your zero baseline at top if needed)
-   m_scene->addLine(0, 0, w, 0, axisPen);
+        // 1) Draw the two axes
+        //    left at x=0 for pressure, right at x=w for temperature
+        m_scene->addLine(0, 0, 0, h, axisPen);
+        m_scene->addLine(w, 0, w, h, axisPen);
 
 
-int numXTicks = 12;
-qreal now = QDateTime::currentMSecsSinceEpoch() / 1000.0;
-qreal windowStart = now - 10;
-qreal windowEnd = now;
 
-for (int i = 0; i <= numXTicks; ++i) {
-    qreal t = windowStart + i * (windowEnd - windowStart) / numXTicks;
-    qreal x = i * (w / numXTicks);
+        // 2) Compute min/max for each series (with a little padding)
+        qreal pMin=std::numeric_limits<qreal>::max(),
+              pMax=std::numeric_limits<qreal>::lowest();
+        for (auto &pt : m_pressure) {
+          pMin = qMin(pMin, pt.value);
+          pMax = qMax(pMax, pt.value);
+        }
+        if (pMin>pMax) { pMin=0; pMax=1; }
+        qreal pPad = (pMax-pMin)*0.1;
+        pMin -= pPad;  pMax += pPad;
 
-    // Draw the tick
-    m_scene->addLine(x, 0, x, -5, QPen(Qt::black));
+        qreal tMin=std::numeric_limits<qreal>::max(),
+              tMax=std::numeric_limits<qreal>::lowest();
+        for (auto &pt : m_temp) {
+          tMin = qMin(tMin, pt.value);
+          tMax = qMax(tMax, pt.value);
+        }
+        if (tMin>tMax) { tMin=0; tMax=1; }
+        qreal tPad = (tMax-tMin)*0.1;
+        tMin -= tPad;  tMax += tPad;
 
-    // Convert t (in seconds) to readable time string
-    QDateTime time = QDateTime::fromSecsSinceEpoch(static_cast<qint64>(t));
-    QString timeText = time.toString("hh:mm:ss");  // or "mm:ss"
+        // 3) Draw tick‐marks + labels
+        auto drawYAxis = [&](qreal minV, qreal maxV, qreal x, const QString &label){
+          int steps = 5;
+          qreal range = maxV - minV;
+          for (int i = 0; i <= steps; ++i) {
+            qreal v = minV + (range/steps)*i;
+            qreal y = (v - minV) / range * h;
+            m_scene->addLine(x, y, x + (x==0? 5 : -5), y, axisPen);
+            auto *lbl = makeLabel(QString::number(v, 'f', 1));
+            QRectF br = lbl->boundingRect();
+            lbl->setPos(x + (x==0? 8 : -br.width()-8),
+                        y - br.height()/2);
+          }
+          // axis title
+          auto *title = makeLabel(label);
+          title->setRotation(90);
+          QRectF tr = title->boundingRect();
+          title->setPos(x + (x==0? 8 : -tr.width()-8),
+                        h/2 + tr.width()/2);
+        };
 
-    // Create the label
-    auto* label = m_scene->addSimpleText(timeText);
-    label->setFlag(QGraphicsItem::ItemIgnoresTransformations);
-    QRectF br = label->boundingRect();
-    label->setPos(x - br.width() / 2, 20);  // Below tick
-}
+        drawYAxis(pMin, pMax, /*x=*/0,   QStringLiteral("Pressure (bar)"));
+        drawYAxis(tMin, tMax, /*x=*/w,   QStringLiteral("Temperature (°C)"));
 
-}
+        // 4) X‐axis remains time at bottom
+        m_scene->addLine(0, 0, w, 0, axisPen);
+        int numXTicks = 6;
+        qreal now = QDateTime::currentMSecsSinceEpoch()/1000.0;
+        qreal t0  = now - m_windowSeconds;
+        for (int i = 0; i <= numXTicks; ++i) {
+          qreal t = t0 + (now-t0)*i/numXTicks;
+          qreal x = w * (qreal(i)/numXTicks);
+          m_scene->addLine(x, 0, x, -5, axisPen);
+          auto *lbl = makeLabel(
+            QDateTime::fromSecsSinceEpoch(qint64(t))
+              .toString("hh:mm:ss")
+          );
+          QRectF br = lbl->boundingRect();
+          lbl->setPos(x - br.width()/2, 8);
+        }
+    }
+
+
 
 void GraphWidget::drawSeries(const QVector<DataPoint>& s, const QColor& c, qreal yOffset) {
     if (s.size() < 2)
@@ -219,7 +237,6 @@ void GraphWidget::appendTempPoint(const DataPoint& t) {
 
 // Tegner alt på nytt (clear + aksser + alle kurver)
 void GraphWidget::refresh() {
-         qDebug() << "refreshing graphw";
     m_scene->clear();
     drawAxes();
     drawSeries(m_temp,     Qt::blue,  0);

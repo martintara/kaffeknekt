@@ -23,6 +23,7 @@ SOURCES += \
     optionsdialog.cpp \
     sensoranalyticsdialog.cpp \
     settingsdialog.cpp \
+    statistics.cpp \
     warningdialog.cpp \
     websocketclient.cpp
 
@@ -39,6 +40,7 @@ HEADERS += \
     optionsdialog.h \
     sensoranalyticsdialog.h \
     settingsdialog.h \
+    statistics.h \
     warningdialog.h \
     websocketclient.h
 

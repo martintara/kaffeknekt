@@ -12,6 +12,7 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include "statistics.h"
 #include "ui_mainwindow.h"
 #include "infodetaildialog.h"
 #include "datafetcher.h"
@@ -33,7 +34,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void hideInfoFrame();
-
+    void on_flagsent();
 
 private slots:
     // For hovedmeny (frame_1) som egt frame
@@ -58,10 +59,12 @@ protected:
 private:
     Ui::Kaffeknekt *ui;
     GraphWidget    *m_graph;
+    Statistics          *m_statsDialog;
     SensorAnalyticsDialog *m_saDialog;// our real-time graph view
     WebSocketClient       *m_ws;
     bool sideMenuVisible;
-
+    int    m_cupCount        = 0;
+    bool   m_warningShown     = false;
     //WebSocketClient *m_ws;
     graphDialog     *m_graphDialog;
 };
