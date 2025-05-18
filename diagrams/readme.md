@@ -13,3 +13,5 @@
 ![Alt Text](Activity_Diagram.drawio.svg)
 ![Alt Text](Sequence_Diagram.drawio.svg)
 ![Alt Text](DFDGUI_esp.drawio.png)
+![Alt Text](DFDGUI_InDB.drawio.png)
+
