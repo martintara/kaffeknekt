@@ -47,7 +47,7 @@ border-radius: 5px;
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="resources.qrc">:/icons/alert-triangle.svg</pixmap>
+      <pixmap resource="resources.qrc">:/Bilder_ikoner/alert-triangle.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>

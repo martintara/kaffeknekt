@@ -58,7 +58,7 @@ void graphDialog::onDataReceived(double pressure,
                                  double temperature,
                                  const QString& flag)
 {
-    qDebug() << " graphDialog::onDataReceived() called";
+
 
     qDebug() << "[WebSocket flag]" << flag;
 

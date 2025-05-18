@@ -33,6 +33,7 @@ public:
 
        // redraw everything (clear + axes + both series)
     void refresh();
+    void clearData();
 
        // you probably already have these:
     void drawAxes();
@@ -54,12 +55,9 @@ private:
     QVector<DataPoint> m_pressure;
     QVector<DataPoint> m_temp;
 
-    // These should call into your existing Influx-HTTP functions:
-    QVector<DataPoint> fetchTemp();
-    QVector<DataPoint> fetchPressure();
+
     //QVector<DataPoint> fetchPower();
 
-// <<< Insert here >>>
     qreal                 m_windowSeconds = 600.0;  // sliding-window in seconds aka 10min
 
 };

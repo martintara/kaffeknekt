@@ -8,20 +8,13 @@
 #include "warningdialog.h"
 #include "websocketclient.h"
 #include "graphdialog.h"
-
-
-
-
-
-
-
 #include <QMainWindow>
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include "ui_mainwindow.h"
 #include "infodetaildialog.h"
-
+#include "datafetcher.h"
 //neste steg er sub-sub side meny for "esnsor analytics/btnTimescale NB. skalfikses!"
 #include <QFrame>             // ADDED: QFrame for sidemenyen
 #include <QPushButton>
@@ -57,19 +50,6 @@ private slots:
 
     //funksjonen for testing av Warning dialogen/n poppuppen.
     void on_btnTestWarning_clicked();
-
-
-
-    /*
-    //For sub-side meny (frame_3 - som heter ikke deet lenger :)-basically Qdialogen! ):
-    void on_btnWaterTemp_clicked();
-    void on_btnWaterPressure_clicked();
-    void on_btnPowerConsumption_clicked();
-
-*/
-
-
-
 
 
 protected:

@@ -34,10 +34,6 @@ void GraphWidget::start() {
 // ——— Data fetch & redraw ———
 void GraphWidget::fetchAndRedraw() {
     // 1) Fetch
-    m_temp     = fetchTemp();
-    m_pressure = fetchPressure();
-   // m_power    = fetchPower();
-
 
 
     // 2) Clear & redraw
@@ -92,31 +88,33 @@ void GraphWidget::drawAxes() {
 //   qDebug() << "temp place" << yLabelRect.width()/2<< w/2;
    rightYLabel->setPos(yLabelRect.width()/2 + 7, w/2 );  // right of graph
 
-   int numFineTicks = 15;   // 0 to 15 (inclusive)
-   int numCoarseTicks = 5;  // 20, 40, 60, 80, 100
-   qreal totalTicks = numFineTicks + numCoarseTicks;  // 21 total levels
-   qreal tickSpacing = h / totalTicks;
+   qreal totalRange = 100.0;            // full axis span
+   qreal tickSpacing = h / totalRange;  // px per unit
 
-   for (int i = 0; i <= numFineTicks; ++i) {
-       qreal y = i * tickSpacing;
-       m_scene->addLine(0, y, 5, y, QPen(Qt::black));
+   // 2) Minor ticks 0–15 (length 3px)
+   for (int value = 0; value <= 15; value +=2) {
+       qreal y = value * tickSpacing;
+       m_scene->addLine(0, y, 4, y, axisPen);
+       // optional: only label the really important ones, e.g. 0, 5, 10, 15
 
-       auto* label = m_scene->addSimpleText(QString::number(i));  // 0 to 15
-       label->setFlag(QGraphicsItem::ItemIgnoresTransformations);
-       QRectF br = label->boundingRect();
-       label->setPos(br.width(), y + br.height() / 2);  // Left of Y-axis
+         auto *lbl = m_scene->addSimpleText(QString::number(value));
+         lbl->setFlag(QGraphicsItem::ItemIgnoresTransformations);
+         QRectF br = lbl->boundingRect();
+         lbl->setPos(5, y - br.height()/2-3);
    }
 
-   for (int j = 1; j <= numCoarseTicks; ++j) {
-       qreal y = (numFineTicks + j) * tickSpacing;
-       int value = j * 20;  // 20, 40, ..., 100
-       m_scene->addLine(0, y, 5, y, QPen(Qt::black));
-
-       auto* label = m_scene->addSimpleText(QString::number(value));
-       label->setFlag(QGraphicsItem::ItemIgnoresTransformations);
-       QRectF br = label->boundingRect();
-       label->setPos(br.width(), y + br.height() / 2);  // Left of Y-axis
+   // 3) Major ticks every 20 (length 7px) from 20 up to 100
+   for (int value = 20; value <= 100; value += 20) {
+       qreal y = value * tickSpacing;
+       m_scene->addLine(0, y, 7, y, axisPen);
+       auto *lbl = m_scene->addSimpleText(QString::number(value));
+       lbl->setFlag(QGraphicsItem::ItemIgnoresTransformations);
+       QRectF br = lbl->boundingRect();
+       lbl->setPos(8, y - br.height()/2);
    }
+
+   // 4) (Re-draw your zero baseline at top if needed)
+   m_scene->addLine(0, 0, w, 0, axisPen);
 
 
 int numXTicks = 12;
@@ -148,9 +146,8 @@ void GraphWidget::drawSeries(const QVector<DataPoint>& s, const QColor& c, qreal
     if (s.size() < 2)
         return;
 
-   /* qDebug() << "   drawSeries() first point at"
-             << s[0].timestamp << s[0].value
-             << "offset=" <<yOffset;
+
+   /*
 |rv
     if (s.size() < 2)
         return;
@@ -171,7 +168,10 @@ void GraphWidget::drawSeries(const QVector<DataPoint>& s, const QColor& c, qreal
 
     // Use full scene height for scaling Y (example ranges)
     qreal yMin = 0;
-    qreal yMax = (c == Qt::red) ? 20 : 120;  // red = pressure, blue = temp
+    qreal yMax = (c == Qt::red)   // red = pressure
+                 ? 20            // pressure rarely exceeds ~20bar
+                 : 100;          // blue = temperature up to ~100°C
+     // red = pressure, blue = temp
 
     auto mapX = [&](qreal t) {
         return (t - xMin) / xRange * w;
@@ -189,17 +189,7 @@ void GraphWidget::drawSeries(const QVector<DataPoint>& s, const QColor& c, qreal
 
 }
 
-// ——— Stubbed fetch-functions ———
-// Replace these bodies with calls into your HTTP/Influx code:
-QVector<DataPoint> GraphWidget::fetchTemp() {
-    QVector<DataPoint> v;
-    // … call your Influx client, parse into DataPoint list …
-    return v;
-}
-QVector<DataPoint> GraphWidget::fetchPressure() {
-    QVector<DataPoint> v;
-    return v;
-}
+
 
 
 
@@ -229,11 +219,18 @@ void GraphWidget::appendTempPoint(const DataPoint& t) {
 
 // Tegner alt på nytt (clear + aksser + alle kurver)
 void GraphWidget::refresh() {
-
+         qDebug() << "refreshing graphw";
     m_scene->clear();
     drawAxes();
     drawSeries(m_temp,     Qt::blue,  0);
     drawSeries(m_pressure, Qt::red,   0);
+
+}
+
+void GraphWidget::clearData(){
+        m_pressure.clear();
+        m_temp.clear();
+
 
 }
 

@@ -13,42 +13,17 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>0</y>
-     <width>591</width>
-     <height>801</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #F5EBDD;
-border-radius: 40px;
-color: #000;
-</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>111</width>
-     <height>811</height>
-    </rect>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>150</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="maximumSize">
+      <size>
+       <width>150</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;ui version=&quot;4.0&quot;&gt;
  &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
   &lt;widget class=&quot;QPushButton&quot; name=&quot;btnInfo&quot;&gt;
@@ -65,7 +40,7 @@ color: #000;
    &lt;/property&gt;
    &lt;property name=&quot;icon&quot;&gt;
     &lt;iconset resource=&quot;resources.qrc&quot;&gt;
-     &lt;normaloff&gt;:/icons/info.svg&lt;/normaloff&gt;:/icons/info.svg&lt;/iconset&gt;
+     &lt;normaloff&gt;:/Bilder_ikoner/info.svg&lt;/normaloff&gt;:/Bilder_ikoner/info.svg&lt;/iconset&gt;
    &lt;/property&gt;
    &lt;property name=&quot;iconSize&quot;&gt;
     &lt;size&gt;
@@ -80,228 +55,122 @@ color: #000;
  &lt;/resources&gt;
 &lt;/ui&gt;
 </string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Shape::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
-   </property>
-   <widget class="QPushButton" name="btnHome">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>71</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #7B4A2F;
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="btnHome">
+        <property name="styleSheet">
+         <string notr="true">background-color: #7B4A2F;
 color: white;  /* valgfritt, for kontrast */
 border-radius: 12px;  /* hvis du ønsker avrundede hjørner */
 </string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="resources.qrc">
-      <normaloff>:/icons/home.svg</normaloff>:/icons/home.svg</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>27</width>
-      <height>27</height>
-     </size>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QPushButton" name="btnBack">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>20</y>
-     <width>88</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #7B4A2F;
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/Bilder_ikoner/home.svg</normaloff>:/Bilder_ikoner/home.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">background-color: #F5EBDD;
+border-radius: 40px;
+color: #000;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>607</width>
+        <height>798</height>
+       </rect>
+      </property>
+      <widget class="QTextEdit" name="SD_beskrivelse">
+       <property name="geometry">
+        <rect>
+         <x>53</x>
+         <y>19</y>
+         <width>551</width>
+         <height>731</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;In the sequence diagram, the user initiates the brewing process by sending a “Start Brewing Coffee” message to the system, which immediately begins handling the request and simultaneously streams real-time data (such as temperature and remaining time) back to the user interface. At the same time, the system packages the event details—like timestamp and parameters—and sends them to the database for storage. Later, when the user requests to view past brewing events by sending a “Request Event Data” message, the system queries the database for those stored events. The database returns the requested data, and the system formats and displays it in the user interface, allowing the user both to monitor the brewing process in real time and to retrieve historical brewing data at any time.&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/Bilder_ikoner/Sequence_Diagram.drawio.png&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;This activity diagram shows the end-to-end flow from when the user starts brewing coffee until the completed brew is recorded and shown back to them:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;The user clicks &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;Start Brewing Coffee&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;, and the system immediately detects that a brewing event has begun. As the machine runs, the system continuously &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;displays real-time data&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt; (e.g. temperature, time remaining) which the user can view. When brewing completes, the system marks the event as finished and &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;sends the event data&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt; (timestamp, parameters, etc.) to the database. The database &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;receives and saves&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt; this event. Next, the system &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;retrieves and displays&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt; the saved event in the “Event” tab. Finally, the user navigates to that tab, &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;sees the stored event data&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;, and the process ends.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/Bilder_ikoner/Activity_Diagram.drawio.png&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:14pt; font-weight:700; color:#865e3c;&quot;&gt;Monitoring System – Electrical Overview&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;This diagram shows how the monitoring system inside the espresso machine is powered and how it collects and sends brewing data to the user interface.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;Power Supply&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;, the system uses a dedicated power supply that converts the building’s 230 V AC power into a safe 5 V DC output. This powers all the internal electronics of the monitoring system, including sensors and the main control unit.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;ESP32 Microcontroller (FireBeetle 2)&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt; -At the heart of the system is the ESP32 FireBeetle 2, a smart microcontroller that collects sensor data and communicates with the display system. It acts like the brain of the monitoring unit.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;-  &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;Sensors and Measurements&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;, the system includes several types of sensors, each connected to the ESP32 using communication protocols suited to their needs:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; text-decoration: underline;&quot;&gt;Pressure Sensor (I²C)&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;: Measures water pressure during brewing to help assess extraction quality.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; text-decoration: underline;&quot;&gt;Temperature Sensor (PT100)&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;: A highly accurate sensor that monitors water temperature. It is connected via a signal conditioning module that converts the analog signal into digital data for the ESP32 to read.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;&amp;gt; Analog Current Sensor – Brew Detection: This sensor detects whether the espresso machine is actively brewing coffee by monitoring electrical current flow.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;&amp;gt; Analog Current Sensor – Power Consumption: This sensor measures the total power usage of the espresso machine, helping track energy efficiency and operational state.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;Real-Time Clock Module&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;: Keeps accurate time even when the system is powered off, ensuring that all sensor data is time-stamped correctly.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:700;&quot;&gt;Data Output to Display&lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu Sans'; font-size:11pt;&quot;&gt;. All collected data is sent via serial communication to the Raspberry Pi 5, which handles the graphical display you see. This interface shows real-time values for pressure, temperature, and power usage in a clear and interactive format.&lt;br /&gt;&lt;/span&gt;&lt;img src=&quot;:/Bilder_ikoner/Electrical_Diagram.drawio.png&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnBack">
+     <property name="styleSheet">
+      <string notr="true">background-color: #7B4A2F;
 color: white;  /* valgfritt, for kontrast */
 border-radius: 12px;  /* hvis du ønsker avrundede hjørner */
 </string>
-   </property>
-   <property name="text">
-    <string>BACK</string>
-   </property>
-  </widget>
-  <widget class="QScrollArea" name="scrollArea">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>60</y>
-     <width>571</width>
-     <height>721</height>
-    </rect>
-   </property>
-   <property name="widgetResizable">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents_2">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>569</width>
-      <height>719</height>
-     </rect>
-    </property>
-    <widget class="QTextEdit" name="SD_beskrivelse">
-     <property name="geometry">
-      <rect>
-       <x>53</x>
-       <y>19</y>
-       <width>441</width>
-       <height>121</height>
-      </rect>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In the sequence diagram, the user initiates the brewing process by sending a “Start Brewing Coffee” message to the system, which immediately begins handling the request and simultaneously streams real-time data (such as temperature and remaining time) back to the user interface. At the same time, the system packages the event details—like timestamp and parameters—and sends them to the database for storage. Later, when the user requests to view past brewing events by sending a “Request Event Data” message, the system queries the database for those stored events. The database returns the requested data, and the system formats and displays it in the user interface, allowing the user both to monitor the brewing process in real time and to retrieve historical brewing data at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="sekvensDiagram">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>160</y>
-       <width>401</width>
-       <height>191</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::StyledPanel</enum>
      </property>
      <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="resources.qrc">:/icons/Downloads/Sequence_Diagram.drawio.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
+      <string>BACK</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="AD_beskrivelse">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>360</y>
-       <width>431</width>
-       <height>70</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::Box</enum>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This activity diagram shows the end-to-end flow from when the user starts brewing coffee until the completed brew is recorded and shown back to them:&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The user clicks &lt;span style=&quot; font-weight:700;&quot;&gt;Start Brewing Coffee&lt;/span&gt;, and the system immediately detects that a brewing event has begun. As the machine runs, the system continuously &lt;span style=&quot; font-weight:700;&quot;&gt;displays real-time data&lt;/span&gt; (e.g. temperature, time remaining) which the user can view. When brewing completes, the system marks the event as finished and &lt;span style=&quot; font-weight:700;&quot;&gt;sends the event data&lt;/span&gt; (timestamp, parameters, etc.) to the database. The database &lt;span style=&quot; font-weight:700;&quot;&gt;receives and saves&lt;/span&gt; this event. Next, the system &lt;span style=&quot; font-weight:700;&quot;&gt;retrieves and displays&lt;/span&gt; the saved event in the “Event” tab. Finally, the user navigates to that tab, &lt;span style=&quot; font-weight:700;&quot;&gt;sees the stored event data&lt;/span&gt;, and the process ends.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>55</x>
-       <y>440</y>
-       <width>431</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::Box</enum>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="resources.qrc">:/icons/Downloads/Overall_Software_Interface.drawio.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>510</y>
-       <width>441</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::Box</enum>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; color:#865e3c;&quot;&gt;Monitoring System – Electrical Overview&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This diagram shows how the monitoring system inside the espresso machine is powered and how it collects and sends brewing data to the user interface.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- &lt;span style=&quot; font-weight:700;&quot;&gt;Power Supply&lt;/span&gt;, the system uses a dedicated power supply that converts the building’s 230 V AC power into a safe 5 V DC output. This powers all the internal electronics of the monitoring system, including sensors and the main control unit.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- &lt;span style=&quot; font-weight:700;&quot;&gt;ESP32 Microcontroller (FireBeetle 2)&lt;/span&gt; -At the heart of the system is the ESP32 FireBeetle 2, a smart microcontroller that collects sensor data and communicates with the display system. It acts like the brain of the monitoring unit.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;-  &lt;span style=&quot; font-weight:700;&quot;&gt;Sensors and Measurements&lt;/span&gt;, the system includes several types of sensors, each connected to the ESP32 using communication protocols suited to their needs:&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Pressure Sensor (I²C)&lt;/span&gt;: Measures water pressure during brewing to help assess extraction quality.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Temperature Sensor (PT100)&lt;/span&gt;: A highly accurate sensor that monitors water temperature. It is connected via a signal conditioning module that converts the analog signal into digital data for the ESP32 to read.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;gt; Analog Current Sensor – Brew Detection: This sensor detects whether the espresso machine is actively brewing coffee by monitoring electrical current flow.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;gt; Analog Current Sensor – Power Consumption: This sensor measures the total power usage of the espresso machine, helping track energy efficiency and operational state.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- &lt;span style=&quot; font-weight:700;&quot;&gt;Real-Time Clock Module&lt;/span&gt;: Keeps accurate time even when the system is powered off, ensuring that all sensor data is time-stamped correctly.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- &lt;span style=&quot; font-weight:700;&quot;&gt;Data Output to Display&lt;/span&gt;. All collected data is sent via serial communication to the Raspberry Pi 5, which handles the graphical display you see. This interface shows real-time values for pressure, temperature, and power usage in a clear and interactive format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>600</y>
-       <width>441</width>
-       <height>101</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::Box</enum>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="resources.qrc">:/icons/Downloads/Electrical_Diagram.drawio.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-  </widget>
+   </item>
+  </layout>
+  <zorder>frame</zorder>
+  <zorder>btnBack</zorder>
+  <zorder>label</zorder>
+  <zorder>scrollArea</zorder>
  </widget>
  <resources>
   <include location="resources.qrc"/>

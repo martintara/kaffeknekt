@@ -32,8 +32,8 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>thermometer.svg</normaloff>thermometer.svg</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/Bilder_ikoner/thermometer.svg</normaloff>:/Bilder_ikoner/thermometer.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -61,8 +61,8 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>droplet.svg</normaloff>droplet.svg</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/Bilder_ikoner/droplet.svg</normaloff>:/Bilder_ikoner/droplet.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -90,8 +90,8 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>battery-charging.svg</normaloff>battery-charging.svg</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/Bilder_ikoner/battery-charging.svg</normaloff>:/Bilder_ikoner/battery-charging.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -215,7 +215,7 @@ color: #000000;
 </string>
     </property>
     <property name="text">
-     <string>24h</string>
+     <string> minute</string>
     </property>
    </widget>
    <widget class="QPushButton" name="week">
@@ -234,7 +234,7 @@ color: #000000;
 </string>
     </property>
     <property name="text">
-     <string>Week</string>
+     <string>hour</string>
     </property>
    </widget>
    <widget class="QPushButton" name="month">
@@ -253,11 +253,13 @@ color: #000000;
 </string>
     </property>
     <property name="text">
-     <string>Month</string>
+     <string>Day</string>
     </property>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

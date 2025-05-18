@@ -30,10 +30,10 @@ InfoDetailDialog::InfoDetailDialog(QWidget *parent)
 
     // Legg til dine to widgets i riktig rekkefølge
     vlay->addWidget(ui->SD_beskrivelse);
-    vlay->addWidget(ui->sekvensDiagram);
+//    vlay->addWidget(ui->sekvensDiagram);
 
-    vlay->addWidget(ui->AD_beskrivelse);
-    vlay->addWidget(ui->label_2);
+//    vlay->addWidget(ui->AD_beskrivelse);
+//    vlay->addWidget(ui->label_2);
 
 }
 
