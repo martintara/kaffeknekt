@@ -3,7 +3,7 @@
  * @brief Main entry point for the system. Initializes hardware and starts tasks.
  *
  * Sets up I2C, ADC (ADS1115), and RTC (DS3232). Creates and pins various sensor-reading and
- * data-publishing tasks to core 1. A shared measurement structure and an I2C mutex
+ * data-publishing tasks to core 1. An I2C mutex
  * are used for safe task communication and peripheral access.
  */
 
@@ -34,17 +34,19 @@ void setup() {
   Serial.begin(115200);
   Wire.begin(SDA_PIN, SCL_PIN);
   ///Initilizing ads
-  ads.setAddr_ADS1115(ADS1115_IIC_ADDRESS0);  // 0x48
-  ads.setGain(eGAIN_ONE);        // ±4.096V range
-  ads.setMode(eMODE_SINGLE);     // Single-shot mode
-  ads.setRate(eRATE_128);        // 128 samples per second
-  ads.setOSMode(eOSMODE_SINGLE); // Start a single conversion
+  ads.setAddr_ADS1115(ADS1115_IIC_ADDRESS0);
+  ads.setGain(eGAIN_ONE);
+  ads.setMode(eMODE_SINGLE);
+  ads.setRate(eRATE_128);
+  ads.setOSMode(eOSMODE_SINGLE);
   ads.init();
+
   /// Initializing rtc
   while (!rtc.begin()) {
     Serial.println("Failed to init DS3232 RTC chip.");
     delay(1000);
   }
+
   Serial.println("DS3232 RTC initialized successfully!");
   /// Creation of mutex to protect i2c bus
   i2cMutex = xSemaphoreCreateMutex();

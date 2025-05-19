@@ -4,7 +4,7 @@
  *
  * This task uses an ADS1115 ADC and a SEN0211 current sensor to measure the AC current,
  * calculate power consumption, and updates power variable in a shared measurement structure.
- * It also takes measurement from an aditional SEN0211 sensor to discovere when brewing starts and stops.
+ * It also takes measurement from an aditional SEN0211 sensor to discover when brewing starts and stops.
  */
 
 #include <Arduino.h>
