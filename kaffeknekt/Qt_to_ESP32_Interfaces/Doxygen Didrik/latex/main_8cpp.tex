@@ -1,0 +1,72 @@
+\doxysection{Socket\+Data/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{SocketData/main.cpp@{SocketData/main.cpp}}
+{\ttfamily \#include $<$QCore\+Application$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/un.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$nlohmann/json.\+hpp$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_accd1a28a51a58f5632e42b9fd57725d8}{SOCKET\+\_\+\+PATH}}~"{}/tmp/socket"{}
+\begin{DoxyCompactList}\small\item\em Path for the UNIX domain socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a5ece610682861d1713357ebe3d61997f}{create\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Creates a UNXI socket and connects it to the data handling server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a86a4a1fa435c74cd572b34425ddc3f88}{get\+Data}} (int socket)
+\begin{DoxyCompactList}\small\item\em Reads data from the connected socket. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em UNIX domain socket client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8cpp_accd1a28a51a58f5632e42b9fd57725d8}\index{main.cpp@{main.cpp}!SOCKET\_PATH@{SOCKET\_PATH}}
+\index{SOCKET\_PATH@{SOCKET\_PATH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SOCKET\_PATH}{SOCKET\_PATH}}
+{\footnotesize\ttfamily \label{main_8cpp_accd1a28a51a58f5632e42b9fd57725d8} 
+\#define SOCKET\+\_\+\+PATH~"{}/tmp/socket"{}}
+
+
+
+Path for the UNIX domain socket. 
+
+This path is used to create the socket and connect to it. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a5ece610682861d1713357ebe3d61997f}\index{main.cpp@{main.cpp}!createSocket@{createSocket}}
+\index{createSocket@{createSocket}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{createSocket()}{createSocket()}}
+{\footnotesize\ttfamily \label{main_8cpp_a5ece610682861d1713357ebe3d61997f} 
+int create\+Socket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates a UNXI socket and connects it to the data handling server. 
+
+Creates a UNIX domain socket, connects to the data handling server, and handles errors. \Hypertarget{main_8cpp_a86a4a1fa435c74cd572b34425ddc3f88}\index{main.cpp@{main.cpp}!getData@{getData}}
+\index{getData@{getData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{main_8cpp_a86a4a1fa435c74cd572b34425ddc3f88} 
+void get\+Data (\begin{DoxyParamCaption}\item[{int}]{socket}{}\end{DoxyParamCaption})}
+
+
+
+Reads data from the connected socket. 
+
+Reads data from the connected socket, adds the specified values to variables. \Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+UNIX domain socket client. 
+
+Connects to a UNIX domain socket using \doxylink{main_8cpp_a5ece610682861d1713357ebe3d61997f}{create\+Socket()} and receives data using \doxylink{main_8cpp_a86a4a1fa435c74cd572b34425ddc3f88}{get\+Data()}. 

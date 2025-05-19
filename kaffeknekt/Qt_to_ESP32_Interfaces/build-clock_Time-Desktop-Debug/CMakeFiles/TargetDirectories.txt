@@ -1,0 +1,9 @@
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/clock_Time.dir
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/install.dir
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/install/local.dir
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/install/strip.dir
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/clock_Time_autogen_timestamp_deps.dir
+/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/CMakeFiles/clock_Time_autogen.dir
