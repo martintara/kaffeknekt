@@ -1,0 +1,18 @@
+# ninja log v5
+2666	3075	1746437444937993938	clock_Time	94e5a945763a39ce
+385	3477	1746437228047107560	CMakeFiles/clock_Time.dir/main.cpp.o	c439f1c3e1f92528
+385	3666	1746437228239106540	CMakeFiles/clock_Time.dir/clock_Time_autogen/mocs_compilation.cpp.o	fa5bf8d553d4bd63
+3	48	1746437441914008998	/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/mocs_compilation.cpp	59459e0f8c7aa2e3
+3	48	1746437441914008998	/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/timestamp	59459e0f8c7aa2e3
+3	48	1746437441914008998	clock_Time_autogen/mocs_compilation.cpp	59459e0f8c7aa2e3
+50	2666	1746437444525995989	CMakeFiles/clock_Time.dir/clock_time.cpp.o	a402c145ffbff99b
+3	48	1746437441914008998	clock_Time_autogen/timestamp	59459e0f8c7aa2e3
+1	195	1746784103479478580	build.ninja	bf3c6fcc0a0b3ba8
+4	54	1746792439590798424	clock_Time_autogen/timestamp	59459e0f8c7aa2e3
+4	54	1746792439590798424	clock_Time_autogen/mocs_compilation.cpp	59459e0f8c7aa2e3
+4	54	1746792439590798424	/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/timestamp	59459e0f8c7aa2e3
+4	54	1746792439590798424	/home/kaffeknekt/kaffeknekt/build-clock_Time-Desktop-Debug/clock_Time_autogen/mocs_compilation.cpp	59459e0f8c7aa2e3
+56	2442	1746792441970770015	CMakeFiles/clock_Time.dir/main.cpp.o	c439f1c3e1f92528
+56	2564	1746792442094768538	CMakeFiles/clock_Time.dir/clock_Time_autogen/mocs_compilation.cpp.o	fa5bf8d553d4bd63
+56	2677	1746792442210767157	CMakeFiles/clock_Time.dir/clock_time.cpp.o	a402c145ffbff99b
+2677	3030	1746792442566762917	clock_Time	94e5a945763a39ce

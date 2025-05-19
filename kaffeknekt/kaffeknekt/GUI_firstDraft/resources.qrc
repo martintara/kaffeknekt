@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Bilder_ikoner/battery-charging.svg</file>
+        <file>Bilder_ikoner/beans.jpg</file>
+        <file>Bilder_ikoner/beans1.png</file>
+        <file>Bilder_ikoner/calendar.svg</file>
+        <file>Bilder_ikoner/clock.svg</file>
+        <file>Bilder_ikoner/coffee.svg</file>
+        <file>Bilder_ikoner/droplet.svg</file>
+        <file>Bilder_ikoner/espresso.jpg</file>
+        <file>Bilder_ikoner/espresso1.jpg</file>
+        <file>Bilder_ikoner/home.svg</file>
+        <file>Bilder_ikoner/info.svg</file>
+        <file>Bilder_ikoner/kaffeknekt_logo.png</file>
+        <file>Bilder_ikoner/kaffemaskina.webp</file>
+        <file>Bilder_ikoner/menu.svg</file>
+        <file>Bilder_ikoner/pie-chart.svg</file>
+        <file>Bilder_ikoner/qr_codeInstagram.png</file>
+        <file>Bilder_ikoner/qr_codeWebsite.png</file>
+        <file>Bilder_ikoner/semcon_logo.webp</file>
+        <file>Bilder_ikoner/settings.svg</file>
+        <file>Bilder_ikoner/SpyBot.png</file>
+        <file>Bilder_ikoner/thermometer.svg</file>
+        <file>Bilder_ikoner/Activity_Diagram.drawio.svg</file>
+        <file>Bilder_ikoner/Electrical_Diagram.drawio.png</file>
+        <file>Bilder_ikoner/Sequence_Diagram.drawio.svg</file>
+        <file>Bilder_ikoner/Activity_Diagram.drawio.png</file>
+        <file>Bilder_ikoner/Sequence_Diagram.drawio.png</file>
+    </qresource>
+</RCC>
