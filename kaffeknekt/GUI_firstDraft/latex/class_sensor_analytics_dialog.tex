@@ -1,0 +1,104 @@
+\doxysection{Sensor\+Analytics\+Dialog Class Reference}
+\hypertarget{class_sensor_analytics_dialog}{}\label{class_sensor_analytics_dialog}\index{SensorAnalyticsDialog@{SensorAnalyticsDialog}}
+
+
+Dialog for displaying and selecting sensor analytics metrics.  
+
+
+
+
+{\ttfamily \#include $<$sensoranalyticsdialog.\+h$>$}
+
+Inheritance diagram for Sensor\+Analytics\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sensor_analytics_dialog}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sensor_analytics_dialog_acaaf592b602adb325cf9948a92512abd}{interval\+Selected}} (qreal seconds)
+\begin{DoxyCompactList}\small\item\em Emitted when the user selects a time interval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sensor_analytics_dialog_a70a950d3b09bc9456cb4d9183e0d32f2}{Sensor\+Analytics\+Dialog}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{class_sensor_analytics_dialog}{Sensor\+Analytics\+Dialog}. \end{DoxyCompactList}\item 
+\Hypertarget{class_sensor_analytics_dialog_afe12249b9da76eecf5fc65a3dc8b5e56}\label{class_sensor_analytics_dialog_afe12249b9da76eecf5fc65a3dc8b5e56} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Sensor\+Analytics\+Dialog} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_sensor_analytics_dialog_a775da93327f46372e0559c306f8ec293}\label{class_sensor_analytics_dialog_a775da93327f46372e0559c306f8ec293} 
+void {\bfseries on\+\_\+btn\+Water\+Temp\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the water temperature button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_sensor_analytics_dialog_afbf3f3ee02d9a0e8db09a1ff1724c551}\label{class_sensor_analytics_dialog_afbf3f3ee02d9a0e8db09a1ff1724c551} 
+void {\bfseries on\+\_\+btn\+Water\+Pressure\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the water pressure button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_sensor_analytics_dialog_a242291bb05b15c0ae038485e9f4b6410}\label{class_sensor_analytics_dialog_a242291bb05b15c0ae038485e9f4b6410} 
+void {\bfseries on\+\_\+btn\+Power\+Consumption\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the power consumption button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_sensor_analytics_dialog_a1ca127c9b000c2d2ab1a9debb7cfce9a}\label{class_sensor_analytics_dialog_a1ca127c9b000c2d2ab1a9debb7cfce9a} 
+void {\bfseries on\+\_\+day\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the "{}day"{} interval is selected. \end{DoxyCompactList}\item 
+\Hypertarget{class_sensor_analytics_dialog_a8f254f146b17784151bd3668e75c84c4}\label{class_sensor_analytics_dialog_a8f254f146b17784151bd3668e75c84c4} 
+void {\bfseries on\+\_\+week\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the "{}week"{} interval is selected. \end{DoxyCompactList}\item 
+\Hypertarget{class_sensor_analytics_dialog_ad83a4629123bbf0b5bf44cfcaf8df8ea}\label{class_sensor_analytics_dialog_ad83a4629123bbf0b5bf44cfcaf8df8ea} 
+void {\bfseries on\+\_\+month\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the "{}month"{} interval is selected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_sensor_analytics_dialog_a71235cb6f55ac0e82968f627bee253aa}\label{class_sensor_analytics_dialog_a71235cb6f55ac0e82968f627bee253aa} 
+Ui\+::\+Sensor\+Analytics\+Dialog \texorpdfstring{$\ast$}{*} {\bfseries ui}
+\begin{DoxyCompactList}\small\item\em Pointer to the UI components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dialog for displaying and selecting sensor analytics metrics. 
+
+This dialog allows the user to view different sensor-\/related data (e.\+g., water temperature, pressure, power consumption) and to select the time interval for data analysis. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sensor_analytics_dialog_a70a950d3b09bc9456cb4d9183e0d32f2}\index{SensorAnalyticsDialog@{SensorAnalyticsDialog}!SensorAnalyticsDialog@{SensorAnalyticsDialog}}
+\index{SensorAnalyticsDialog@{SensorAnalyticsDialog}!SensorAnalyticsDialog@{SensorAnalyticsDialog}}
+\doxysubsubsection{\texorpdfstring{SensorAnalyticsDialog()}{SensorAnalyticsDialog()}}
+{\footnotesize\ttfamily \label{class_sensor_analytics_dialog_a70a950d3b09bc9456cb4d9183e0d32f2} 
+Sensor\+Analytics\+Dialog\+::\+Sensor\+Analytics\+Dialog (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs the \doxylink{class_sensor_analytics_dialog}{Sensor\+Analytics\+Dialog}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget (optional). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sensor_analytics_dialog_acaaf592b602adb325cf9948a92512abd}\index{SensorAnalyticsDialog@{SensorAnalyticsDialog}!intervalSelected@{intervalSelected}}
+\index{intervalSelected@{intervalSelected}!SensorAnalyticsDialog@{SensorAnalyticsDialog}}
+\doxysubsubsection{\texorpdfstring{intervalSelected}{intervalSelected}}
+{\footnotesize\ttfamily \label{class_sensor_analytics_dialog_acaaf592b602adb325cf9948a92512abd} 
+void Sensor\+Analytics\+Dialog\+::interval\+Selected (\begin{DoxyParamCaption}\item[{qreal}]{seconds}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the user selects a time interval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & The selected interval in seconds. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sensoranalyticsdialog.\+h\item 
+sensoranalyticsdialog.\+cpp\end{DoxyCompactItemize}

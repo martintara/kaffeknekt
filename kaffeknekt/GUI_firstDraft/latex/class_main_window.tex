@@ -1,0 +1,144 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{class_main_window}{}\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+The main application window for the Kaffeknekt dashboard.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs the main window. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Main\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a20c90e43c716041be4616da120a6ccde}\label{class_main_window_a20c90e43c716041be4616da120a6ccde} 
+void {\bfseries hide\+Info\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Hides the informational side frame (if visible). \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a0fc0da5fce7e7aa2a3c6d9f657e9d367}\label{class_main_window_a0fc0da5fce7e7aa2a3c6d9f657e9d367} 
+void {\bfseries on\+\_\+flagsent} ()
+\begin{DoxyCompactList}\small\item\em Slot to handle when a flag is sent (e.\+g., for a warning or state change). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a3febb9ef08a8e0f7fc00848ea540a899}{show\+Event}} (QShow\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles the event when the main window is shown. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_main_window_aec114ad985be115af4116814f9e7d04f}\label{class_main_window_aec114ad985be115af4116814f9e7d04f} 
+void {\bfseries on\+\_\+btn\+Hamburger\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the hamburger menu button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a412d36e2110b7b958ec408f89fa506ab}\label{class_main_window_a412d36e2110b7b958ec408f89fa506ab} 
+void {\bfseries on\+\_\+btn\+Home\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the home button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a4d9aff04317a6227f0463210a1a52b83}\label{class_main_window_a4d9aff04317a6227f0463210a1a52b83} 
+void {\bfseries on\+\_\+btn\+Settings\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the settings button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a3f92165c5e22b7c229a521b734d25be3}\label{class_main_window_a3f92165c5e22b7c229a521b734d25be3} 
+void {\bfseries on\+\_\+btn\+Info\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the info button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_afcdaeea7e92715da34f55407939aea68}\label{class_main_window_afcdaeea7e92715da34f55407939aea68} 
+void {\bfseries on\+\_\+btn\+Instructions\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the instructions button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a676656583e07c541febb8915e9734192}\label{class_main_window_a676656583e07c541febb8915e9734192} 
+void {\bfseries on\+\_\+btn\+Sensor\+Analytics\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the sensor analytics button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a8a568ac890cbdeffcc93197e34b44018}\label{class_main_window_a8a568ac890cbdeffcc93197e34b44018} 
+void {\bfseries on\+\_\+btn\+Statistics\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the statistics button is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_ac22a4af2e9123e021e79575675f2bcce}\label{class_main_window_ac22a4af2e9123e021e79575675f2bcce} 
+void {\bfseries on\+\_\+btn\+Here\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the "{}\+Here"{} button inside info frame is clicked. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a882d5943e90d79c51d76bfbe3cc462dd}\label{class_main_window_a882d5943e90d79c51d76bfbe3cc462dd} 
+void {\bfseries on\+\_\+btn\+Test\+Warning\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the test warning button is clicked. Used for testing the warning popup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_main_window_ab54a35930d121203e1384d736c3da8b1}\label{class_main_window_ab54a35930d121203e1384d736c3da8b1} 
+Ui\+::\+Kaffeknekt \texorpdfstring{$\ast$}{*} {\bfseries ui}
+\begin{DoxyCompactList}\small\item\em Pointer to UI components. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_af3581963674c07d7647f4f5d65848dc0}\label{class_main_window_af3581963674c07d7647f4f5d65848dc0} 
+\mbox{\hyperlink{class_graph_widget}{Graph\+Widget}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em Graph widget for data display. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a84cc44d73bcb18ef23a877c7786bd3a9}\label{class_main_window_a84cc44d73bcb18ef23a877c7786bd3a9} 
+\mbox{\hyperlink{class_statistics}{Statistics}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+stats\+Dialog}
+\begin{DoxyCompactList}\small\item\em Dialog for showing statistics. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_aa82f4741aa5302839532b7a3fab4d608}\label{class_main_window_aa82f4741aa5302839532b7a3fab4d608} 
+\mbox{\hyperlink{class_sensor_analytics_dialog}{Sensor\+Analytics\+Dialog}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+sa\+Dialog}
+\begin{DoxyCompactList}\small\item\em Dialog for real-\/time analytics. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_ac898765a191d51ff891f4e1c6a17a82b}\label{class_main_window_ac898765a191d51ff891f4e1c6a17a82b} 
+\mbox{\hyperlink{class_web_socket_client}{Web\+Socket\+Client}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+ws}
+\begin{DoxyCompactList}\small\item\em Web\+Socket client for real-\/time data. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a2db911238110c79db8949ebf31e5effd}\label{class_main_window_a2db911238110c79db8949ebf31e5effd} 
+bool {\bfseries side\+Menu\+Visible}
+\begin{DoxyCompactList}\small\item\em Tracks visibility of side menu. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_aa74591639d7adaec878729cd19353925}\label{class_main_window_aa74591639d7adaec878729cd19353925} 
+int {\bfseries m\+\_\+cup\+Count} = 0
+\begin{DoxyCompactList}\small\item\em Tracks the number of cups (usage metric). \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_ac040fe8991c16ab5f9946cc52d07e4c6}\label{class_main_window_ac040fe8991c16ab5f9946cc52d07e4c6} 
+bool {\bfseries m\+\_\+warning\+Shown} = false
+\begin{DoxyCompactList}\small\item\em Whether a warning dialog has been shown. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a79a89cd1f2a881392f0d5b90fcb6e732}\label{class_main_window_a79a89cd1f2a881392f0d5b90fcb6e732} 
+\mbox{\hyperlink{classgraph_dialog}{graph\+Dialog}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+graph\+Dialog}
+\begin{DoxyCompactList}\small\item\em Dialog for graph display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main application window for the Kaffeknekt dashboard. 
+
+This class controls the main GUI, manages views such as graphs, settings, and instructions, and connects to real-\/time data via Web\+Socket. It also handles various UI interactions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_a996c5a2b6f77944776856f08ec30858d} 
+Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs the main window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Optional parent widget. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_window_a3febb9ef08a8e0f7fc00848ea540a899}\index{MainWindow@{MainWindow}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{showEvent()}{showEvent()}}
+{\footnotesize\ttfamily \label{class_main_window_a3febb9ef08a8e0f7fc00848ea540a899} 
+void Main\+Window\+::show\+Event (\begin{DoxyParamCaption}\item[{QShow\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles the event when the main window is shown. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Pointer to the QShow\+Event. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mainwindow.\+h\item 
+mainwindow.\+cpp\item 
+warningdialog.\+cpp\end{DoxyCompactItemize}

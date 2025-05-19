@@ -1,0 +1,185 @@
+\doxysection{Graph\+Widget Class Reference}
+\hypertarget{class_graph_widget}{}\label{class_graph_widget}\index{GraphWidget@{GraphWidget}}
+
+
+A custom graphics view for plotting pressure and temperature data in real-\/time.  
+
+
+
+
+{\ttfamily \#include $<$graphview.\+h$>$}
+
+Inheritance diagram for Graph\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_widget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_widget_a6df7c301e5551dff21bbdc5b6cd7ffc9}{Graph\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_graph_widget}{Graph\+Widget}. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_aded42c6a0505efca3bee8d763ae3647f}\label{class_graph_widget_aded42c6a0505efca3bee8d763ae3647f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Graph\+Widget} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_af8ffeabbdcfba3c7bee5da7cf0ffbbf7}\label{class_graph_widget_af8ffeabbdcfba3c7bee5da7cf0ffbbf7} 
+void {\bfseries start} ()
+\begin{DoxyCompactList}\small\item\em Starts the periodic data refresh timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_widget_af98aef384bcba55010801c6cdf9fc03d}{set\+Window\+Seconds}} (qreal seconds)
+\begin{DoxyCompactList}\small\item\em Sets the size of the time window (in seconds) for graph display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_widget_a3cca3fc23cb6852065d31bf529b77710}{append\+Pressure\+Point}} (const \mbox{\hyperlink{struct_data_point}{Data\+Point}} \&p)
+\begin{DoxyCompactList}\small\item\em Appends a new pressure data point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_widget_a4dcbdad9056be1089b3ab7a39ae601a6}{append\+Temp\+Point}} (const \mbox{\hyperlink{struct_data_point}{Data\+Point}} \&t)
+\begin{DoxyCompactList}\small\item\em Appends a new temperature data point. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_a4f264a6d3332f26e735d53a929003846}\label{class_graph_widget_a4f264a6d3332f26e735d53a929003846} 
+void {\bfseries refresh} ()
+\begin{DoxyCompactList}\small\item\em Redraws the entire graph\+: clears scene, draws axes and data series. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_ab5c0fe82d31e081e63db0a5dfbf78d30}\label{class_graph_widget_ab5c0fe82d31e081e63db0a5dfbf78d30} 
+void {\bfseries clear\+Data} ()
+\begin{DoxyCompactList}\small\item\em Clears all stored data points and the graph display. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_a5e16822bb6ca0e5b47bad208ea7bce13}\label{class_graph_widget_a5e16822bb6ca0e5b47bad208ea7bce13} 
+void {\bfseries draw\+Axes} ()
+\begin{DoxyCompactList}\small\item\em Draws the axes on the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_widget_aa2051c1ed9e3691948b1922004ef9623}{draw\+Series}} (const QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ \&series, const QColor \&pen\+Color, qreal y\+Offset)
+\begin{DoxyCompactList}\small\item\em Draws a time series on the graph with a given color and Y offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_graph_widget_aee45971fea2aa0f516ca7abbdfd446fb}{resize\+Event}} (QResize\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles resizing of the widget to adjust the graph accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_graph_widget_aa9f8e7eec1141df356a6cf98fd6cbf1c}\label{class_graph_widget_aa9f8e7eec1141df356a6cf98fd6cbf1c} 
+void {\bfseries fetch\+And\+Redraw} ()
+\begin{DoxyCompactList}\small\item\em Called periodically to fetch new data and update the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_graph_widget_acb7a2e522848fca80a9ed9a6094926ed}\label{class_graph_widget_acb7a2e522848fca80a9ed9a6094926ed} 
+QGraphics\+Scene \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+scene}
+\begin{DoxyCompactList}\small\item\em Scene for rendering the graph. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_ab24d236780e44e36aeb0bce1793874b6}\label{class_graph_widget_ab24d236780e44e36aeb0bce1793874b6} 
+QTimer \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em Timer for triggering periodic updates. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_a4538763520ff8bd9e787faea9a15e508}\label{class_graph_widget_a4538763520ff8bd9e787faea9a15e508} 
+QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ {\bfseries m\+\_\+pressure}
+\begin{DoxyCompactList}\small\item\em Stored pressure data points. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_aaa7b56173d1af7a97c22a736c75b62f7}\label{class_graph_widget_aaa7b56173d1af7a97c22a736c75b62f7} 
+QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ {\bfseries m\+\_\+temp}
+\begin{DoxyCompactList}\small\item\em Stored temperature data points. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_widget_ad805e0ecc536b9ce88e9339648973b85}\label{class_graph_widget_ad805e0ecc536b9ce88e9339648973b85} 
+qreal {\bfseries m\+\_\+window\+Seconds} = 600.\+0
+\begin{DoxyCompactList}\small\item\em Time window for visible data (default 10 minutes). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A custom graphics view for plotting pressure and temperature data in real-\/time. 
+
+This widget displays two time-\/series graphs (pressure and temperature) and periodically updates to reflect new incoming data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_graph_widget_a6df7c301e5551dff21bbdc5b6cd7ffc9}\index{GraphWidget@{GraphWidget}!GraphWidget@{GraphWidget}}
+\index{GraphWidget@{GraphWidget}!GraphWidget@{GraphWidget}}
+\doxysubsubsection{\texorpdfstring{GraphWidget()}{GraphWidget()}}
+{\footnotesize\ttfamily \label{class_graph_widget_a6df7c301e5551dff21bbdc5b6cd7ffc9} 
+Graph\+Widget\+::\+Graph\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_graph_widget}{Graph\+Widget}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_graph_widget_a3cca3fc23cb6852065d31bf529b77710}\index{GraphWidget@{GraphWidget}!appendPressurePoint@{appendPressurePoint}}
+\index{appendPressurePoint@{appendPressurePoint}!GraphWidget@{GraphWidget}}
+\doxysubsubsection{\texorpdfstring{appendPressurePoint()}{appendPressurePoint()}}
+{\footnotesize\ttfamily \label{class_graph_widget_a3cca3fc23cb6852065d31bf529b77710} 
+void Graph\+Widget\+::append\+Pressure\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_data_point}{Data\+Point}} \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Appends a new pressure data point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The pressure data point to append. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_graph_widget_a4dcbdad9056be1089b3ab7a39ae601a6}\index{GraphWidget@{GraphWidget}!appendTempPoint@{appendTempPoint}}
+\index{appendTempPoint@{appendTempPoint}!GraphWidget@{GraphWidget}}
+\doxysubsubsection{\texorpdfstring{appendTempPoint()}{appendTempPoint()}}
+{\footnotesize\ttfamily \label{class_graph_widget_a4dcbdad9056be1089b3ab7a39ae601a6} 
+void Graph\+Widget\+::append\+Temp\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_data_point}{Data\+Point}} \&}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Appends a new temperature data point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The temperature data point to append. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_graph_widget_aa2051c1ed9e3691948b1922004ef9623}\index{GraphWidget@{GraphWidget}!drawSeries@{drawSeries}}
+\index{drawSeries@{drawSeries}!GraphWidget@{GraphWidget}}
+\doxysubsubsection{\texorpdfstring{drawSeries()}{drawSeries()}}
+{\footnotesize\ttfamily \label{class_graph_widget_aa2051c1ed9e3691948b1922004ef9623} 
+void Graph\+Widget\+::draw\+Series (\begin{DoxyParamCaption}\item[{const QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ \&}]{series}{, }\item[{const QColor \&}]{pen\+Color}{, }\item[{qreal}]{y\+Offset}{}\end{DoxyParamCaption})}
+
+
+
+Draws a time series on the graph with a given color and Y offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em series} & The data series to draw. \\
+\hline
+{\em pen\+Color} & The color of the graph line. \\
+\hline
+{\em y\+Offset} & Vertical offset for the series. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_graph_widget_aee45971fea2aa0f516ca7abbdfd446fb}\index{GraphWidget@{GraphWidget}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!GraphWidget@{GraphWidget}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily \label{class_graph_widget_aee45971fea2aa0f516ca7abbdfd446fb} 
+void Graph\+Widget\+::resize\+Event (\begin{DoxyParamCaption}\item[{QResize\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles resizing of the widget to adjust the graph accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Resize event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_graph_widget_af98aef384bcba55010801c6cdf9fc03d}\index{GraphWidget@{GraphWidget}!setWindowSeconds@{setWindowSeconds}}
+\index{setWindowSeconds@{setWindowSeconds}!GraphWidget@{GraphWidget}}
+\doxysubsubsection{\texorpdfstring{setWindowSeconds()}{setWindowSeconds()}}
+{\footnotesize\ttfamily \label{class_graph_widget_af98aef384bcba55010801c6cdf9fc03d} 
+void Graph\+Widget\+::set\+Window\+Seconds (\begin{DoxyParamCaption}\item[{qreal}]{seconds}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the size of the time window (in seconds) for graph display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & Length of the display window in seconds. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+graphview.\+h\item 
+graphview.\+cpp\end{DoxyCompactItemize}

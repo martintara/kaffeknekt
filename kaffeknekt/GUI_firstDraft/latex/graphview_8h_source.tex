@@ -1,0 +1,62 @@
+\doxysection{graphview.\+h}
+\hypertarget{graphview_8h_source}{}\label{graphview_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GRAPHWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GRAPHWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QGraphicsView>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QGraphicsScene>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QResizeEvent>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QGraphicsSimpleTextItem>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_data_point}{DataPoint}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ qreal\ \mbox{\hyperlink{struct_data_point_a04f4ebd2406748c2a96717c5b80eb2ec}{timestamp}};\ \ }
+\DoxyCodeLine{00017\ \ \ \ \ qreal\ \mbox{\hyperlink{struct_data_point_a8d61d18cf52040711d240e5233d7605a}{value}};\ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_graph_widget_a6df7c301e5551dff21bbdc5b6cd7ffc9}{GraphWidget}}\ :\ \textcolor{keyword}{public}\ QGraphicsView\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_graph_widget_a6df7c301e5551dff21bbdc5b6cd7ffc9}{GraphWidget}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_graph_widget_aded42c6a0505efca3bee8d763ae3647f}{\string~GraphWidget}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_af8ffeabbdcfba3c7bee5da7cf0ffbbf7}{start}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_af98aef384bcba55010801c6cdf9fc03d}{setWindowSeconds}}(qreal\ seconds)\ \{\ \mbox{\hyperlink{class_graph_widget_ad805e0ecc536b9ce88e9339648973b85}{m\_windowSeconds}}\ =\ seconds;\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_a3cca3fc23cb6852065d31bf529b77710}{appendPressurePoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_point}{DataPoint}}\&\ p);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_a4dcbdad9056be1089b3ab7a39ae601a6}{appendTempPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_point}{DataPoint}}\&\ t);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_a4f264a6d3332f26e735d53a929003846}{refresh}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_ab5c0fe82d31e081e63db0a5dfbf78d30}{clearData}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_a5e16822bb6ca0e5b47bad208ea7bce13}{drawAxes}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_aa2051c1ed9e3691948b1922004ef9623}{drawSeries}}(\textcolor{keyword}{const}\ QVector<DataPoint>\&\ series,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QColor\&\ penColor,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ yOffset);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_aa9f8e7eec1141df356a6cf98fd6cbf1c}{fetchAndRedraw}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_widget_aee45971fea2aa0f516ca7abbdfd446fb}{resizeEvent}}(QResizeEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00103\ \ \ \ \ QGraphicsScene*\ \mbox{\hyperlink{class_graph_widget_acb7a2e522848fca80a9ed9a6094926ed}{m\_scene}};\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ QTimer*\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graph_widget_ab24d236780e44e36aeb0bce1793874b6}{m\_timer}};\ \ \ \ \ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ QVector<DataPoint>\ \mbox{\hyperlink{class_graph_widget_a4538763520ff8bd9e787faea9a15e508}{m\_pressure}};\ }
+\DoxyCodeLine{00107\ \ \ \ \ QVector<DataPoint>\ \mbox{\hyperlink{class_graph_widget_aaa7b56173d1af7a97c22a736c75b62f7}{m\_temp}};\ \ \ \ \ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ qreal\ \mbox{\hyperlink{class_graph_widget_ad805e0ecc536b9ce88e9339648973b85}{m\_windowSeconds}}\ =\ 600.0;\ }
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GRAPHWIDGET\_H}}
+
+\end{DoxyCode}

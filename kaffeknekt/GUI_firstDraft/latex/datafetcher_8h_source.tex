@@ -1,0 +1,29 @@
+\doxysection{datafetcher.\+h}
+\hypertarget{datafetcher_8h_source}{}\label{datafetcher_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATAFETCHER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATAFETCHER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}graphview.h"{}}\ \ \ \ \textcolor{comment}{//\ for\ DataPoint}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data_fetcher_ac84127fead7f1d7542f02166bb38d267}{DataFetcher}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_data_fetcher_ac84127fead7f1d7542f02166bb38d267}{DataFetcher}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ QVector<DataPoint>\ \mbox{\hyperlink{class_data_fetcher_acc737fe075ffa9d8100346f32d5f2e05}{fetchPressureWindow}}(qreal\ windowSeconds,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ influxUrl,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ token,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ bucket);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ QVector<DataPoint>\ \mbox{\hyperlink{class_data_fetcher_ae0e97cead635550a8415d43f9bea7212}{fetchTempWindow}}(qreal\ windowSeconds,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ influxUrl,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ token,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ bucket);}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATAFETCHER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,106 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Namespace List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ui Namespace Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{9}{subsection.5.1.1}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Coffee\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Instructions\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{11}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{11}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}CoffeeInstructionsDialog()}{11}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}$\sim $CoffeeInstructionsDialog()}{12}{subsubsection.6.1.2.2}%
+\contentsline {subsection}{\numberline {6.1.3}Member Data Documentation}{12}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}ui}{12}{subsubsection.6.1.3.1}%
+\contentsline {section}{\numberline {6.2}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fetcher Class Reference}{12}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{13}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Member Function Documentation}{13}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}fetchPressureWindow()}{13}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}fetchTempWindow()}{13}{subsubsection.6.2.2.2}%
+\contentsline {section}{\numberline {6.3}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point Struct Reference}{14}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{14}{subsection.6.3.1}%
+\contentsline {section}{\numberline {6.4}graph\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{14}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{15}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{15}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}graphDialog()}{15}{subsubsection.6.4.2.1}%
+\contentsline {subsection}{\numberline {6.4.3}Member Function Documentation}{16}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}appendData}{16}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}hideEvent()}{16}{subsubsection.6.4.3.2}%
+\contentsline {subsubsection}{\numberline {6.4.3.3}onDataReceived}{16}{subsubsection.6.4.3.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.4}setWindowSeconds()}{16}{subsubsection.6.4.3.4}%
+\contentsline {subsubsection}{\numberline {6.4.3.5}showEvent()}{17}{subsubsection.6.4.3.5}%
+\contentsline {section}{\numberline {6.5}Graph\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Widget Class Reference}{17}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{18}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Constructor \& Destructor Documentation}{18}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}GraphWidget()}{18}{subsubsection.6.5.2.1}%
+\contentsline {subsection}{\numberline {6.5.3}Member Function Documentation}{19}{subsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.1}appendPressurePoint()}{19}{subsubsection.6.5.3.1}%
+\contentsline {subsubsection}{\numberline {6.5.3.2}appendTempPoint()}{19}{subsubsection.6.5.3.2}%
+\contentsline {subsubsection}{\numberline {6.5.3.3}drawSeries()}{19}{subsubsection.6.5.3.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.4}resizeEvent()}{19}{subsubsection.6.5.3.4}%
+\contentsline {subsubsection}{\numberline {6.5.3.5}setWindowSeconds()}{20}{subsubsection.6.5.3.5}%
+\contentsline {section}{\numberline {6.6}Info\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{20}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{21}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Constructor \& Destructor Documentation}{21}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}InfoDetailDialog()}{21}{subsubsection.6.6.2.1}%
+\contentsline {section}{\numberline {6.7}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window Class Reference}{21}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{23}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Constructor \& Destructor Documentation}{23}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}MainWindow()}{23}{subsubsection.6.7.2.1}%
+\contentsline {subsection}{\numberline {6.7.3}Member Function Documentation}{23}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}showEvent()}{23}{subsubsection.6.7.3.1}%
+\contentsline {section}{\numberline {6.8}One\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Day\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{24}{section.6.8}%
+\contentsline {section}{\numberline {6.9}One\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Month\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{24}{section.6.9}%
+\contentsline {section}{\numberline {6.10}One\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Week\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{25}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Options\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{25}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{26}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Constructor \& Destructor Documentation}{26}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}OptionsDialog()}{26}{subsubsection.6.11.2.1}%
+\contentsline {section}{\numberline {6.12}Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Analytics\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{26}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{27}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Constructor \& Destructor Documentation}{27}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}SensorAnalyticsDialog()}{27}{subsubsection.6.12.2.1}%
+\contentsline {subsection}{\numberline {6.12.3}Member Function Documentation}{27}{subsection.6.12.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.1}intervalSelected}{27}{subsubsection.6.12.3.1}%
+\contentsline {section}{\numberline {6.13}Settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{28}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{28}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Constructor \& Destructor Documentation}{28}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}SettingsDialog()}{28}{subsubsection.6.13.2.1}%
+\contentsline {section}{\numberline {6.14}Statistics Class Reference}{29}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{29}{subsection.6.14.1}%
+\contentsline {subsection}{\numberline {6.14.2}Constructor \& Destructor Documentation}{29}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}Statistics()}{29}{subsubsection.6.14.2.1}%
+\contentsline {subsection}{\numberline {6.14.3}Member Function Documentation}{30}{subsection.6.14.3}%
+\contentsline {subsubsection}{\numberline {6.14.3.1}setCupCount()}{30}{subsubsection.6.14.3.1}%
+\contentsline {section}{\numberline {6.15}Warning\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{30}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{30}{subsection.6.15.1}%
+\contentsline {section}{\numberline {6.16}Web\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Socket\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Client Class Reference}{31}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{31}{subsection.6.16.1}%
+\contentsline {subsection}{\numberline {6.16.2}Constructor \& Destructor Documentation}{31}{subsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.1}WebSocketClient()}{31}{subsubsection.6.16.2.1}%
+\contentsline {subsection}{\numberline {6.16.3}Member Function Documentation}{31}{subsection.6.16.3}%
+\contentsline {subsubsection}{\numberline {6.16.3.1}dataReceived}{31}{subsubsection.6.16.3.1}%
+\contentsline {chapter}{\numberline {7}File Documentation}{33}{chapter.7}%
+\contentsline {section}{\numberline {7.1}coffeeinstructionsdialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{33}{section.7.1}%
+\contentsline {section}{\numberline {7.2}datafetcher.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{33}{section.7.2}%
+\contentsline {section}{\numberline {7.3}graphdialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{34}{section.7.3}%
+\contentsline {section}{\numberline {7.4}graphview.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{34}{section.7.4}%
+\contentsline {section}{\numberline {7.5}infodetaildialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{35}{section.7.5}%
+\contentsline {section}{\numberline {7.6}mainwindow.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{35}{section.7.6}%
+\contentsline {section}{\numberline {7.7}moc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}predefs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{36}{section.7.7}%
+\contentsline {section}{\numberline {7.8}onedaydialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{41}{section.7.8}%
+\contentsline {section}{\numberline {7.9}onemonthdialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{42}{section.7.9}%
+\contentsline {section}{\numberline {7.10}oneweekdialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{42}{section.7.10}%
+\contentsline {section}{\numberline {7.11}optionsdialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{42}{section.7.11}%
+\contentsline {section}{\numberline {7.12}sensoranalyticsdialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{43}{section.7.12}%
+\contentsline {section}{\numberline {7.13}settingsdialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{43}{section.7.13}%
+\contentsline {section}{\numberline {7.14}statistics.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{44}{section.7.14}%
+\contentsline {section}{\numberline {7.15}warningdialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{44}{section.7.15}%
+\contentsline {section}{\numberline {7.16}websocketclient.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{44}{section.7.16}%
+\contentsline {chapter}{Index}{45}{section*.53}%

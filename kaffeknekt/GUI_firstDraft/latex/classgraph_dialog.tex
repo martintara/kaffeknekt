@@ -1,0 +1,187 @@
+\doxysection{graph\+Dialog Class Reference}
+\hypertarget{classgraph_dialog}{}\label{classgraph_dialog}\index{graphDialog@{graphDialog}}
+
+
+Dialog window for displaying real-\/time pressure and temperature graphs.  
+
+
+
+
+{\ttfamily \#include $<$graphdialog.\+h$>$}
+
+Inheritance diagram for graph\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgraph_dialog}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classgraph_dialog_aa3be5f8d396343cce6c466c31597055e}{append\+Data}} (double pressure, double temperature)
+\begin{DoxyCompactList}\small\item\em Appends pressure and temperature data to the internal buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgraph_dialog_a6b5f2a1eb60c23d7670a7d1c0e898617}{on\+Data\+Received}} (double pressure, double temperature, const QString \&flag)
+\begin{DoxyCompactList}\small\item\em Handles data received from the \doxylink{class_web_socket_client}{Web\+Socket\+Client}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classgraph_dialog_a11a3ba858be7daaac0c052cc44c2ff9e}\label{classgraph_dialog_a11a3ba858be7daaac0c052cc44c2ff9e} 
+void {\bfseries dialog\+Shown} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the dialog is shown. \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_dialog_a809172c7212a762dd7dfb53b52e472a5}\label{classgraph_dialog_a809172c7212a762dd7dfb53b52e472a5} 
+void {\bfseries dialog\+Hidden} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the dialog is hidden. \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_dialog_a15572abe8d2da8a3785a8c59ea7d21d2}\label{classgraph_dialog_a15572abe8d2da8a3785a8c59ea7d21d2} 
+void {\bfseries flagsent} ()
+\begin{DoxyCompactList}\small\item\em Emitted when a flag is sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgraph_dialog_ac9911df98cc88616600be1fbadc86c55}{graph\+Dialog}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classgraph_dialog}{graph\+Dialog} window. \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_dialog_a0b880a173572b84e16cbb2516d72ae6f}\label{classgraph_dialog_a0b880a173572b84e16cbb2516d72ae6f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}graph\+Dialog} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classgraph_dialog}{graph\+Dialog} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgraph_dialog_a64fd625672b80e3f193ef1f57bb8a4ae}{set\+Window\+Seconds}} (qreal seconds)
+\begin{DoxyCompactList}\small\item\em Sets the time window (in seconds) to display on the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classgraph_dialog_a9c659551fada80996ba840a061d7efc4}{show\+Event}} (QShow\+Event \texorpdfstring{$\ast$}{*}ev) override
+\begin{DoxyCompactList}\small\item\em Handles the event when the dialog is shown. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgraph_dialog_a2b033dfced8dd9ee37991e821b3630d3}{hide\+Event}} (QHide\+Event \texorpdfstring{$\ast$}{*}ev) override
+\begin{DoxyCompactList}\small\item\em Handles the event when the dialog is hidden. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classgraph_dialog_a50883f130b8d367ecc933416ac4d1316}\label{classgraph_dialog_a50883f130b8d367ecc933416ac4d1316} 
+Ui\+::graph\+Dialog \texorpdfstring{$\ast$}{*} {\bfseries ui}
+\begin{DoxyCompactList}\small\item\em Pointer to the UI components. \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_dialog_a9ca2b7e6115399eafa41b2adbf8a47ab}\label{classgraph_dialog_a9ca2b7e6115399eafa41b2adbf8a47ab} 
+\mbox{\hyperlink{class_graph_widget}{Graph\+Widget}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em Widget used to plot the data. \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_dialog_ae93fcce5b2bf8d04a0deb14517ab65e2}\label{classgraph_dialog_ae93fcce5b2bf8d04a0deb14517ab65e2} 
+\mbox{\hyperlink{class_web_socket_client}{Web\+Socket\+Client}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+ws\+Client}
+\begin{DoxyCompactList}\small\item\em Web\+Socket client for real-\/time data. \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_dialog_a6329be88928197b502e777b45b0838e1}\label{classgraph_dialog_a6329be88928197b502e777b45b0838e1} 
+QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ {\bfseries m\+\_\+pressure}
+\begin{DoxyCompactList}\small\item\em Buffer for pressure data points. \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_dialog_a000b9a343ee962639aeffb4ea86abbcb}\label{classgraph_dialog_a000b9a343ee962639aeffb4ea86abbcb} 
+QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ {\bfseries m\+\_\+temp}
+\begin{DoxyCompactList}\small\item\em Buffer for temperature data points. \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_dialog_a6bb5d04b832de2b5a57e6db33890d2bd}\label{classgraph_dialog_a6bb5d04b832de2b5a57e6db33890d2bd} 
+qreal {\bfseries m\+\_\+window\+Seconds} = 600.\+0
+\begin{DoxyCompactList}\small\item\em Display window size in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dialog window for displaying real-\/time pressure and temperature graphs. 
+
+This class handles data visualization using a \doxylink{class_graph_widget}{Graph\+Widget}, and receives real-\/time updates via \doxylink{class_web_socket_client}{Web\+Socket\+Client}. It also emits signals on show/hide events and when a specific flag is sent. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgraph_dialog_ac9911df98cc88616600be1fbadc86c55}\index{graphDialog@{graphDialog}!graphDialog@{graphDialog}}
+\index{graphDialog@{graphDialog}!graphDialog@{graphDialog}}
+\doxysubsubsection{\texorpdfstring{graphDialog()}{graphDialog()}}
+{\footnotesize\ttfamily \label{classgraph_dialog_ac9911df98cc88616600be1fbadc86c55} 
+graph\+Dialog\+::graph\+Dialog (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classgraph_dialog}{graph\+Dialog} window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgraph_dialog_aa3be5f8d396343cce6c466c31597055e}\index{graphDialog@{graphDialog}!appendData@{appendData}}
+\index{appendData@{appendData}!graphDialog@{graphDialog}}
+\doxysubsubsection{\texorpdfstring{appendData}{appendData}}
+{\footnotesize\ttfamily \label{classgraph_dialog_aa3be5f8d396343cce6c466c31597055e} 
+void graph\+Dialog\+::append\+Data (\begin{DoxyParamCaption}\item[{double}]{pressure}{, }\item[{double}]{temperature}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Appends pressure and temperature data to the internal buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pressure} & The new pressure reading. \\
+\hline
+{\em temperature} & The new temperature reading. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgraph_dialog_a2b033dfced8dd9ee37991e821b3630d3}\index{graphDialog@{graphDialog}!hideEvent@{hideEvent}}
+\index{hideEvent@{hideEvent}!graphDialog@{graphDialog}}
+\doxysubsubsection{\texorpdfstring{hideEvent()}{hideEvent()}}
+{\footnotesize\ttfamily \label{classgraph_dialog_a2b033dfced8dd9ee37991e821b3630d3} 
+void graph\+Dialog\+::hide\+Event (\begin{DoxyParamCaption}\item[{QHide\+Event \texorpdfstring{$\ast$}{*}}]{ev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles the event when the dialog is hidden. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & Pointer to the QHide\+Event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgraph_dialog_a6b5f2a1eb60c23d7670a7d1c0e898617}\index{graphDialog@{graphDialog}!onDataReceived@{onDataReceived}}
+\index{onDataReceived@{onDataReceived}!graphDialog@{graphDialog}}
+\doxysubsubsection{\texorpdfstring{onDataReceived}{onDataReceived}}
+{\footnotesize\ttfamily \label{classgraph_dialog_a6b5f2a1eb60c23d7670a7d1c0e898617} 
+void graph\+Dialog\+::on\+Data\+Received (\begin{DoxyParamCaption}\item[{double}]{pressure}{, }\item[{double}]{temperature}{, }\item[{const QString \&}]{flag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Handles data received from the \doxylink{class_web_socket_client}{Web\+Socket\+Client}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pressure} & The received pressure value. \\
+\hline
+{\em temperature} & The received temperature value. \\
+\hline
+{\em flag} & A string flag received with the data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgraph_dialog_a64fd625672b80e3f193ef1f57bb8a4ae}\index{graphDialog@{graphDialog}!setWindowSeconds@{setWindowSeconds}}
+\index{setWindowSeconds@{setWindowSeconds}!graphDialog@{graphDialog}}
+\doxysubsubsection{\texorpdfstring{setWindowSeconds()}{setWindowSeconds()}}
+{\footnotesize\ttfamily \label{classgraph_dialog_a64fd625672b80e3f193ef1f57bb8a4ae} 
+void graph\+Dialog\+::set\+Window\+Seconds (\begin{DoxyParamCaption}\item[{qreal}]{seconds}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the time window (in seconds) to display on the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & Length of the time window. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgraph_dialog_a9c659551fada80996ba840a061d7efc4}\index{graphDialog@{graphDialog}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!graphDialog@{graphDialog}}
+\doxysubsubsection{\texorpdfstring{showEvent()}{showEvent()}}
+{\footnotesize\ttfamily \label{classgraph_dialog_a9c659551fada80996ba840a061d7efc4} 
+void graph\+Dialog\+::show\+Event (\begin{DoxyParamCaption}\item[{QShow\+Event \texorpdfstring{$\ast$}{*}}]{ev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles the event when the dialog is shown. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & Pointer to the QShow\+Event. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+graphdialog.\+h\item 
+graphdialog.\+cpp\end{DoxyCompactItemize}

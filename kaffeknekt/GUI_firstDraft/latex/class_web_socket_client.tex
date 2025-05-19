@@ -1,0 +1,81 @@
+\doxysection{Web\+Socket\+Client Class Reference}
+\hypertarget{class_web_socket_client}{}\label{class_web_socket_client}\index{WebSocketClient@{WebSocketClient}}
+
+
+Threaded client for receiving real-\/time data via Web\+Socket.  
+
+
+
+
+{\ttfamily \#include $<$websocketclient.\+h$>$}
+
+Inheritance diagram for Web\+Socket\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_web_socket_client}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_web_socket_client_af6aac4b2cbd29a8ad66e8214d328ce3f}{data\+Received}} (double pressure, double temperature, const QString \&flag)
+\begin{DoxyCompactList}\small\item\em Emitted when new sensor data is received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_web_socket_client_a9d1181557b9036c9439b771e506b45ca}{Web\+Socket\+Client}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{class_web_socket_client}{Web\+Socket\+Client}. \end{DoxyCompactList}\item 
+\Hypertarget{class_web_socket_client_ab35880dc6cfb2f3a8c5bde5c9c2843a7}\label{class_web_socket_client_ab35880dc6cfb2f3a8c5bde5c9c2843a7} 
+void {\bfseries run} () override
+\begin{DoxyCompactList}\small\item\em Runs the thread logic. Override this method to implement the Web\+Socket communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Threaded client for receiving real-\/time data via Web\+Socket. 
+
+This class runs in a separate thread and is responsible for connecting to a Web\+Socket server to receive live pressure, temperature, and flag data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_web_socket_client_a9d1181557b9036c9439b771e506b45ca}\index{WebSocketClient@{WebSocketClient}!WebSocketClient@{WebSocketClient}}
+\index{WebSocketClient@{WebSocketClient}!WebSocketClient@{WebSocketClient}}
+\doxysubsubsection{\texorpdfstring{WebSocketClient()}{WebSocketClient()}}
+{\footnotesize\ttfamily \label{class_web_socket_client_a9d1181557b9036c9439b771e506b45ca} 
+Web\+Socket\+Client\+::\+Web\+Socket\+Client (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs the \doxylink{class_web_socket_client}{Web\+Socket\+Client}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Optional parent QObject. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_web_socket_client_af6aac4b2cbd29a8ad66e8214d328ce3f}\index{WebSocketClient@{WebSocketClient}!dataReceived@{dataReceived}}
+\index{dataReceived@{dataReceived}!WebSocketClient@{WebSocketClient}}
+\doxysubsubsection{\texorpdfstring{dataReceived}{dataReceived}}
+{\footnotesize\ttfamily \label{class_web_socket_client_af6aac4b2cbd29a8ad66e8214d328ce3f} 
+void Web\+Socket\+Client\+::data\+Received (\begin{DoxyParamCaption}\item[{double}]{pressure}{, }\item[{double}]{temperature}{, }\item[{const QString \&}]{flag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when new sensor data is received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pressure} & The pressure value. \\
+\hline
+{\em temperature} & The temperature value. \\
+\hline
+{\em flag} & A string-\/based flag or status indicator. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+websocketclient.\+h\item 
+websocketclient.\+cpp\end{DoxyCompactItemize}

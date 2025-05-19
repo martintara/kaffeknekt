@@ -1,0 +1,86 @@
+\doxysection{Data\+Fetcher Class Reference}
+\hypertarget{class_data_fetcher}{}\label{class_data_fetcher}\index{DataFetcher@{DataFetcher}}
+
+
+Utility class for fetching sensor data from Influx\+DB.  
+
+
+
+
+{\ttfamily \#include $<$datafetcher.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_data_fetcher_ac84127fead7f1d7542f02166bb38d267}\label{class_data_fetcher_ac84127fead7f1d7542f02166bb38d267} 
+{\bfseries Data\+Fetcher} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_data_fetcher}{Data\+Fetcher}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ \mbox{\hyperlink{class_data_fetcher_acc737fe075ffa9d8100346f32d5f2e05}{fetch\+Pressure\+Window}} (qreal window\+Seconds, const QString \&influx\+Url, const QString \&token, const QString \&bucket)
+\begin{DoxyCompactList}\small\item\em Fetch pressure data points within a given time window. \end{DoxyCompactList}\item 
+static QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ \mbox{\hyperlink{class_data_fetcher_ae0e97cead635550a8415d43f9bea7212}{fetch\+Temp\+Window}} (qreal window\+Seconds, const QString \&influx\+Url, const QString \&token, const QString \&bucket)
+\begin{DoxyCompactList}\small\item\em Fetch temperature data points within a given time window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for fetching sensor data from Influx\+DB. 
+
+This class provides static methods for retrieving temperature and pressure data over a given time window from an Influx\+DB source. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_fetcher_acc737fe075ffa9d8100346f32d5f2e05}\index{DataFetcher@{DataFetcher}!fetchPressureWindow@{fetchPressureWindow}}
+\index{fetchPressureWindow@{fetchPressureWindow}!DataFetcher@{DataFetcher}}
+\doxysubsubsection{\texorpdfstring{fetchPressureWindow()}{fetchPressureWindow()}}
+{\footnotesize\ttfamily \label{class_data_fetcher_acc737fe075ffa9d8100346f32d5f2e05} 
+QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ Data\+Fetcher\+::fetch\+Pressure\+Window (\begin{DoxyParamCaption}\item[{qreal}]{window\+Seconds}{, }\item[{const QString \&}]{influx\+Url}{, }\item[{const QString \&}]{token}{, }\item[{const QString \&}]{bucket}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fetch pressure data points within a given time window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Seconds} & The size of the time window in seconds. \\
+\hline
+{\em influx\+Url} & URL of the Influx\+DB server. \\
+\hline
+{\em token} & Authentication token for accessing the Influx\+DB. \\
+\hline
+{\em bucket} & Name of the bucket to query data from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QVector$<$\+Data\+Point$>$ A vector of pressure data points. 
+\end{DoxyReturn}
+\Hypertarget{class_data_fetcher_ae0e97cead635550a8415d43f9bea7212}\index{DataFetcher@{DataFetcher}!fetchTempWindow@{fetchTempWindow}}
+\index{fetchTempWindow@{fetchTempWindow}!DataFetcher@{DataFetcher}}
+\doxysubsubsection{\texorpdfstring{fetchTempWindow()}{fetchTempWindow()}}
+{\footnotesize\ttfamily \label{class_data_fetcher_ae0e97cead635550a8415d43f9bea7212} 
+QVector$<$ \mbox{\hyperlink{struct_data_point}{Data\+Point}} $>$ Data\+Fetcher\+::fetch\+Temp\+Window (\begin{DoxyParamCaption}\item[{qreal}]{window\+Seconds}{, }\item[{const QString \&}]{influx\+Url}{, }\item[{const QString \&}]{token}{, }\item[{const QString \&}]{bucket}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fetch temperature data points within a given time window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Seconds} & The size of the time window in seconds. \\
+\hline
+{\em influx\+Url} & URL of the Influx\+DB server. \\
+\hline
+{\em token} & Authentication token for accessing the Influx\+DB. \\
+\hline
+{\em bucket} & Name of the bucket to query data from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QVector$<$\+Data\+Point$>$ A vector of temperature data points. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+datafetcher.\+h\item 
+datafetcher.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,123 @@
+\begin{theindex}
+
+  \item {\texorpdfstring{$\sim$}{\string~}CoffeeInstructionsDialog}
+    \subitem {CoffeeInstructionsDialog}, \hyperpage{12}
+
+  \indexspace
+
+  \item {appendData}
+    \subitem {graphDialog}, \hyperpage{16}
+  \item {appendPressurePoint}
+    \subitem {GraphWidget}, \hyperpage{19}
+  \item {appendTempPoint}
+    \subitem {GraphWidget}, \hyperpage{19}
+
+  \indexspace
+
+  \item {CoffeeInstructionsDialog}, \hyperpage{11}
+    \subitem {\texorpdfstring{$\sim$}{\string~}CoffeeInstructionsDialog}, 
+		\hyperpage{12}
+    \subitem {CoffeeInstructionsDialog}, \hyperpage{11}
+    \subitem {ui}, \hyperpage{12}
+
+  \indexspace
+
+  \item {DataFetcher}, \hyperpage{12}
+    \subitem {fetchPressureWindow}, \hyperpage{13}
+    \subitem {fetchTempWindow}, \hyperpage{13}
+  \item {DataPoint}, \hyperpage{14}
+  \item {dataReceived}
+    \subitem {WebSocketClient}, \hyperpage{31}
+  \item {drawSeries}
+    \subitem {GraphWidget}, \hyperpage{19}
+
+  \indexspace
+
+  \item {fetchPressureWindow}
+    \subitem {DataFetcher}, \hyperpage{13}
+  \item {fetchTempWindow}
+    \subitem {DataFetcher}, \hyperpage{13}
+
+  \indexspace
+
+  \item {graphDialog}, \hyperpage{14}
+    \subitem {appendData}, \hyperpage{16}
+    \subitem {graphDialog}, \hyperpage{15}
+    \subitem {hideEvent}, \hyperpage{16}
+    \subitem {onDataReceived}, \hyperpage{16}
+    \subitem {setWindowSeconds}, \hyperpage{16}
+    \subitem {showEvent}, \hyperpage{17}
+  \item {GraphWidget}, \hyperpage{17}
+    \subitem {appendPressurePoint}, \hyperpage{19}
+    \subitem {appendTempPoint}, \hyperpage{19}
+    \subitem {drawSeries}, \hyperpage{19}
+    \subitem {GraphWidget}, \hyperpage{18}
+    \subitem {resizeEvent}, \hyperpage{19}
+    \subitem {setWindowSeconds}, \hyperpage{20}
+
+  \indexspace
+
+  \item {hideEvent}
+    \subitem {graphDialog}, \hyperpage{16}
+
+  \indexspace
+
+  \item {InfoDetailDialog}, \hyperpage{20}
+    \subitem {InfoDetailDialog}, \hyperpage{21}
+  \item {intervalSelected}
+    \subitem {SensorAnalyticsDialog}, \hyperpage{27}
+
+  \indexspace
+
+  \item {MainWindow}, \hyperpage{21}
+    \subitem {MainWindow}, \hyperpage{23}
+    \subitem {showEvent}, \hyperpage{23}
+
+  \indexspace
+
+  \item {onDataReceived}
+    \subitem {graphDialog}, \hyperpage{16}
+  \item {OneDayDialog}, \hyperpage{24}
+  \item {OneMonthDialog}, \hyperpage{24}
+  \item {OneWeekDialog}, \hyperpage{25}
+  \item {OptionsDialog}, \hyperpage{25}
+    \subitem {OptionsDialog}, \hyperpage{26}
+
+  \indexspace
+
+  \item {resizeEvent}
+    \subitem {GraphWidget}, \hyperpage{19}
+
+  \indexspace
+
+  \item {SensorAnalyticsDialog}, \hyperpage{26}
+    \subitem {intervalSelected}, \hyperpage{27}
+    \subitem {SensorAnalyticsDialog}, \hyperpage{27}
+  \item {setCupCount}
+    \subitem {Statistics}, \hyperpage{30}
+  \item {SettingsDialog}, \hyperpage{28}
+    \subitem {SettingsDialog}, \hyperpage{28}
+  \item {setWindowSeconds}
+    \subitem {graphDialog}, \hyperpage{16}
+    \subitem {GraphWidget}, \hyperpage{20}
+  \item {showEvent}
+    \subitem {graphDialog}, \hyperpage{17}
+    \subitem {MainWindow}, \hyperpage{23}
+  \item {Statistics}, \hyperpage{29}
+    \subitem {setCupCount}, \hyperpage{30}
+    \subitem {Statistics}, \hyperpage{29}
+
+  \indexspace
+
+  \item {Ui}, \hyperpage{9}
+  \item {ui}
+    \subitem {CoffeeInstructionsDialog}, \hyperpage{12}
+
+  \indexspace
+
+  \item {WarningDialog}, \hyperpage{30}
+  \item {WebSocketClient}, \hyperpage{31}
+    \subitem {dataReceived}, \hyperpage{31}
+    \subitem {WebSocketClient}, \hyperpage{31}
+
+\end{theindex}

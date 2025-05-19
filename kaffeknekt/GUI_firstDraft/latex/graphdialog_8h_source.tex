@@ -1,0 +1,57 @@
+\doxysection{graphdialog.\+h}
+\hypertarget{graphdialog_8h_source}{}\label{graphdialog_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//graphdialog.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ GRAPHDIALOG\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ GRAPHDIALOG\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QSizePolicy>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}graphview.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}websocketclient.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{\ \textcolor{keyword}{class\ }graphDialog;\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgraph_dialog_ac9911df98cc88616600be1fbadc86c55}{graphDialog}}\ :\ \textcolor{keyword}{public}\ QDialog\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classgraph_dialog_ac9911df98cc88616600be1fbadc86c55}{graphDialog}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classgraph_dialog_a0b880a173572b84e16cbb2516d72ae6f}{\string~graphDialog}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_dialog_a64fd625672b80e3f193ef1f57bb8a4ae}{setWindowSeconds}}(qreal\ seconds)\ \{\ \mbox{\hyperlink{classgraph_dialog_a6bb5d04b832de2b5a57e6db33890d2bd}{m\_windowSeconds}}\ =\ seconds;\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ signals:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_dialog_a11a3ba858be7daaac0c052cc44c2ff9e}{dialogShown}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_dialog_a809172c7212a762dd7dfb53b52e472a5}{dialogHidden}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_dialog_a15572abe8d2da8a3785a8c59ea7d21d2}{flagsent}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_dialog_aa3be5f8d396343cce6c466c31597055e}{appendData}}(\textcolor{keywordtype}{double}\ pressure,\ \textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_dialog_a6b5f2a1eb60c23d7670a7d1c0e898617}{onDataReceived}}(\textcolor{keywordtype}{double}\ pressure,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temperature,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ flag);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ Ui::graphDialog\ *\mbox{\hyperlink{classgraph_dialog_a50883f130b8d367ecc933416ac4d1316}{ui}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_graph_widget}{GraphWidget}}\ \ \ \ \ *\mbox{\hyperlink{classgraph_dialog_a9ca2b7e6115399eafa41b2adbf8a47ab}{m\_graph}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_web_socket_client}{WebSocketClient}}\ *\mbox{\hyperlink{classgraph_dialog_ae93fcce5b2bf8d04a0deb14517ab65e2}{m\_wsClient}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ QVector<DataPoint>\ \mbox{\hyperlink{classgraph_dialog_a6329be88928197b502e777b45b0838e1}{m\_pressure}};\ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ QVector<DataPoint>\ \mbox{\hyperlink{classgraph_dialog_a000b9a343ee962639aeffb4ea86abbcb}{m\_temp}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgraph_dialog_a6bb5d04b832de2b5a57e6db33890d2bd}{m\_windowSeconds}}\ =\ 600.0;\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_dialog_a9c659551fada80996ba840a061d7efc4}{showEvent}}(QShowEvent*\ ev)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_dialog_a2b033dfced8dd9ee37991e821b3630d3}{hideEvent}}(QHideEvent*\ ev)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GRAPHDIALOG\_H}}
+
+\end{DoxyCode}

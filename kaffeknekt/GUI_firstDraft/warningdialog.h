@@ -3,21 +3,22 @@
 
 #include <QDialog>
 
-
+/**
+ * @namespace Ui
+ * @brief Qt namespace containing UI classes generated from .ui files.
+ */
 namespace Ui { class WarningDialog; }
+
+/**
+ * @class WarningDialog
+ * @brief Dialog for displaying a temperature-related warning to the user.
+ *
+ * This dialog notifies the user when a critical temperature threshold is reached.
+ * It provides options to ignore or acknowledge the warning.
+ */
 class WarningDialog : public QDialog {
     Q_OBJECT
+
 public:
-
-    explicit WarningDialog(double temp, QWidget *parent = nullptr);
-    ~WarningDialog();
-private slots:
-    void on_btnIgnore_clicked();
-
-    void on_btnOK_clicked();
-
-private:
-    Ui::WarningDialog *ui;
-};
-
-#endif // WARNINGDIALOG_H
+    /**
+     * @brief Constructs the WarningDialog with a specific*

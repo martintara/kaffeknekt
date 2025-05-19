@@ -1,0 +1,81 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}sensoranalyticsdialog.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}coffeeinstructionsdialog.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}graphview.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}warningdialog.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}websocketclient.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}graphdialog.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QGraphicsScene>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QGraphicsView>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}statistics.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}ui\_mainwindow.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}infodetaildialog.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}datafetcher.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QFrame>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }Kaffeknekt;}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a20c90e43c716041be4616da120a6ccde}{hideInfoFrame}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a0fc0da5fce7e7aa2a3c6d9f657e9d367}{on\_flagsent}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Frame\ 1\ (main\ menu)}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aec114ad985be115af4116814f9e7d04f}{on\_btnHamburger\_clicked}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a412d36e2110b7b958ec408f89fa506ab}{on\_btnHome\_clicked}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a4d9aff04317a6227f0463210a1a52b83}{on\_btnSettings\_clicked}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a3f92165c5e22b7c229a521b734d25be3}{on\_btnInfo\_clicked}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Frame\ 2\ (submenu)}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_afcdaeea7e92715da34f55407939aea68}{on\_btnInstructions\_clicked}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a676656583e07c541febb8915e9734192}{on\_btnSensorAnalytics\_clicked}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8a568ac890cbdeffcc93197e34b44018}{on\_btnStatistics\_clicked}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ac22a4af2e9123e021e79575675f2bcce}{on\_btnHere\_clicked}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a882d5943e90d79c51d76bfbe3cc462dd}{on\_btnTestWarning\_clicked}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a3febb9ef08a8e0f7fc00848ea540a899}{showEvent}}(QShowEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00121\ \ \ \ \ Ui::Kaffeknekt\ *\mbox{\hyperlink{class_main_window_ab54a35930d121203e1384d736c3da8b1}{ui}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_graph_widget}{GraphWidget}}\ \ \ \ *\mbox{\hyperlink{class_main_window_af3581963674c07d7647f4f5d65848dc0}{m\_graph}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_statistics}{Statistics}}\ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a84cc44d73bcb18ef23a877c7786bd3a9}{m\_statsDialog}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_sensor_analytics_dialog}{SensorAnalyticsDialog}}\ *\mbox{\hyperlink{class_main_window_aa82f4741aa5302839532b7a3fab4d608}{m\_saDialog}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{class_web_socket_client}{WebSocketClient}}\ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_ac898765a191d51ff891f4e1c6a17a82b}{m\_ws}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_window_a2db911238110c79db8949ebf31e5effd}{sideMenuVisible}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{class_main_window_aa74591639d7adaec878729cd19353925}{m\_cupCount}}\ \ \ \ \ \ \ \ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \mbox{\hyperlink{class_main_window_ac040fe8991c16ab5f9946cc52d07e4c6}{m\_warningShown}}\ \ \ \ \ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{classgraph_dialog}{graphDialog}}\ \ \ \ \ *\mbox{\hyperlink{class_main_window_a79a89cd1f2a881392f0d5b90fcb6e732}{m\_graphDialog}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}
