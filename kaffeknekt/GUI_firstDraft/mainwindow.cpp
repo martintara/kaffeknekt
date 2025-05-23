@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
         m_saDialog->setModal(false);
         m_saDialog->show();
     });
-
+    m_lastwarningTime.start();
 
 
 // 1) Create the dialog but don’t show yet:
@@ -170,19 +170,20 @@ void MainWindow::on_flagsent(){
         // if stats dialog is visible, update immediately:
         if (m_statsDialog && m_statsDialog->isVisible()) {
             // whenever you detect flag==1, emit this
-               ++m_cupCount;
                m_statsDialog->setCupCount(m_cupCount);
         }
 
-        if (m_cupCount > 20 && !m_warningShown) {
+        if (m_cupCount > 20) {
+                if( !m_warningShown || m_lastwarningTime.elapsed() > 60 * 60 *1000){
             QMessageBox::warning(
                         this,
                         tr("Time to Wash"),
                         tr("You’ve brewed %1 cups!\nTime to clean the machine.").arg(m_cupCount)
                     );
             m_warningShown = true;
+            m_lastwarningTime.restart();
         }
-
+}
 }
 void MainWindow::showEvent(QShowEvent *event)
 {
@@ -238,12 +239,15 @@ void MainWindow::on_btnStatistics_clicked()
        m_statsDialog->exec();
 }
 
+
+
+/*
 void MainWindow::on_btnHome_clicked()
 {
     sideMenuVisible = true;
     ui->frame_2->setVisible(true);
 
-}
+}*/
 
 
 void MainWindow::on_btnHere_clicked()

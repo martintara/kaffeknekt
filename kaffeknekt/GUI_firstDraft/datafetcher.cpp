@@ -28,13 +28,13 @@ QVector<DataPoint> DataFetcher::fetchPressureWindow(qreal windowSeconds,
     static const QString fluxTpl = QStringLiteral(R"__(
     option start = -%1s
     option stop  = now()
-    option windowPeriod = %1s
-
+    //option windowPeriod = %1s
+    option windowPeriod = 1000s
     from(bucket:"sensor_data")
   |> range(start: start, stop: stop)
   |> filter(fn: (r) => r._measurement == "Esp32Metrics")
   |> filter(fn: (r) => r._field == "pressure")
-  |> aggregateWindow(every: windowPeriod, fn: mean, createEmpty: false)
+  //|> aggregateWindow(every: windowPeriod, fn: mean, createEmpty: false)
   |> yield()
     )__");
     QString fluxStr = fluxTpl
@@ -83,7 +83,13 @@ QVector<DataPoint> DataFetcher::fetchPressureWindow(qreal windowSeconds,
         if (cols.size() <= qMax(idxTime, idxValue)) continue;
 
         // parse ISO timestamps
-        QDateTime dt = QDateTime::fromString(cols[idxTime], Qt::ISODate);
+        //QDateTime dt = QDateTime::fromString(cols[idxTime], Qt::ISODate);
+        QString isoTime = cols[idxTime].split('.')[0];  // strip nanoseconds
+        QDateTime dt = QDateTime::fromString(isoTime, Qt::ISODate);
+
+        qDebug() << "[DEBUG] parsed timestamp:" << dt.toString(Qt::ISODate);
+
+
         if (!dt.isValid()) {
             qWarning() << "Bad date parse:" << cols[idxTime];
             continue;
@@ -120,13 +126,13 @@ QVector<DataPoint> DataFetcher::fetchTempWindow(qreal windowSeconds,
             static const QString fluxTpl = QStringLiteral(R"__(
             option start = -%1s
             option stop  = now()
-            option windowPeriod = %1s
-
+            //option windowPeriod = %1s
+            option windowPeriod = 1000s
             from(bucket:"sensor_data")
           |> range(start: start, stop: stop)
           |> filter(fn: (r) => r._measurement == "Esp32Metrics")
           |> filter(fn: (r) => r._field == "temperature")
-          |> aggregateWindow(every: windowPeriod, fn: mean, createEmpty: false)
+          //|> aggregateWindow(every: windowPeriod, fn: mean, createEmpty: false)
           |> yield()
             )__");
 

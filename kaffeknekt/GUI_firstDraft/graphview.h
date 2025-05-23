@@ -35,7 +35,7 @@ public:
     void refresh();
     void clearData();
 
-       // you probably already have these:
+
     void drawAxes();
     void drawSeries(const QVector<DataPoint>& series,
                        const QColor& penColor,

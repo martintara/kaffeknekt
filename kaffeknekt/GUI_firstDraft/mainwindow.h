@@ -8,6 +8,7 @@
 #include "warningdialog.h"
 #include "websocketclient.h"
 #include "graphdialog.h"
+#include <QElapsedTimer>
 #include <QMainWindow>
 #include <QTimer>
 #include <QGraphicsScene>
@@ -39,7 +40,7 @@ public:
 private slots:
     // For hovedmeny (frame_1) som egt frame
     void on_btnHamburger_clicked();
-    void on_btnHome_clicked();
+   // void on_btnHome_clicked();
     void on_btnSettings_clicked();
     void on_btnInfo_clicked();
 
@@ -64,9 +65,12 @@ private:
     WebSocketClient       *m_ws;
     bool sideMenuVisible;
     int    m_cupCount        = 0;
+    QElapsedTimer m_lastwarningTime;
     bool   m_warningShown     = false;
     //WebSocketClient *m_ws;
     graphDialog     *m_graphDialog;
+
+   bool analytics_clicked;
 };
 
 #endif // MAINWINDOW_H

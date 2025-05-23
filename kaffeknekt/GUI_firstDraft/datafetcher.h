@@ -19,7 +19,3 @@ public:
 };
 
 #endif // DATAFETCHER_H
-
-
-
-

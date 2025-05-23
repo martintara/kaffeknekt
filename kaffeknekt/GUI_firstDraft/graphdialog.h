@@ -17,8 +17,10 @@ public:
     explicit graphDialog(QWidget *parent = nullptr);
     ~graphDialog();
     void setWindowSeconds(qreal seconds) { m_windowSeconds = seconds; }
+     // avoid starting the socket thread more than once
+    //bool m_wsStarted = false;
 
-
+     QString m_prevFlag = "0";
 signals:
     void dialogShown();
     void dialogHidden();

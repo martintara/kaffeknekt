@@ -38,7 +38,6 @@ graphDialog::graphDialog(QWidget *parent)
         }
 
     m_graph->refresh();
-    qDebug() << "graphDialog: initial refresh() called";
 
     // Start the WebSocket client thread
     m_wsClient = new WebSocketClient(this);
@@ -59,16 +58,21 @@ void graphDialog::onDataReceived(double pressure,
                                  const QString& flag)
 {
 
+    qDebug() << "graphDialog: onDataReceived called with" << pressure << temperature << flag;
 
-    if (flag == QLatin1String("1")) {
+    if (flag == QLatin1String("1") && m_prevFlag != QLatin1String("1")) {
           // each time flag==1, we brewed a cup
         emit flagsent();
     }
+    m_prevFlag = flag;
 
     // Pop up as soon as we receive any data
     // show dialog on first data
-
-    if (!isVisible()) show();
+    QMetaObject::invokeMethod(this, [this, pressure, temperature]() {
+    if (!isVisible())
+        show();
+        raise();
+        activateWindow();
 
     //qreal t = QDateTime::currentMSecsSinceEpoch() / 1000.0;
 
@@ -79,14 +83,15 @@ void graphDialog::onDataReceived(double pressure,
     qreal now = QDateTime::currentMSecsSinceEpoch() / 1000.0;
     qreal t   = now - g_startTime;   // seconds since dialog opened
 
-
     m_graph->appendPressurePoint({ t, pressure });
     m_graph->appendTempPoint    ({ t, temperature });
     m_graph->refresh();
+    }, Qt::QueuedConnection);
 }
 void graphDialog::showEvent(QShowEvent* ev) {
     QDialog::showEvent(ev);
     emit dialogShown();
+
 
 }
 
@@ -100,6 +105,7 @@ void graphDialog::hideEvent(QHideEvent* ev) {
 
 void graphDialog::appendData(double pressure, double temperature) {
     // (No change needed here if you still use this helper)
+
     qreal t = QDateTime::currentMSecsSinceEpoch() / 1000.0;
     m_graph->appendPressurePoint({ t, pressure });
     m_graph->appendTempPoint    ({ t, temperature });

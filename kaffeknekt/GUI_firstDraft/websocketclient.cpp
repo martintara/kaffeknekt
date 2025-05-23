@@ -62,13 +62,38 @@ void WebSocketClient::run() {
             rest.erase(0, pos + 1);
             try {
                 auto jsonData = nlohmann::json::parse(line);
+                qDebug() << "WebSocketClient received line:" << QString::fromStdString(line);
+
+                if (!jsonData.contains("pressure") || !jsonData.contains("temperature") || !jsonData.contains("flag")) {
+                    qWarning() << "Missing one or more expected fields in JSON:" << QString::fromStdString(line);
+                    continue;
+                }
+
+                //QString flag       = QString::fromStdString(jsonData["flag"]);
+                double pressure    = jsonData["pressure"];
+                double temperature = jsonData["temperature"];
+
+                QString flag = QString::fromStdString(jsonData["flag"].dump());
+                flag.remove('\"');  // remove quotes if it's a string (e.g., "1")
+
+
+                qDebug() << "Emitting dataReceived with:" << pressure << temperature << flag;
+
+                emit dataReceived(pressure, temperature, flag);
+            } catch (const std::exception& e) {
+                qWarning() << "JSON parse error:" << e.what() << "for input:" << QString::fromStdString(line);
+            }
+
+            /*
+            try {
+                auto jsonData = nlohmann::json::parse(line);
                 QString flag       = QString::fromStdString(jsonData["flag"]);
                 double pressure    = jsonData["pressure"];
                 double temperature = jsonData["temperature"];
                 emit dataReceived(pressure, temperature, flag);
             } catch (...) {
                 // ignore parse errors
-            }
+            }*/
         }
     }
 
