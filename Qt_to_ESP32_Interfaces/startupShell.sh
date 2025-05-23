@@ -7,4 +7,5 @@ source /home/kaffeknekt/influx_env/bin/activate
 python /home/kaffeknekt/kaffeknekt/database/influxsocketesp_trinity.py
 
 #Start QT app
-/home/kaffeknekt/kaffeknekt/qtApp
+/home/kaffeknekt/kaffeknekt/kaffeknekt/GUI_firstDraft/GUI_firstDraft
+
