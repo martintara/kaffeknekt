@@ -99,9 +99,9 @@ void TaskACPower(void *pvParameters) {
     sharedMeasurement.ACPower = ACPower;
 
     current = readACCurrentValue(1);
-
+    //Serial.println(current);
     /// This checks if there is a current flowing to the solenoid, indicating if the machine is brewing or not.
-    if(current > 0.06){
+    if(current > 0.07){
       sharedMeasurement.flag = 1;
     } else {
       sharedMeasurement.flag = 0;
