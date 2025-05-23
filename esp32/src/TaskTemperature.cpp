@@ -40,7 +40,7 @@ void TaskTemperature(void *pvParameters) {
   /// Initial delay to allow system to stabelize.
   vTaskDelay(2000 / portTICK_PERIOD_MS);
   
-  Serial.println("Temperature sensor task starting...");
+  //Serial.println("Temperature sensor task starting...");
   
   /// SPI initialization for temperature sensor
   SPI.begin(); //redundant?
@@ -50,8 +50,8 @@ void TaskTemperature(void *pvParameters) {
   
   /// Initial reading to check if sensor is working
   uint16_t rtd_initial = thermo.readRTD();
-  Serial.print("Initial RTD reading: "); 
-  Serial.println(rtd_initial);
+  //Serial.print("Initial RTD reading: "); 
+  //Serial.println(rtd_initial);
 
   if (rtd_initial == 0) {
     Serial.println("WARNING: Temperature sensor not responding");

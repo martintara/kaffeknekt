@@ -36,6 +36,7 @@ void TaskPublish(void *pvParameters) {
     doc["power"] = localCopy.ACPower;
     doc["timestamp"] = localCopy.timestamp;
     doc["flag"] = localCopy.flag;
+
     serializeJson(doc, Serial);
     Serial.println(); /// Print line indicates end of message
 
