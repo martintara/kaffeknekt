@@ -1,0 +1,6 @@
+https://github.com/DFRobot/DFRobot_DS323X.git
+https://github.com/DFRobot/DFRobot_INA219
+paulstoffregen/OneWire@^2.3.8
+dfrobot/DFRobot_ADS1115@^1.0.0
+bblanchon/ArduinoJson@^6.21.3
+Wire
