@@ -1,5 +1,7 @@
 QT       += core gui widgets
 QT       += core gui
+QT       += serialport
+
 QT += network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,6 +17,7 @@ SOURCES += \
     graphdialog.cpp \
     graphview.cpp \
     infodetaildialog.cpp \
+    klokke.cpp \
     main.cpp \
     mainwindow.cpp \
     onedaydialog.cpp \
@@ -33,6 +36,7 @@ HEADERS += \
     graphdialog.h \
     graphview.h \
     infodetaildialog.h \
+    klokke.h \
     mainwindow.h \
     onedaydialog.h \
     onemonthdialog.h \
@@ -48,6 +52,7 @@ FORMS += \
     coffeinstructionsdialog.ui \
     graphdialog.ui \
     infodetaildialog.ui \
+    klokke.ui \
     mainwindow.ui \
     onedaydialog.ui \
     onemonthdialog.ui \

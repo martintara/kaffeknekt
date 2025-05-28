@@ -208,12 +208,15 @@ void MainWindow::on_btnSensorAnalytics_clicked()
 
 }
 
+
 void MainWindow::on_btnSettings_clicked()
 {
-    SettingsDialog dialog(this);
+    clock_time dialog(this);
     dialog.exec();
     ui->statusbar->showMessage("Settings button clicked!");
 }
+
+
 
 void MainWindow::on_btnInfo_clicked()
 {

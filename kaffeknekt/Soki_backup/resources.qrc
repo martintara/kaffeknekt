@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>espresso1.jpg</file>
+        <file>espresso.jpg</file>
+        <file>coffeinstructionsdialog.ui</file>
+        <file>coffeeinstructionsdialog.h</file>
+        <file>coffeeinstructionsdialog.cpp</file>
+        <file>coffee.svg</file>
+        <file>calendar.svg</file>
+        <file>beans1.png</file>
+        <file>beans.jpg</file>
+        <file>alert-triangle.svg</file>
+        <file>settings.svg</file>
+        <file>pie-chart.svg</file>
+        <file>menu.svg</file>
+        <file>kaffemaskina.webp</file>
+        <file>kaffeknekt_logo.png</file>
+        <file>info.svg</file>
+        <file>home.svg</file>
+        <file>SpyBot.png</file>
+    </qresource>
+</RCC>

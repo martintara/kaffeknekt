@@ -108,10 +108,10 @@ color: #000;
       <widget class="QTextEdit" name="textEdit_2">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>251</width>
-         <height>621</height>
+         <x>9</x>
+         <y>9</y>
+         <width>256</width>
+         <height>551</height>
         </rect>
        </property>
        <property name="html">
@@ -131,8 +131,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
        <property name="geometry">
         <rect>
-         <x>90</x>
-         <y>570</y>
+         <x>100</x>
+         <y>580</y>
          <width>65</width>
          <height>30</height>
         </rect>

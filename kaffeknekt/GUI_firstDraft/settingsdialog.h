@@ -1,5 +1,6 @@
 #ifndef SETTINGSDIALOG_H
 #define SETTINGSDIALOG_H
+#include "klokke.h"
 
 #include <QDialog>
 
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::SettingsDialog *ui;
+    clock_time *clockWidget;
 };
 
 #endif // SETTINGSDIALOG_H

@@ -1,0 +1,9 @@
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/KaffeknektDashboard.dir
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/edit_cache.dir
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/rebuild_cache.dir
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/list_install_components.dir
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/install.dir
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/install/local.dir
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/install/strip.dir
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/KaffeknektDashboard_autogen_timestamp_deps.dir
+/home/kaffeknekt/kaffeknekt/build-Graf_4TemplateTest-RPI_Qt_6_Kit-Debug/CMakeFiles/KaffeknektDashboard_autogen.dir

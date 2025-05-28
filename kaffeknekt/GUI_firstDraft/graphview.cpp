@@ -62,6 +62,7 @@ void GraphWidget::drawAxes() {
 
         // --- Y-axis left label (Pressure) ---
         auto* yLabelLeft = m_scene->addSimpleText("Pressure (bar)");
+        yLabelLeft->setBrush(Qt::red);
         yLabelLeft->setFlag(QGraphicsItem::ItemIgnoresTransformations);
         yLabelLeft->setRotation(90);
         QRectF yLeftRect = yLabelLeft->boundingRect();
@@ -69,6 +70,7 @@ void GraphWidget::drawAxes() {
 
         // --- Y-axis right label (Temperature) ---
             auto* yLabelRight = m_scene->addSimpleText("Temperature (°C)");
+            yLabelRight->setBrush(Qt::blue);
             yLabelRight->setFlag(QGraphicsItem::ItemIgnoresTransformations);
             yLabelRight->setRotation(90);
             QRectF yRightRect = yLabelRight->boundingRect();
@@ -85,8 +87,15 @@ void GraphWidget::drawAxes() {
                 tickLeft->setPos(8, y - 8);
 
                 // Right Y ticks
+                /*
                 m_scene->addLine(w, y, w - 5, y, axisPen);
                 auto* tickRight = m_scene->addSimpleText(QString::number(i * 10 + 20));  // just example values
+                tickRight->setFlag(QGraphicsItem::ItemIgnoresTransformations);
+                tickRight->setPos(w - 40, y - 8);*/
+
+                int tempValue = 0 + i * 10;  // 10, 20, ..., 120
+                m_scene->addLine(w, y, w - 5, y, axisPen);
+                auto* tickRight = m_scene->addSimpleText(QString::number(tempValue));
                 tickRight->setFlag(QGraphicsItem::ItemIgnoresTransformations);
                 tickRight->setPos(w - 40, y - 8);
             }
