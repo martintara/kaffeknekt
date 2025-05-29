@@ -4,7 +4,7 @@
 
 // ESP32 Firebird 2 pin definitions
 // You may need to adjust these pins based on your specific board layout
-#define MAX31865_CS_PIN    21     // CS pin for MAX31865
+#define MAX31865_CS_PIN    14     // CS pin for MAX31865
 #define MAX31865_DI_PIN    23    // MOSI pin
 #define MAX31865_DO_PIN    19    // MISO pin
 #define MAX31865_CLK_PIN   18    // SCK pin
