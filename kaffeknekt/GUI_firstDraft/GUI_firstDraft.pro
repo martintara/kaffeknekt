@@ -98,6 +98,6 @@ DISTFILES += \
     Bilder_ikoner/thermometer.svg \
     Bilder_ikoner/Activity_Diagram.drawio.png \
     Bilder_ikoner/Electrical_Diagram.drawio.png \
-    Bilder_ikoner/Sequence_Diagram.drawio.png
-
+    Bilder_ikoner/Sequence_Diagram.drawio.png \
     socketdata.pri
+
